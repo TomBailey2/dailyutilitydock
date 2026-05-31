@@ -1,0 +1,7 @@
+.next/
+node_modules/
+*.tsbuildinfo
+
+# Build-generated SEO files
+public/robots.txt
+public/sitemap*.xml
