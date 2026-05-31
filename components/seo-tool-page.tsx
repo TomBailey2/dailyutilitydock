@@ -107,6 +107,7 @@ function Field({
   onChange,
   type = "number",
   min,
+  max,
   step,
   prefix,
   suffix,
@@ -117,6 +118,7 @@ function Field({
   onChange: (value: string) => void;
   type?: string;
   min?: string;
+  max?: string;
   step?: string;
   prefix?: string;
   suffix?: string;
@@ -134,6 +136,7 @@ function Field({
           id={id}
           type={type}
           min={min}
+          max={max}
           step={step}
           value={value}
           onChange={(event) => onChange(event.target.value)}
