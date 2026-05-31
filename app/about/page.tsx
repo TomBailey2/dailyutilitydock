@@ -67,7 +67,7 @@ export default function AboutPage() {
                 <div>
                   <h3 className="font-semibold mb-2">Privacy First</h3>
                   <p className="text-sm text-muted-foreground">
-                    Your data never leaves your browser. We don't store, track, or sell your information.
+                    Your data never leaves your browser. We do not store, track, or sell your information.
                   </p>
                 </div>
               </div>

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, useCallback } from "react";
 import { QrCode, Download, Copy } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -125,7 +125,7 @@ export default function QRGeneratorPage() {
   const [fgColor, setFgColor] = useState("#000000");
   const [bgColor, setBgColor] = useState("#FFFFFF");
 
-  const getContent = (): string => {
+  const getContent = useCallback((): string => {
     switch (qrData.type) {
       case "url":
         return qrData.url || "https://example.com";
@@ -142,13 +142,13 @@ export default function QRGeneratorPage() {
       default:
         return "https://dailyutilitydock.com";
     }
-  };
+  }, [qrData]);
 
   useEffect(() => {
     if (canvasRef.current) {
       drawQRCode(canvasRef.current, getContent(), fgColor, bgColor);
     }
-  }, [qrData, fgColor, bgColor]);
+  }, [getContent, fgColor, bgColor]);
 
   const downloadQR = () => {
     if (canvasRef.current) {

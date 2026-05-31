@@ -31,14 +31,14 @@ export default function TermsOfUsePage() {
           <section>
             <h2 className="text-2xl font-semibold mb-4">Agreement to Terms</h2>
             <p className="text-muted-foreground">
-              By accessing and using Daily Utility Dock ("the Website"), you agree to be bound by these Terms of Use. If you do not agree to these terms, please do not use the Website.
+              By accessing and using Daily Utility Dock (&quot;the Website&quot;), you agree to be bound by these Terms of Use. If you do not agree to these terms, please do not use the Website.
             </p>
           </section>
 
           <section>
             <h2 className="text-2xl font-semibold mb-4">Description of Service</h2>
             <p className="text-muted-foreground">
-              Daily Utility Dock provides free online tools including calculators, converters, and utilities for everyday tasks. The service is provided "as is" and we make no guarantees about the availability or accuracy of any specific tool.
+              Daily Utility Dock provides free online tools including calculators, converters, and utilities for everyday tasks. The service is provided &quot;as is&quot; and we make no guarantees about the availability or accuracy of any specific tool.
             </p>
           </section>
 
@@ -57,7 +57,7 @@ export default function TermsOfUsePage() {
           <section>
             <h2 className="text-2xl font-semibold mb-4">Disclaimer of Warranties</h2>
             <p className="text-muted-foreground">
-              The Website and its content are provided "as is" and "as available" without any warranties of any kind, either express or implied. We do not warrant that:
+              The Website and its content are provided &quot;as is&quot; and &quot;as available&quot; without any warranties of any kind, either express or implied. We do not warrant that:
             </p>
             <ul className="list-disc pl-6 text-muted-foreground space-y-2">
               <li>The Website will be uninterrupted or error-free</li>
