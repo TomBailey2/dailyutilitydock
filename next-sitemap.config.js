@@ -8,7 +8,7 @@ const siteUrl = (
 module.exports = {
   siteUrl,
   outDir: './public',
-  autoLastmod: true,
+  autoLastmod: false,
   generateRobotsTxt: true,
   generateIndexSitemap: false,
   sitemapSize: 7000,

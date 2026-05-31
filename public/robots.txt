@@ -1,4 +1,9 @@
+# *
 User-agent: *
 Allow: /
 
+# Host
+Host: https://dailyutilitydock.com
+
+# Sitemaps
 Sitemap: https://dailyutilitydock.com/sitemap.xml
