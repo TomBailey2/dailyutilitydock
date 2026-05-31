@@ -73,16 +73,16 @@ export default function SpeedTestPage() {
     <div className="container mx-auto px-4 py-8">
       <BreadcrumbSchema
         items={[
-          { name: "Home", url: "https://dailyutilityhub.com" },
-          { name: "Tools", url: "https://dailyutilityhub.com#tools" },
-          { name: "Speed Test", url: "https://dailyutilityhub.com/tools/speed-test" },
+          { name: "Home", url: "https://dailyutilitydock.com" },
+          { name: "Tools", url: "https://dailyutilitydock.com#tools" },
+          { name: "Speed Test", url: "https://dailyutilitydock.com/tools/speed-test" },
         ]}
       />
       <FAQSchema questions={faqItems} />
       <SoftwareAppSchema
         name="Internet Speed Test"
         description="Check your download and upload speeds instantly"
-        url="https://dailyutilityhub.com/tools/speed-test"
+        url="https://dailyutilitydock.com/tools/speed-test"
       />
 
       <div className="max-w-3xl mx-auto">

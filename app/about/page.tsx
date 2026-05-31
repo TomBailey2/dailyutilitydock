@@ -8,8 +8,8 @@ export default function AboutPage() {
     <div className="container mx-auto px-4 py-8">
       <BreadcrumbSchema
         items={[
-          { name: "Home", url: "https://dailyutilityhub.com" },
-          { name: "About", url: "https://dailyutilityhub.com/about" },
+          { name: "Home", url: "https://dailyutilitydock.com" },
+          { name: "About", url: "https://dailyutilitydock.com/about" },
         ]}
       />
 

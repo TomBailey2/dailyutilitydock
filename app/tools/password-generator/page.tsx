@@ -96,16 +96,16 @@ export default function PasswordGeneratorPage() {
     <div className="container mx-auto px-4 py-8">
       <BreadcrumbSchema
         items={[
-          { name: "Home", url: "https://dailyutilityhub.com" },
-          { name: "Tools", url: "https://dailyutilityhub.com#tools" },
-          { name: "Password Generator", url: "https://dailyutilityhub.com/tools/password-generator" },
+          { name: "Home", url: "https://dailyutilitydock.com" },
+          { name: "Tools", url: "https://dailyutilitydock.com#tools" },
+          { name: "Password Generator", url: "https://dailyutilitydock.com/tools/password-generator" },
         ]}
       />
       <FAQSchema questions={faqItems} />
       <SoftwareAppSchema
         name="Password Generator"
         description="Create strong, secure passwords instantly"
-        url="https://dailyutilityhub.com/tools/password-generator"
+        url="https://dailyutilitydock.com/tools/password-generator"
       />
 
       <div className="max-w-2xl mx-auto">

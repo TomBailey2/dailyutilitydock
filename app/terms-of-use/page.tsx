@@ -7,8 +7,8 @@ export default function TermsOfUsePage() {
     <div className="container mx-auto px-4 py-8">
       <BreadcrumbSchema
         items={[
-          { name: "Home", url: "https://dailyutilityhub.com" },
-          { name: "Terms of Use", url: "https://dailyutilityhub.com/terms-of-use" },
+          { name: "Home", url: "https://dailyutilitydock.com" },
+          { name: "Terms of Use", url: "https://dailyutilitydock.com/terms-of-use" },
         ]}
       />
 

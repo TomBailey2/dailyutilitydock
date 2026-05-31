@@ -93,16 +93,16 @@ export default function TimezoneConverterPage() {
     <div className="container mx-auto px-4 py-8">
       <BreadcrumbSchema
         items={[
-          { name: "Home", url: "https://dailyutilityhub.com" },
-          { name: "Tools", url: "https://dailyutilityhub.com#tools" },
-          { name: "Timezone Converter", url: "https://dailyutilityhub.com/tools/timezone-converter" },
+          { name: "Home", url: "https://dailyutilitydock.com" },
+          { name: "Tools", url: "https://dailyutilitydock.com#tools" },
+          { name: "Timezone Converter", url: "https://dailyutilitydock.com/tools/timezone-converter" },
         ]}
       />
       <FAQSchema questions={faqItems} />
       <SoftwareAppSchema
         name="Timezone Converter"
         description="Convert times between different timezones easily"
-        url="https://dailyutilityhub.com/tools/timezone-converter"
+        url="https://dailyutilitydock.com/tools/timezone-converter"
       />
 
       <div className="max-w-2xl mx-auto">

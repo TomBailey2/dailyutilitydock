@@ -74,16 +74,16 @@ export default function VATCalculatorPage() {
     <div className="container mx-auto px-4 py-8">
       <BreadcrumbSchema
         items={[
-          { name: "Home", url: "https://dailyutilityhub.com" },
-          { name: "Tools", url: "https://dailyutilityhub.com#tools" },
-          { name: "VAT Calculator", url: "https://dailyutilityhub.com/tools/vat-calculator" },
+          { name: "Home", url: "https://dailyutilitydock.com" },
+          { name: "Tools", url: "https://dailyutilitydock.com#tools" },
+          { name: "VAT Calculator", url: "https://dailyutilitydock.com/tools/vat-calculator" },
         ]}
       />
       <FAQSchema questions={faqItems} />
       <SoftwareAppSchema
         name="UK VAT Calculator"
         description="Calculate UK VAT at 20%, 5%, or 0% rates"
-        url="https://dailyutilityhub.com/tools/vat-calculator"
+        url="https://dailyutilitydock.com/tools/vat-calculator"
       />
 
       <div className="max-w-2xl mx-auto">

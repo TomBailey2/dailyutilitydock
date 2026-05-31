@@ -85,16 +85,16 @@ export default function IPCheckerPage() {
     <div className="container mx-auto px-4 py-8">
       <BreadcrumbSchema
         items={[
-          { name: "Home", url: "https://dailyutilityhub.com" },
-          { name: "Tools", url: "https://dailyutilityhub.com#tools" },
-          { name: "IP Checker", url: "https://dailyutilityhub.com/tools/ip-checker" },
+          { name: "Home", url: "https://dailyutilitydock.com" },
+          { name: "Tools", url: "https://dailyutilitydock.com#tools" },
+          { name: "IP Checker", url: "https://dailyutilitydock.com/tools/ip-checker" },
         ]}
       />
       <FAQSchema questions={faqItems} />
       <SoftwareAppSchema
         name="IP Address Checker"
         description="Find your public IP address and location details"
-        url="https://dailyutilityhub.com/tools/ip-checker"
+        url="https://dailyutilitydock.com/tools/ip-checker"
       />
 
       <div className="max-w-2xl mx-auto">

@@ -9,7 +9,7 @@ import { WebSiteSchema } from '@/components/schema-markup';
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://dailyutilityhub.com'),
+  metadataBase: new URL('https://dailyutilitydock.com'),
   title: {
     default: 'Daily Utility Hub - Free Online Tools for Everyday Tasks',
     template: '%s | Daily Utility Hub',
@@ -49,7 +49,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://dailyutilityhub.com',
+    url: 'https://dailyutilitydock.com',
     siteName: 'Daily Utility Hub',
     title: 'Daily Utility Hub - Free Online Tools for Everyday Tasks',
     description:
@@ -102,7 +102,7 @@ export default function RootLayout({
 
         <WebSiteSchema
           name="Daily Utility Hub"
-          url="https://dailyutilityhub.com"
+          url="https://dailyutilitydock.com"
           description="Free online tools for everyday tasks"
         />
       </head>
