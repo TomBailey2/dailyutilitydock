@@ -160,16 +160,16 @@ export default function UnitConverterPage() {
     <div className="container mx-auto px-4 py-8">
       <BreadcrumbSchema
         items={[
-          { name: "Home", url: "https://dailyutilityhub.com" },
-          { name: "Tools", url: "https://dailyutilityhub.com#tools" },
-          { name: "Unit Converter", url: "https://dailyutilityhub.com/tools/unit-converter" },
+          { name: "Home", url: "https://dailyutilitydock.com" },
+          { name: "Tools", url: "https://dailyutilitydock.com#tools" },
+          { name: "Unit Converter", url: "https://dailyutilitydock.com/tools/unit-converter" },
         ]}
       />
       <FAQSchema questions={faqItems} />
       <SoftwareAppSchema
         name="Unit Converter"
         description="Convert length, weight, temperature and more"
-        url="https://dailyutilityhub.com/tools/unit-converter"
+        url="https://dailyutilitydock.com/tools/unit-converter"
       />
 
       <div className="max-w-3xl mx-auto">

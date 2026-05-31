@@ -43,8 +43,8 @@ export default function ContactPage() {
     <div className="container mx-auto px-4 py-8">
       <BreadcrumbSchema
         items={[
-          { name: "Home", url: "https://dailyutilityhub.com" },
-          { name: "Contact", url: "https://dailyutilityhub.com/contact" },
+          { name: "Home", url: "https://dailyutilitydock.com" },
+          { name: "Contact", url: "https://dailyutilitydock.com/contact" },
         ]}
       />
 

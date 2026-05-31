@@ -7,8 +7,8 @@ export default function PrivacyPolicyPage() {
     <div className="container mx-auto px-4 py-8">
       <BreadcrumbSchema
         items={[
-          { name: "Home", url: "https://dailyutilityhub.com" },
-          { name: "Privacy Policy", url: "https://dailyutilityhub.com/privacy-policy" },
+          { name: "Home", url: "https://dailyutilitydock.com" },
+          { name: "Privacy Policy", url: "https://dailyutilitydock.com/privacy-policy" },
         ]}
       />
 

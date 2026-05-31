@@ -7,8 +7,8 @@ export default function CookiePolicyPage() {
     <div className="container mx-auto px-4 py-8">
       <BreadcrumbSchema
         items={[
-          { name: "Home", url: "https://dailyutilityhub.com" },
-          { name: "Cookie Policy", url: "https://dailyutilityhub.com/cookie-policy" },
+          { name: "Home", url: "https://dailyutilitydock.com" },
+          { name: "Cookie Policy", url: "https://dailyutilitydock.com/cookie-policy" },
         ]}
       />
 

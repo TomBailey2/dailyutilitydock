@@ -95,16 +95,16 @@ export default function AgeCalculatorPage() {
     <div className="container mx-auto px-4 py-8">
       <BreadcrumbSchema
         items={[
-          { name: "Home", url: "https://dailyutilityhub.com" },
-          { name: "Tools", url: "https://dailyutilityhub.com#tools" },
-          { name: "Age Calculator", url: "https://dailyutilityhub.com/tools/age-calculator" },
+          { name: "Home", url: "https://dailyutilitydock.com" },
+          { name: "Tools", url: "https://dailyutilitydock.com#tools" },
+          { name: "Age Calculator", url: "https://dailyutilitydock.com/tools/age-calculator" },
         ]}
       />
       <FAQSchema questions={faqItems} />
       <SoftwareAppSchema
         name="Age Calculator"
         description="Calculate exact age from date of birth"
-        url="https://dailyutilityhub.com/tools/age-calculator"
+        url="https://dailyutilitydock.com/tools/age-calculator"
       />
 
       <div className="max-w-2xl mx-auto">

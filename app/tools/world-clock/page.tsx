@@ -114,16 +114,16 @@ export default function WorldClockPage() {
     <div className="container mx-auto px-4 py-8">
       <BreadcrumbSchema
         items={[
-          { name: "Home", url: "https://dailyutilityhub.com" },
-          { name: "Tools", url: "https://dailyutilityhub.com#tools" },
-          { name: "World Clock", url: "https://dailyutilityhub.com/tools/world-clock" },
+          { name: "Home", url: "https://dailyutilitydock.com" },
+          { name: "Tools", url: "https://dailyutilitydock.com#tools" },
+          { name: "World Clock", url: "https://dailyutilitydock.com/tools/world-clock" },
         ]}
       />
       <FAQSchema questions={faqItems} />
       <SoftwareAppSchema
         name="World Clock"
         description="View current time in multiple cities worldwide"
-        url="https://dailyutilityhub.com/tools/world-clock"
+        url="https://dailyutilitydock.com/tools/world-clock"
       />
 
       <div className="max-w-3xl mx-auto">

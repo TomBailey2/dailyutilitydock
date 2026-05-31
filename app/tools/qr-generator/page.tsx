@@ -136,7 +136,7 @@ export default function QRGeneratorPage() {
       case "wifi":
         return `WIFI:S:${qrData.wifiSsid || "Network"};T:WPA;P:${qrData.wifiPassword || "password"};;`;
       default:
-        return "https://dailyutilityhub.com";
+        return "https://dailyutilitydock.com";
     }
   };
 
@@ -173,16 +173,16 @@ export default function QRGeneratorPage() {
     <div className="container mx-auto px-4 py-8">
       <BreadcrumbSchema
         items={[
-          { name: "Home", url: "https://dailyutilityhub.com" },
-          { name: "Tools", url: "https://dailyutilityhub.com#tools" },
-          { name: "QR Generator", url: "https://dailyutilityhub.com/tools/qr-generator" },
+          { name: "Home", url: "https://dailyutilitydock.com" },
+          { name: "Tools", url: "https://dailyutilitydock.com#tools" },
+          { name: "QR Generator", url: "https://dailyutilitydock.com/tools/qr-generator" },
         ]}
       />
       <FAQSchema questions={faqItems} />
       <SoftwareAppSchema
         name="QR Code Generator"
         description="Generate QR codes for URLs, text, and more"
-        url="https://dailyutilityhub.com/tools/qr-generator"
+        url="https://dailyutilitydock.com/tools/qr-generator"
       />
 
       <div className="max-w-2xl mx-auto">

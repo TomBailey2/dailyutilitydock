@@ -82,16 +82,16 @@ export default function FuelCalculatorPage() {
     <div className="container mx-auto px-4 py-8">
       <BreadcrumbSchema
         items={[
-          { name: "Home", url: "https://dailyutilityhub.com" },
-          { name: "Tools", url: "https://dailyutilityhub.com#tools" },
-          { name: "Fuel Calculator", url: "https://dailyutilityhub.com/tools/fuel-calculator" },
+          { name: "Home", url: "https://dailyutilitydock.com" },
+          { name: "Tools", url: "https://dailyutilitydock.com#tools" },
+          { name: "Fuel Calculator", url: "https://dailyutilitydock.com/tools/fuel-calculator" },
         ]}
       />
       <FAQSchema questions={faqItems} />
       <SoftwareAppSchema
         name="Fuel Cost Calculator"
         description="Calculate your journey fuel costs and efficiency"
-        url="https://dailyutilityhub.com/tools/fuel-calculator"
+        url="https://dailyutilitydock.com/tools/fuel-calculator"
       />
 
       <div className="max-w-2xl mx-auto">
