@@ -7,6 +7,8 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { FAQSection } from "@/components/faq-section";
 import { AdsPlaceholder } from "@/components/ads-placeholder";
 import { BreadcrumbSchema, FAQSchema, SoftwareAppSchema } from "@/components/schema-markup";
+import { ToolEducationSections } from "@/components/tool-education-sections";
+import { getCoreTool } from "@/lib/site-tools";
 
 const faqItems = [
   {
@@ -26,6 +28,8 @@ const faqItems = [
     answer: "Yes, our speed test provides accurate results by measuring real data transfer speeds. However, results can vary based on your current network conditions. Run multiple tests at different times for a more complete picture of your connection quality.",
   },
 ];
+
+const toolContent = getCoreTool("speed-test")!;
 
 export default function SpeedTestPage() {
   const [testing, setTesting] = useState(false);
@@ -192,6 +196,8 @@ export default function SpeedTestPage() {
         </div>
 
         <AdsPlaceholder size="inline" className="mb-6" />
+
+        <ToolEducationSections tool={toolContent} />
 
         <FAQSection items={faqItems} />
       </div>

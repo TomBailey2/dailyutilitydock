@@ -11,8 +11,8 @@ const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
 export const metadata: Metadata = {
   metadataBase: new URL('https://dailyutilitydock.com'),
   title: {
-    default: 'Daily Utility Hub - Free Online Tools for Everyday Tasks',
-    template: '%s | Daily Utility Hub',
+    default: 'Daily Utility Dock - Free Online Tools for Everyday Tasks',
+    template: '%s | Daily Utility Dock',
   },
   description:
     'Free online tools including internet speed test, world clock, timezone converter, VAT calculator, password generator, and more. Fast, reliable, and easy to use.',
@@ -26,9 +26,9 @@ export const metadata: Metadata = {
     'QR code',
     'unit converter',
   ],
-  authors: [{ name: 'Daily Utility Hub' }],
-  creator: 'Daily Utility Hub',
-  publisher: 'Daily Utility Hub',
+  authors: [{ name: 'Daily Utility Dock' }],
+  creator: 'Daily Utility Dock',
+  publisher: 'Daily Utility Dock',
 
   verification: {
     google: 'PASTE_GOOGLE_SEARCH_CONSOLE_CODE_HERE',
@@ -50,8 +50,8 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'en_US',
     url: 'https://dailyutilitydock.com',
-    siteName: 'Daily Utility Hub',
-    title: 'Daily Utility Hub - Free Online Tools for Everyday Tasks',
+    siteName: 'Daily Utility Dock',
+    title: 'Daily Utility Dock - Free Online Tools for Everyday Tasks',
     description:
       'Free online tools including internet speed test, world clock, timezone converter, VAT calculator, password generator, and more.',
     images: [
@@ -59,14 +59,14 @@ export const metadata: Metadata = {
         url: '/og-image.png',
         width: 1200,
         height: 630,
-        alt: 'Daily Utility Hub',
+        alt: 'Daily Utility Dock',
       },
     ],
   },
 
   twitter: {
     card: 'summary_large_image',
-    title: 'Daily Utility Hub - Free Online Tools',
+    title: 'Daily Utility Dock - Free Online Tools',
     description:
       'Free online tools including internet speed test, world clock, timezone converter, and more.',
     images: ['/og-image.png'],
@@ -101,7 +101,7 @@ export default function RootLayout({
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 
         <WebSiteSchema
-          name="Daily Utility Hub"
+          name="Daily Utility Dock"
           url="https://dailyutilitydock.com"
           description="Free online tools for everyday tasks"
         />

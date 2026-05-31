@@ -31,7 +31,7 @@ export default function PrivacyPolicyPage() {
           <section>
             <h2 className="text-2xl font-semibold mb-4">Introduction</h2>
             <p className="text-muted-foreground">
-              Daily Utility Hub ("we", "our", or "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, and safeguard your information when you visit our website and use our tools.
+              Daily Utility Dock (&quot;we&quot;, &quot;our&quot;, or &quot;us&quot;) is committed to protecting your privacy. This Privacy Policy explains how we collect, use, and safeguard your information when you visit our website and use our tools.
             </p>
           </section>
 
@@ -121,7 +121,7 @@ export default function PrivacyPolicyPage() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-semibold mb-4">Children's Privacy</h2>
+            <h2 className="text-2xl font-semibold mb-4">Children&apos;s Privacy</h2>
             <p className="text-muted-foreground">
               Our website is not intended for children under 13. We do not knowingly collect personal information from children under 13.
             </p>
@@ -130,7 +130,7 @@ export default function PrivacyPolicyPage() {
           <section>
             <h2 className="text-2xl font-semibold mb-4">Changes to This Policy</h2>
             <p className="text-muted-foreground">
-              We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new policy on this page and updating the "Last updated" date.
+              We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new policy on this page and updating the &quot;Last updated&quot; date.
             </p>
           </section>
 

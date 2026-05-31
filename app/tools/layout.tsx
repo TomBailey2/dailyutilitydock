@@ -2,8 +2,8 @@ import { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: {
-    template: '%s | Daily Utility Hub',
-    default: 'Tools | Daily Utility Hub',
+    template: '%s | Daily Utility Dock',
+    default: 'Tools | Daily Utility Dock',
   },
 };
 

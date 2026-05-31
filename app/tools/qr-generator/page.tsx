@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, useCallback } from "react";
 import { QrCode, Download, Copy } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -17,6 +17,8 @@ import {
 import { FAQSection } from "@/components/faq-section";
 import { AdsPlaceholder } from "@/components/ads-placeholder";
 import { BreadcrumbSchema, FAQSchema, SoftwareAppSchema } from "@/components/schema-markup";
+import { ToolEducationSections } from "@/components/tool-education-sections";
+import { getCoreTool } from "@/lib/site-tools";
 import { toast } from "sonner";
 
 const faqItems = [
@@ -37,6 +39,8 @@ const faqItems = [
     answer: "Static QR codes (like those generated here) never expire and contain the data directly in the code itself. They will work indefinitely as long as the encoded content remains valid.",
   },
 ];
+
+const toolContent = getCoreTool("qr-generator")!;
 
 type QRType = "url" | "text" | "email" | "phone" | "sms" | "wifi";
 
@@ -121,7 +125,7 @@ export default function QRGeneratorPage() {
   const [fgColor, setFgColor] = useState("#000000");
   const [bgColor, setBgColor] = useState("#FFFFFF");
 
-  const getContent = (): string => {
+  const getContent = useCallback((): string => {
     switch (qrData.type) {
       case "url":
         return qrData.url || "https://example.com";
@@ -138,13 +142,13 @@ export default function QRGeneratorPage() {
       default:
         return "https://dailyutilitydock.com";
     }
-  };
+  }, [qrData]);
 
   useEffect(() => {
     if (canvasRef.current) {
       drawQRCode(canvasRef.current, getContent(), fgColor, bgColor);
     }
-  }, [qrData, fgColor, bgColor]);
+  }, [getContent, fgColor, bgColor]);
 
   const downloadQR = () => {
     if (canvasRef.current) {
@@ -366,6 +370,8 @@ export default function QRGeneratorPage() {
         </div>
 
         <AdsPlaceholder size="inline" className="mb-6" />
+
+        <ToolEducationSections tool={toolContent} />
 
         <FAQSection items={faqItems} />
       </div>

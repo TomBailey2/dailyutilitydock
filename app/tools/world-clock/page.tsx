@@ -14,6 +14,8 @@ import {
 import { FAQSection } from "@/components/faq-section";
 import { AdsPlaceholder } from "@/components/ads-placeholder";
 import { BreadcrumbSchema, FAQSchema, SoftwareAppSchema } from "@/components/schema-markup";
+import { ToolEducationSections } from "@/components/tool-education-sections";
+import { getCoreTool } from "@/lib/site-tools";
 
 const timezones = [
   { id: "America/New_York", city: "New York", country: "USA", abbr: "EST/EDT" },
@@ -51,6 +53,8 @@ const faqItems = [
     answer: "Some cities share the same timezone but may have different DST rules or historical changes. Our tool uses the official IANA timezone database to ensure accuracy for each specific location.",
   },
 ];
+
+const toolContent = getCoreTool("world-clock")!;
 
 export default function WorldClockPage() {
   const [selectedClocks, setSelectedClocks] = useState([
@@ -195,6 +199,8 @@ export default function WorldClockPage() {
         </div>
 
         <AdsPlaceholder size="inline" className="mb-6" />
+
+        <ToolEducationSections tool={toolContent} />
 
         <FAQSection items={faqItems} />
       </div>

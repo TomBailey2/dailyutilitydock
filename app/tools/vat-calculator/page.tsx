@@ -10,6 +10,8 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { FAQSection } from "@/components/faq-section";
 import { AdsPlaceholder } from "@/components/ads-placeholder";
 import { BreadcrumbSchema, FAQSchema, SoftwareAppSchema } from "@/components/schema-markup";
+import { ToolEducationSections } from "@/components/tool-education-sections";
+import { getCoreTool } from "@/lib/site-tools";
 
 const vatRates = [
   { value: "20", label: "Standard Rate (20%)" },
@@ -35,6 +37,8 @@ const faqItems = [
     answer: "You must register for VAT if your taxable turnover exceeds £90,000 (as of 2024) in a 12-month period, or if you expect it to exceed this threshold. You can also register voluntarily if your turnover is below the threshold.",
   },
 ];
+
+const toolContent = getCoreTool("vat-calculator")!;
 
 export default function VATCalculatorPage() {
   const [amount, setAmount] = useState("");
@@ -197,6 +201,8 @@ export default function VATCalculatorPage() {
         )}
 
         <AdsPlaceholder size="inline" className="mb-6" />
+
+        <ToolEducationSections tool={toolContent} />
 
         <FAQSection items={faqItems} />
       </div>

@@ -16,6 +16,8 @@ import {
 import { FAQSection } from "@/components/faq-section";
 import { AdsPlaceholder } from "@/components/ads-placeholder";
 import { BreadcrumbSchema, FAQSchema, SoftwareAppSchema } from "@/components/schema-markup";
+import { ToolEducationSections } from "@/components/tool-education-sections";
+import { getCoreTool } from "@/lib/site-tools";
 
 const faqItems = [
   {
@@ -35,6 +37,8 @@ const faqItems = [
     answer: "To calculate cost per mile, divide your fuel cost per litre by your vehicle's MPG, then multiply by the conversion factor for your gallon type (UK: 4.546, US: 3.785). Our calculator does this automatically for you.",
   },
 ];
+
+const toolContent = getCoreTool("fuel-calculator")!;
 
 export default function FuelCalculatorPage() {
   const [distance, setDistance] = useState("");
@@ -204,6 +208,8 @@ export default function FuelCalculatorPage() {
         )}
 
         <AdsPlaceholder size="inline" className="mb-6" />
+
+        <ToolEducationSections tool={toolContent} />
 
         <FAQSection items={faqItems} />
       </div>

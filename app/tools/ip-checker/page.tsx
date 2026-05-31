@@ -7,6 +7,8 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { FAQSection } from "@/components/faq-section";
 import { AdsPlaceholder } from "@/components/ads-placeholder";
 import { BreadcrumbSchema, FAQSchema, SoftwareAppSchema } from "@/components/schema-markup";
+import { ToolEducationSections } from "@/components/tool-education-sections";
+import { getCoreTool } from "@/lib/site-tools";
 
 const faqItems = [
   {
@@ -26,6 +28,8 @@ const faqItems = [
     answer: "You can hide or mask your IP address by using a VPN (Virtual Private Network), proxy server, or Tor browser. These services route your traffic through different servers, making it appear as though you're connecting from a different location.",
   },
 ];
+
+const toolContent = getCoreTool("ip-checker")!;
 
 export default function IPCheckerPage() {
   const [ipInfo, setIpInfo] = useState<{
@@ -195,6 +199,8 @@ export default function IPCheckerPage() {
         )}
 
         <AdsPlaceholder size="inline" className="mb-6" />
+
+        <ToolEducationSections tool={toolContent} />
 
         <FAQSection items={faqItems} />
       </div>

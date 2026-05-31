@@ -361,7 +361,7 @@ export const seoTools: SeoTool[] = [
           "No. It is a lightweight timer and does not store task history.",
       },
     ],
-    relatedSlugs: ["task-priority-matrix", "time-block-planner", "deadline-countdown-calculator"],
+    relatedSlugs: ["task-priority-matrix", "reading-time-calculator", "deadline-countdown-calculator"],
   },
   {
     slug: "task-priority-matrix",
@@ -1209,7 +1209,31 @@ export function getSeoTool(slug: string) {
 }
 
 export function getRelatedTools(tool: SeoTool) {
-  return tool.relatedSlugs
+  const explicitTools = tool.relatedSlugs
     .map((slug) => getSeoTool(slug))
     .filter((related): related is SeoTool => Boolean(related));
+
+  const seen = new Set(explicitTools.map((related) => related.slug));
+  seen.add(tool.slug);
+
+  const categoryFallbacks = seoTools.filter(
+    (related) => related.category === tool.category && !seen.has(related.slug)
+  );
+
+  return [...explicitTools, ...categoryFallbacks].slice(0, 6);
+}
+
+export function getSeoToolFaqs(tool: SeoTool) {
+  const extraFaqs = [
+    {
+      question: `When should I use the ${tool.title}?`,
+      answer: `Use the ${tool.title} when you need a quick, browser-based way to handle ${tool.shortTitle.toLowerCase()} tasks without setting up a spreadsheet or installing a dedicated app. It is best for estimates, checks, and everyday planning.`,
+    },
+    {
+      question: `Does the ${tool.title} store my results?`,
+      answer: `The ${tool.title} is designed for immediate use in the browser. Treat the result as something to copy into your own notes, documents, accounting system, project plan, or password manager where appropriate.`,
+    },
+  ];
+
+  return [...tool.faqs, ...extraFaqs].slice(0, 6);
 }

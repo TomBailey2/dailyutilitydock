@@ -31,14 +31,14 @@ export default function TermsOfUsePage() {
           <section>
             <h2 className="text-2xl font-semibold mb-4">Agreement to Terms</h2>
             <p className="text-muted-foreground">
-              By accessing and using Daily Utility Hub ("the Website"), you agree to be bound by these Terms of Use. If you do not agree to these terms, please do not use the Website.
+              By accessing and using Daily Utility Dock (&quot;the Website&quot;), you agree to be bound by these Terms of Use. If you do not agree to these terms, please do not use the Website.
             </p>
           </section>
 
           <section>
             <h2 className="text-2xl font-semibold mb-4">Description of Service</h2>
             <p className="text-muted-foreground">
-              Daily Utility Hub provides free online tools including calculators, converters, and utilities for everyday tasks. The service is provided "as is" and we make no guarantees about the availability or accuracy of any specific tool.
+              Daily Utility Dock provides free online tools including calculators, converters, and utilities for everyday tasks. The service is provided &quot;as is&quot; and we make no guarantees about the availability or accuracy of any specific tool.
             </p>
           </section>
 
@@ -57,7 +57,7 @@ export default function TermsOfUsePage() {
           <section>
             <h2 className="text-2xl font-semibold mb-4">Disclaimer of Warranties</h2>
             <p className="text-muted-foreground">
-              The Website and its content are provided "as is" and "as available" without any warranties of any kind, either express or implied. We do not warrant that:
+              The Website and its content are provided &quot;as is&quot; and &quot;as available&quot; without any warranties of any kind, either express or implied. We do not warrant that:
             </p>
             <ul className="list-disc pl-6 text-muted-foreground space-y-2">
               <li>The Website will be uninterrupted or error-free</li>
@@ -69,7 +69,7 @@ export default function TermsOfUsePage() {
           <section>
             <h2 className="text-2xl font-semibold mb-4">Limitation of Liability</h2>
             <p className="text-muted-foreground">
-              In no event shall Daily Utility Hub, its directors, employees, or affiliates be liable for any indirect, incidental, special, consequential, or punitive damages arising out of your access to or use of the Website. This includes, but is not limited to, damages for loss of profits, data, or other intangible losses.
+              In no event shall Daily Utility Dock, its directors, employees, or affiliates be liable for any indirect, incidental, special, consequential, or punitive damages arising out of your access to or use of the Website. This includes, but is not limited to, damages for loss of profits, data, or other intangible losses.
             </p>
           </section>
 
@@ -83,14 +83,14 @@ export default function TermsOfUsePage() {
           <section>
             <h2 className="text-2xl font-semibold mb-4">Intellectual Property</h2>
             <p className="text-muted-foreground">
-              The Website and its original content, features, and functionality are owned by Daily Utility Hub and are protected by international copyright, trademark, and other intellectual property laws.
+              The Website and its original content, features, and functionality are owned by Daily Utility Dock and are protected by international copyright, trademark, and other intellectual property laws.
             </p>
           </section>
 
           <section>
             <h2 className="text-2xl font-semibold mb-4">Third-Party Links</h2>
             <p className="text-muted-foreground">
-              The Website may contain links to third-party websites or services that are not owned or controlled by Daily Utility Hub. We have no control over, and assume no responsibility for, the content, privacy policies, or practices of any third-party websites.
+              The Website may contain links to third-party websites or services that are not owned or controlled by Daily Utility Dock. We have no control over, and assume no responsibility for, the content, privacy policies, or practices of any third-party websites.
             </p>
           </section>
 
