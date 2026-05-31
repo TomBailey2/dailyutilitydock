@@ -9,9 +9,62 @@ import {
   MapPin,
   Calendar,
   ArrowLeftRight,
+  PiggyBank,
+  Landmark,
+  Home,
+  Target,
+  Wallet,
+  TrendingUp,
+  Timer,
+  ListChecks,
+  Users,
+  BookOpen,
+  AlarmClock,
+  Link as LinkIcon,
+  Binary,
+  Braces,
+  Megaphone,
+  Mail,
+  Search,
+  Umbrella,
+  Receipt,
+  HeartPulse,
+  Scale,
+  FileClock,
+  Briefcase,
+  type LucideIcon,
 } from "lucide-react";
 import { ToolCard } from "@/components/tool-card";
 import { AdsPlaceholder } from "@/components/ads-placeholder";
+import { seoTools } from "@/lib/seo-tools";
+
+const newToolIconMap: Record<string, LucideIcon> = {
+  AlarmClock,
+  Binary,
+  BookOpen,
+  Braces,
+  Briefcase,
+  Calendar,
+  Clock,
+  FileClock,
+  HeartPulse,
+  Home,
+  Landmark,
+  Link: LinkIcon,
+  ListChecks,
+  Mail,
+  Megaphone,
+  PiggyBank,
+  Receipt,
+  Scale,
+  Search,
+  Target,
+  Timer,
+  TrendingUp,
+  Umbrella,
+  Users,
+  Wallet,
+};
 
 const tools = [
   {
@@ -74,6 +127,12 @@ const tools = [
     href: "/tools/unit-converter",
     icon: ArrowLeftRight,
   },
+  ...seoTools.map((tool) => ({
+    title: tool.title,
+    description: tool.description,
+    href: `/tools/${tool.slug}`,
+    icon: newToolIconMap[tool.icon] ?? Calculator,
+  })),
 ];
 
 export default function HomePage() {
