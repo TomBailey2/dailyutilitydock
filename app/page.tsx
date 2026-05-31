@@ -9,6 +9,8 @@ import {
   MapPin,
   Calendar,
   ArrowLeftRight,
+  Droplets,
+  Flame,
   PiggyBank,
   Landmark,
   Home,
@@ -32,6 +34,7 @@ import {
   Scale,
   FileClock,
   Briefcase,
+  Zap,
   type LucideIcon,
 } from "lucide-react";
 import { ToolCard } from "@/components/tool-card";
@@ -46,7 +49,9 @@ const newToolIconMap: Record<string, LucideIcon> = {
   Briefcase,
   Calendar,
   Clock,
+  Droplets,
   FileClock,
+  Flame,
   HeartPulse,
   Home,
   Landmark,
@@ -64,6 +69,7 @@ const newToolIconMap: Record<string, LucideIcon> = {
   Umbrella,
   Users,
   Wallet,
+  Zap,
 };
 
 const tools = [

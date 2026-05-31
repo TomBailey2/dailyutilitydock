@@ -11,7 +11,9 @@ import {
   Calculator,
   Calendar,
   Clock,
+  Droplets,
   FileClock,
+  Flame,
   HeartPulse,
   Home,
   Landmark,
@@ -29,6 +31,7 @@ import {
   Umbrella,
   Users,
   Wallet,
+  Zap,
 } from "lucide-react";
 import { AdsPlaceholder } from "@/components/ads-placeholder";
 import { FAQSection } from "@/components/faq-section";
@@ -53,7 +56,9 @@ const iconMap = {
   Calculator,
   Calendar,
   Clock,
+  Droplets,
   FileClock,
+  Flame,
   HeartPulse,
   Home,
   Landmark,
@@ -71,6 +76,7 @@ const iconMap = {
   Umbrella,
   Users,
   Wallet,
+  Zap,
 };
 
 function numberValue(value: string) {
@@ -1198,6 +1204,249 @@ function UkWorkingDaysTool() {
   );
 }
 
+function UkElectricityCostTool() {
+  const [watts, setWatts] = useState("2000");
+  const [hoursPerDay, setHoursPerDay] = useState("1");
+  const [daysPerWeek, setDaysPerWeek] = useState("7");
+  const [unitRate, setUnitRate] = useState("26.11");
+  const [standbyWatts, setStandbyWatts] = useState("0");
+  const [standingCharge, setStandingCharge] = useState("57.19");
+
+  const result = useMemo(() => {
+    const activeHours = Math.max(0, numberValue(hoursPerDay)) * Math.min(7, Math.max(0, numberValue(daysPerWeek)));
+    const activeKwh = (Math.max(0, numberValue(watts)) / 1000) * activeHours;
+    const standbyHours = Math.max(0, 24 * 7 - activeHours);
+    const standbyKwh = (Math.max(0, numberValue(standbyWatts)) / 1000) * standbyHours;
+    const weeklyKwh = activeKwh + standbyKwh;
+    const rate = Math.max(0, numberValue(unitRate)) / 100;
+    const activeUseKwh = (Math.max(0, numberValue(watts)) / 1000) * Math.max(0, numberValue(hoursPerDay));
+
+    return {
+      activeUseCost: activeUseKwh * rate,
+      weeklyCost: weeklyKwh * rate,
+      monthlyCost: weeklyKwh * 52 * rate / 12,
+      annualCost: weeklyKwh * 52 * rate,
+      annualKwh: weeklyKwh * 52,
+      annualStandingCharge: (Math.max(0, numberValue(standingCharge)) / 100) * 365,
+    };
+  }, [watts, hoursPerDay, daysPerWeek, unitRate, standbyWatts, standingCharge]);
+
+  return (
+    <div className="space-y-6">
+      <div className="grid gap-4 md:grid-cols-2">
+        <Field id="electricity-watts" label="Appliance power" suffix="W" value={watts} onChange={setWatts} min="0" />
+        <Field id="electricity-hours" label="Hours used per active day" suffix="hours" value={hoursPerDay} onChange={setHoursPerDay} min="0" step="0.25" />
+        <Field id="electricity-days" label="Active days per week" suffix="days" value={daysPerWeek} onChange={setDaysPerWeek} min="0" max="7" step="0.5" />
+        <Field id="electricity-rate" label="Electricity unit rate" suffix="p/kWh" value={unitRate} onChange={setUnitRate} min="0" step="0.01" />
+        <Field id="electricity-standby" label="Standby power" suffix="W" value={standbyWatts} onChange={setStandbyWatts} min="0" step="0.1" />
+        <Field id="electricity-standing" label="Daily standing charge" suffix="p/day" value={standingCharge} onChange={setStandingCharge} min="0" step="0.01" />
+      </div>
+      <ResultGrid
+        items={[
+          { label: "Cost per active day", value: formatCurrency(result.activeUseCost) },
+          { label: "Estimated weekly cost", value: formatCurrency(result.weeklyCost) },
+          { label: "Estimated monthly cost", value: formatCurrency(result.monthlyCost) },
+          { label: "Estimated annual cost", value: formatCurrency(result.annualCost), help: `${formatNumber(result.annualKwh)} kWh per year` },
+          { label: "Annual standing charge", value: formatCurrency(result.annualStandingCharge), help: "Shown separately from appliance usage." },
+        ]}
+      />
+    </div>
+  );
+}
+
+function UkGasBillTool() {
+  const [previousReading, setPreviousReading] = useState("12000");
+  const [currentReading, setCurrentReading] = useState("12150");
+  const [meterUnit, setMeterUnit] = useState<"metric" | "imperial">("metric");
+  const [calorificValue, setCalorificValue] = useState("39.5");
+  const [correctionFactor, setCorrectionFactor] = useState("1.02264");
+  const [unitRate, setUnitRate] = useState("7.33");
+  const [standingCharge, setStandingCharge] = useState("29.04");
+  const [billingDays, setBillingDays] = useState("30");
+  const [vatRate, setVatRate] = useState("5");
+
+  const result = useMemo(() => {
+    const unitsUsed = Math.max(0, numberValue(currentReading) - numberValue(previousReading));
+    const volumeMultiplier = meterUnit === "imperial" ? 2.83 : 1;
+    const kwh = (unitsUsed * volumeMultiplier * Math.max(0, numberValue(correctionFactor)) * Math.max(0, numberValue(calorificValue))) / 3.6;
+    const usageCost = kwh * (Math.max(0, numberValue(unitRate)) / 100);
+    const standingCost = Math.max(0, numberValue(billingDays)) * (Math.max(0, numberValue(standingCharge)) / 100);
+    const subtotal = usageCost + standingCost;
+    const vat = subtotal * (Math.max(0, numberValue(vatRate)) / 100);
+
+    return {
+      unitsUsed,
+      kwh,
+      usageCost,
+      standingCost,
+      vat,
+      total: subtotal + vat,
+    };
+  }, [previousReading, currentReading, meterUnit, calorificValue, correctionFactor, unitRate, standingCharge, billingDays, vatRate]);
+
+  return (
+    <div className="space-y-6">
+      <div className="grid gap-4 md:grid-cols-2">
+        <Field id="gas-previous-reading" label="Previous meter reading" value={previousReading} onChange={setPreviousReading} min="0" />
+        <Field id="gas-current-reading" label="Current meter reading" value={currentReading} onChange={setCurrentReading} min="0" />
+        <div className="space-y-2">
+          <Label htmlFor="gas-meter-unit">Meter type</Label>
+          <select
+            id="gas-meter-unit"
+            value={meterUnit}
+            onChange={(event) => setMeterUnit(event.target.value as "metric" | "imperial")}
+            className="input-field"
+          >
+            <option value="metric">Metric (m3)</option>
+            <option value="imperial">Imperial (hundreds ft3)</option>
+          </select>
+        </div>
+        <Field id="gas-calorific" label="Calorific value" value={calorificValue} onChange={setCalorificValue} min="0" step="0.1" />
+        <Field id="gas-correction" label="Correction factor" value={correctionFactor} onChange={setCorrectionFactor} min="0" step="0.00001" />
+        <Field id="gas-unit-rate" label="Gas unit rate" suffix="p/kWh" value={unitRate} onChange={setUnitRate} min="0" step="0.01" />
+        <Field id="gas-standing" label="Daily standing charge" suffix="p/day" value={standingCharge} onChange={setStandingCharge} min="0" step="0.01" />
+        <Field id="gas-days" label="Billing period" suffix="days" value={billingDays} onChange={setBillingDays} min="0" />
+        <Field id="gas-vat" label="VAT rate" suffix="%" value={vatRate} onChange={setVatRate} min="0" step="0.1" />
+      </div>
+      <ResultGrid
+        items={[
+          { label: "Meter units used", value: formatNumber(result.unitsUsed, 0) },
+          { label: "Estimated gas kWh", value: `${formatNumber(result.kwh)} kWh` },
+          { label: "Usage charge", value: formatCurrency(result.usageCost) },
+          { label: "Standing charge", value: formatCurrency(result.standingCost) },
+          { label: "VAT", value: formatCurrency(result.vat) },
+          { label: "Estimated bill total", value: formatCurrency(result.total) },
+        ]}
+      />
+    </div>
+  );
+}
+
+function UkEnergyDirectDebitTool() {
+  const [electricityKwh, setElectricityKwh] = useState("2900");
+  const [gasKwh, setGasKwh] = useState("11500");
+  const [electricityRate, setElectricityRate] = useState("26.11");
+  const [gasRate, setGasRate] = useState("7.33");
+  const [electricityStanding, setElectricityStanding] = useState("57.19");
+  const [gasStanding, setGasStanding] = useState("29.04");
+  const [currentMonthly, setCurrentMonthly] = useState("160");
+  const [accountBalance, setAccountBalance] = useState("0");
+  const [targetBuffer, setTargetBuffer] = useState("0");
+  const [months, setMonths] = useState("12");
+
+  const result = useMemo(() => {
+    const electricityUsageCost = Math.max(0, numberValue(electricityKwh)) * (Math.max(0, numberValue(electricityRate)) / 100);
+    const gasUsageCost = Math.max(0, numberValue(gasKwh)) * (Math.max(0, numberValue(gasRate)) / 100);
+    const electricityStandingCost = (Math.max(0, numberValue(electricityStanding)) / 100) * 365;
+    const gasStandingCost = (Math.max(0, numberValue(gasStanding)) / 100) * 365;
+    const annualCost = electricityUsageCost + gasUsageCost + electricityStandingCost + gasStandingCost;
+    const monthsToSpread = Math.max(1, numberValue(months));
+    const amountToCollect = Math.max(0, annualCost - numberValue(accountBalance) + numberValue(targetBuffer));
+    const suggestedMonthly = amountToCollect / monthsToSpread;
+    const difference = suggestedMonthly - numberValue(currentMonthly);
+
+    return {
+      electricityCost: electricityUsageCost + electricityStandingCost,
+      gasCost: gasUsageCost + gasStandingCost,
+      annualCost,
+      suggestedMonthly,
+      difference,
+      currentAnnualised: numberValue(currentMonthly) * 12,
+    };
+  }, [
+    electricityKwh,
+    gasKwh,
+    electricityRate,
+    gasRate,
+    electricityStanding,
+    gasStanding,
+    currentMonthly,
+    accountBalance,
+    targetBuffer,
+    months,
+  ]);
+
+  return (
+    <div className="space-y-6">
+      <div className="grid gap-4 md:grid-cols-2">
+        <Field id="direct-debit-electricity-kwh" label="Annual electricity usage" suffix="kWh" value={electricityKwh} onChange={setElectricityKwh} min="0" />
+        <Field id="direct-debit-gas-kwh" label="Annual gas usage" suffix="kWh" value={gasKwh} onChange={setGasKwh} min="0" />
+        <Field id="direct-debit-electricity-rate" label="Electricity unit rate" suffix="p/kWh" value={electricityRate} onChange={setElectricityRate} min="0" step="0.01" />
+        <Field id="direct-debit-gas-rate" label="Gas unit rate" suffix="p/kWh" value={gasRate} onChange={setGasRate} min="0" step="0.01" />
+        <Field id="direct-debit-electricity-standing" label="Electricity standing charge" suffix="p/day" value={electricityStanding} onChange={setElectricityStanding} min="0" step="0.01" />
+        <Field id="direct-debit-gas-standing" label="Gas standing charge" suffix="p/day" value={gasStanding} onChange={setGasStanding} min="0" step="0.01" />
+        <Field id="direct-debit-current" label="Current monthly direct debit" prefix="GBP" value={currentMonthly} onChange={setCurrentMonthly} min="0" />
+        <Field id="direct-debit-balance" label="Current account balance" prefix="GBP" value={accountBalance} onChange={setAccountBalance} step="1" />
+        <Field id="direct-debit-buffer" label="Target credit buffer" prefix="GBP" value={targetBuffer} onChange={setTargetBuffer} min="0" />
+        <Field id="direct-debit-months" label="Months to spread over" suffix="months" value={months} onChange={setMonths} min="1" max="24" />
+      </div>
+      <ResultGrid
+        items={[
+          { label: "Estimated annual energy cost", value: formatCurrency(result.annualCost) },
+          { label: "Suggested monthly payment", value: formatCurrency(result.suggestedMonthly) },
+          { label: "Difference vs current DD", value: `${result.difference >= 0 ? "+" : "-"}${formatCurrency(Math.abs(result.difference))}` },
+          { label: "Electricity share", value: formatCurrency(result.electricityCost) },
+          { label: "Gas share", value: formatCurrency(result.gasCost) },
+          { label: "Current DD annualised", value: formatCurrency(result.currentAnnualised) },
+        ]}
+      />
+    </div>
+  );
+}
+
+function UkWaterBillTool() {
+  const [annualUsage, setAnnualUsage] = useState("120");
+  const [waterRate, setWaterRate] = useState("1.80");
+  const [wastewaterRate, setWastewaterRate] = useState("1.70");
+  const [returnToSewer, setReturnToSewer] = useState("95");
+  const [waterStanding, setWaterStanding] = useState("45");
+  const [wastewaterStanding, setWastewaterStanding] = useState("65");
+  const [surfaceWater, setSurfaceWater] = useState("0");
+
+  const result = useMemo(() => {
+    const usage = Math.max(0, numberValue(annualUsage));
+    const cleanWaterCost = usage * Math.max(0, numberValue(waterRate));
+    const wastewaterVolume = usage * (Math.max(0, numberValue(returnToSewer)) / 100);
+    const wastewaterCost = wastewaterVolume * Math.max(0, numberValue(wastewaterRate));
+    const fixedCharges = Math.max(0, numberValue(waterStanding)) + Math.max(0, numberValue(wastewaterStanding)) + Math.max(0, numberValue(surfaceWater));
+    const annualCost = cleanWaterCost + wastewaterCost + fixedCharges;
+
+    return {
+      cleanWaterCost,
+      wastewaterCost,
+      fixedCharges,
+      annualCost,
+      monthlyCost: annualCost / 12,
+      dailyCost: annualCost / 365,
+      wastewaterVolume,
+    };
+  }, [annualUsage, waterRate, wastewaterRate, returnToSewer, waterStanding, wastewaterStanding, surfaceWater]);
+
+  return (
+    <div className="space-y-6">
+      <div className="grid gap-4 md:grid-cols-2">
+        <Field id="water-usage" label="Annual metered usage" suffix="m3" value={annualUsage} onChange={setAnnualUsage} min="0" />
+        <Field id="water-rate" label="Clean water rate" prefix="GBP" value={waterRate} onChange={setWaterRate} min="0" step="0.01" />
+        <Field id="wastewater-rate" label="Wastewater rate" prefix="GBP" value={wastewaterRate} onChange={setWastewaterRate} min="0" step="0.01" />
+        <Field id="return-to-sewer" label="Return to sewer" suffix="%" value={returnToSewer} onChange={setReturnToSewer} min="0" max="100" step="1" />
+        <Field id="water-standing" label="Annual water standing charge" prefix="GBP" value={waterStanding} onChange={setWaterStanding} min="0" />
+        <Field id="wastewater-standing" label="Annual wastewater standing charge" prefix="GBP" value={wastewaterStanding} onChange={setWastewaterStanding} min="0" />
+        <Field id="surface-water" label="Surface water or drainage charge" prefix="GBP" value={surfaceWater} onChange={setSurfaceWater} min="0" />
+      </div>
+      <ResultGrid
+        items={[
+          { label: "Estimated annual bill", value: formatCurrency(result.annualCost) },
+          { label: "Estimated monthly cost", value: formatCurrency(result.monthlyCost) },
+          { label: "Estimated daily cost", value: formatCurrency(result.dailyCost) },
+          { label: "Clean water charge", value: formatCurrency(result.cleanWaterCost) },
+          { label: "Wastewater charge", value: formatCurrency(result.wastewaterCost), help: `${formatNumber(result.wastewaterVolume)} m3 billed` },
+          { label: "Fixed charges", value: formatCurrency(result.fixedCharges) },
+        ]}
+      />
+    </div>
+  );
+}
+
 function ToolBody({ type }: { type: SeoTool["toolType"] }) {
   switch (type) {
     case "compound-interest":
@@ -1250,6 +1499,14 @@ function ToolBody({ type }: { type: SeoTool["toolType"] }) {
       return <UkNoticeTool />;
     case "uk-working-days":
       return <UkWorkingDaysTool />;
+    case "uk-electricity-cost":
+      return <UkElectricityCostTool />;
+    case "uk-gas-bill":
+      return <UkGasBillTool />;
+    case "uk-energy-direct-debit":
+      return <UkEnergyDirectDebitTool />;
+    case "uk-water-bill":
+      return <UkWaterBillTool />;
   }
 }
 
