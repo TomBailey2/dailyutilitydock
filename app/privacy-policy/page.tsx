@@ -31,7 +31,7 @@ export default function PrivacyPolicyPage() {
           <section>
             <h2 className="text-2xl font-semibold mb-4">Introduction</h2>
             <p className="text-muted-foreground">
-              Daily Utility Hub ("we", "our", or "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, and safeguard your information when you visit our website and use our tools.
+              Daily Utility Dock ("we", "our", or "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, and safeguard your information when you visit our website and use our tools.
             </p>
           </section>
 

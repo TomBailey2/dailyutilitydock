@@ -7,7 +7,9 @@ import { Button } from "@/components/ui/button";
 
 const navItems = [
   { label: "Home", href: "/" },
-  { label: "Tools", href: "/#tools" },
+  { label: "Categories", href: "/#tools" },
+  { label: "Financial", href: "/financial-tools" },
+  { label: "Converters", href: "/converters" },
   { label: "About", href: "/about" },
   { label: "Contact", href: "/contact" },
 ];
@@ -24,7 +26,7 @@ export function SiteHeader() {
               <Wrench className="h-5 w-5 text-primary-foreground" />
             </div>
             <span className="text-lg font-semibold hidden sm:inline-block">
-              Daily Utility Hub
+              Daily Utility Dock
             </span>
           </Link>
 

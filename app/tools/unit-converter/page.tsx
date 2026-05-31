@@ -17,6 +17,8 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { FAQSection } from "@/components/faq-section";
 import { AdsPlaceholder } from "@/components/ads-placeholder";
 import { BreadcrumbSchema, FAQSchema, SoftwareAppSchema } from "@/components/schema-markup";
+import { ToolEducationSections } from "@/components/tool-education-sections";
+import { getCoreTool } from "@/lib/site-tools";
 
 const conversionData = {
   length: {
@@ -93,6 +95,8 @@ const faqItems = [
     answer: "Yes! Our unit converter seamlessly handles conversions between metric and imperial systems. Simply select your source unit, enter the value, and choose your target unit to get the converted result.",
   },
 ];
+
+const toolContent = getCoreTool("unit-converter")!;
 
 type ConversionCategory = keyof typeof conversionData;
 
@@ -270,6 +274,8 @@ export default function UnitConverterPage() {
         )}
 
         <AdsPlaceholder size="inline" className="mb-6" />
+
+        <ToolEducationSections tool={toolContent} />
 
         <FAQSection items={faqItems} />
       </div>

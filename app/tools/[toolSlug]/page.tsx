@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { BreadcrumbSchema, FAQSchema, SoftwareAppSchema } from "@/components/schema-markup";
 import { SeoToolPage } from "@/components/seo-tool-page";
-import { getRelatedTools, getSeoTool, seoTools } from "@/lib/seo-tools";
+import { getRelatedTools, getSeoTool, getSeoToolFaqs, seoTools } from "@/lib/seo-tools";
 
 interface ToolPageProps {
   params: {
@@ -59,6 +59,7 @@ export default function ToolPage({ params }: ToolPageProps) {
 
   const url = `https://dailyutilitydock.com/tools/${tool.slug}`;
   const relatedTools = getRelatedTools(tool);
+  const faqs = getSeoToolFaqs(tool);
 
   return (
     <>
@@ -69,9 +70,9 @@ export default function ToolPage({ params }: ToolPageProps) {
           { name: tool.title, url },
         ]}
       />
-      <FAQSchema questions={tool.faqs} />
+      <FAQSchema questions={faqs} />
       <SoftwareAppSchema name={tool.title} description={tool.description} url={url} />
-      <SeoToolPage tool={tool} relatedTools={relatedTools} />
+      <SeoToolPage tool={tool} relatedTools={relatedTools} faqs={faqs} />
     </>
   );
 }

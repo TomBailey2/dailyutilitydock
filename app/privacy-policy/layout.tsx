@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Privacy Policy',
-  description: 'Read our privacy policy to understand how Daily Utility Hub handles your information when using our free online tools.',
+  description: 'Read our privacy policy to understand how Daily Utility Dock handles your information when using our free online tools.',
 };
 
 export default function PrivacyLayout({

@@ -19,7 +19,7 @@ export default function AboutPage() {
             <Info className="h-6 w-6" />
           </div>
           <div>
-            <h1 className="text-3xl font-bold">About Daily Utility Hub</h1>
+            <h1 className="text-3xl font-bold">About Daily Utility Dock</h1>
             <p className="text-muted-foreground">
               Your trusted destination for free online tools
             </p>
@@ -30,12 +30,12 @@ export default function AboutPage() {
 
         <div className="prose prose-neutral max-w-none mb-8">
           <p className="lead text-lg text-muted-foreground">
-            Daily Utility Hub was created with one simple mission: to provide fast, reliable, and easy-to-use online tools that help you with everyday tasks. Whether you need to check your internet speed, convert units, or generate a secure password, we have got you covered.
+            Daily Utility Dock was created with one simple mission: to provide fast, reliable, and easy-to-use online tools that help you with everyday tasks. Whether you need to check your internet speed, convert units, or generate a secure password, we have got you covered.
           </p>
 
           <h2 className="text-2xl font-semibold mt-8 mb-4">Our Story</h2>
           <p className="text-muted-foreground">
-            Founded in 2024, Daily Utility Hub started as a simple collection of calculators and converters. Today, we serve thousands of users daily with a growing suite of tools designed to simplify your digital life. Our tools are built with performance and user experience as our top priorities.
+            Founded in 2024, Daily Utility Dock started as a simple collection of calculators and converters. Today, we serve thousands of users daily with a growing suite of tools designed to simplify your digital life. Our tools are built with performance and user experience as our top priorities.
           </p>
 
           <h2 className="text-2xl font-semibold mt-8 mb-4">Why Choose Us?</h2>

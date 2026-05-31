@@ -38,7 +38,7 @@ export default function CookiePolicyPage() {
           <section>
             <h2 className="text-2xl font-semibold mb-4">How We Use Cookies</h2>
             <p className="text-muted-foreground">
-              Daily Utility Hub uses cookies for the following purposes:
+              Daily Utility Dock uses cookies for the following purposes:
             </p>
 
             <h3 className="text-xl font-semibold mb-3 mt-6">Essential Cookies</h3>

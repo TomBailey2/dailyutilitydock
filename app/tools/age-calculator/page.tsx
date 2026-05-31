@@ -9,6 +9,8 @@ import { Label } from "@/components/ui/label";
 import { FAQSection } from "@/components/faq-section";
 import { AdsPlaceholder } from "@/components/ads-placeholder";
 import { BreadcrumbSchema, FAQSchema, SoftwareAppSchema } from "@/components/schema-markup";
+import { ToolEducationSections } from "@/components/tool-education-sections";
+import { getCoreTool } from "@/lib/site-tools";
 
 const faqItems = [
   {
@@ -28,6 +30,8 @@ const faqItems = [
     answer: "Age in years represents the number of complete years you've lived, while total days counts every single day from birth. For example, someone who is 30 years old has lived about 10,957 days (including leap years).",
   },
 ];
+
+const toolContent = getCoreTool("age-calculator")!;
 
 export default function AgeCalculatorPage() {
   const [birthDate, setBirthDate] = useState("");
@@ -213,6 +217,8 @@ export default function AgeCalculatorPage() {
         )}
 
         <AdsPlaceholder size="inline" className="mb-6" />
+
+        <ToolEducationSections tool={toolContent} />
 
         <FAQSection items={faqItems} />
       </div>

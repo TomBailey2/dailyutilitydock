@@ -10,6 +10,8 @@ import { Switch } from "@/components/ui/switch";
 import { FAQSection } from "@/components/faq-section";
 import { AdsPlaceholder } from "@/components/ads-placeholder";
 import { BreadcrumbSchema, FAQSchema, SoftwareAppSchema } from "@/components/schema-markup";
+import { ToolEducationSections } from "@/components/tool-education-sections";
+import { getCoreTool } from "@/lib/site-tools";
 import { toast } from "sonner";
 
 const faqItems = [
@@ -30,6 +32,8 @@ const faqItems = [
     answer: "Change passwords immediately if you suspect they've been compromised. Otherwise, focus on using strong, unique passwords rather than frequent changes. Enable two-factor authentication for added security.",
   },
 ];
+
+const toolContent = getCoreTool("password-generator")!;
 
 export default function PasswordGeneratorPage() {
   const [password, setPassword] = useState("");
@@ -233,6 +237,8 @@ export default function PasswordGeneratorPage() {
         </Card>
 
         <AdsPlaceholder size="inline" className="mb-6" />
+
+        <ToolEducationSections tool={toolContent} />
 
         <FAQSection items={faqItems} />
       </div>

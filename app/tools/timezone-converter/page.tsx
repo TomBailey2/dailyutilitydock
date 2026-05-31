@@ -16,6 +16,8 @@ import {
 import { FAQSection } from "@/components/faq-section";
 import { AdsPlaceholder } from "@/components/ads-placeholder";
 import { BreadcrumbSchema, FAQSchema, SoftwareAppSchema } from "@/components/schema-markup";
+import { ToolEducationSections } from "@/components/tool-education-sections";
+import { getCoreTool } from "@/lib/site-tools";
 
 const timezones = [
   { id: "UTC", name: "UTC", offset: "UTC" },
@@ -51,6 +53,8 @@ const faqItems = [
     answer: "Yes, our timezone converter handles both dates and times. This is especially useful when converting times that cross midnight, where the date may change in the target timezone.",
   },
 ];
+
+const toolContent = getCoreTool("timezone-converter")!;
 
 export default function TimezoneConverterPage() {
   const [sourceTimezone, setSourceTimezone] = useState("Europe/London");
@@ -213,6 +217,8 @@ export default function TimezoneConverterPage() {
         )}
 
         <AdsPlaceholder size="inline" className="mb-6" />
+
+        <ToolEducationSections tool={toolContent} />
 
         <FAQSection items={faqItems} />
       </div>

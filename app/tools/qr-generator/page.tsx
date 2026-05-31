@@ -17,6 +17,8 @@ import {
 import { FAQSection } from "@/components/faq-section";
 import { AdsPlaceholder } from "@/components/ads-placeholder";
 import { BreadcrumbSchema, FAQSchema, SoftwareAppSchema } from "@/components/schema-markup";
+import { ToolEducationSections } from "@/components/tool-education-sections";
+import { getCoreTool } from "@/lib/site-tools";
 import { toast } from "sonner";
 
 const faqItems = [
@@ -37,6 +39,8 @@ const faqItems = [
     answer: "Static QR codes (like those generated here) never expire and contain the data directly in the code itself. They will work indefinitely as long as the encoded content remains valid.",
   },
 ];
+
+const toolContent = getCoreTool("qr-generator")!;
 
 type QRType = "url" | "text" | "email" | "phone" | "sms" | "wifi";
 
@@ -366,6 +370,8 @@ export default function QRGeneratorPage() {
         </div>
 
         <AdsPlaceholder size="inline" className="mb-6" />
+
+        <ToolEducationSections tool={toolContent} />
 
         <FAQSection items={faqItems} />
       </div>
