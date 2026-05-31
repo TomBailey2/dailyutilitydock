@@ -30,11 +30,15 @@
 <url><loc>https://dailyutilitydock.com/tools/task-priority-matrix</loc><changefreq>daily</changefreq><priority>0.7</priority></url>
 <url><loc>https://dailyutilitydock.com/tools/time-card-calculator</loc><changefreq>daily</changefreq><priority>0.7</priority></url>
 <url><loc>https://dailyutilitydock.com/tools/timezone-converter</loc><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://dailyutilitydock.com/tools/uk-electricity-cost-calculator</loc><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://dailyutilitydock.com/tools/uk-energy-direct-debit-calculator</loc><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://dailyutilitydock.com/tools/uk-gas-bill-calculator</loc><changefreq>daily</changefreq><priority>0.7</priority></url>
 <url><loc>https://dailyutilitydock.com/tools/uk-holiday-entitlement-calculator</loc><changefreq>daily</changefreq><priority>0.7</priority></url>
 <url><loc>https://dailyutilitydock.com/tools/uk-notice-period-calculator</loc><changefreq>daily</changefreq><priority>0.7</priority></url>
 <url><loc>https://dailyutilitydock.com/tools/uk-redundancy-pay-calculator</loc><changefreq>daily</changefreq><priority>0.7</priority></url>
 <url><loc>https://dailyutilitydock.com/tools/uk-statutory-sick-pay-calculator</loc><changefreq>daily</changefreq><priority>0.7</priority></url>
 <url><loc>https://dailyutilitydock.com/tools/uk-take-home-pay-estimator</loc><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://dailyutilitydock.com/tools/uk-water-bill-calculator</loc><changefreq>daily</changefreq><priority>0.7</priority></url>
 <url><loc>https://dailyutilitydock.com/tools/uk-working-days-calculator</loc><changefreq>daily</changefreq><priority>0.7</priority></url>
 <url><loc>https://dailyutilitydock.com/tools/unit-converter</loc><changefreq>daily</changefreq><priority>0.7</priority></url>
 <url><loc>https://dailyutilitydock.com/tools/url-encoder-decoder</loc><changefreq>daily</changefreq><priority>0.7</priority></url>

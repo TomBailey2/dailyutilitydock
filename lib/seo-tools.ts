@@ -1,4 +1,4 @@
-export type ToolCategory = "Finance" | "Productivity" | "Internet Utilities" | "UK Workplace";
+export type ToolCategory = "Finance" | "Productivity" | "Internet Utilities" | "UK Workplace" | "UK Utilities";
 
 export type ToolType =
   | "compound-interest"
@@ -25,7 +25,11 @@ export type ToolType =
   | "uk-ssp"
   | "uk-redundancy"
   | "uk-notice"
-  | "uk-working-days";
+  | "uk-working-days"
+  | "uk-electricity-cost"
+  | "uk-gas-bill"
+  | "uk-energy-direct-debit"
+  | "uk-water-bill";
 
 export interface SeoTool {
   slug: string;
@@ -1021,6 +1025,182 @@ export const seoTools: SeoTool[] = [
       },
     ],
     relatedSlugs: ["deadline-countdown-calculator", "uk-holiday-entitlement-calculator", "time-card-calculator"],
+  },
+  {
+    slug: "uk-electricity-cost-calculator",
+    title: "UK Electricity Cost Calculator",
+    shortTitle: "UK Electricity Cost",
+    description: "Estimate appliance running costs from watts, usage time, and UK pence-per-kWh rates.",
+    category: "UK Utilities",
+    toolType: "uk-electricity-cost",
+    icon: "Zap",
+    keywords: [
+      "UK electricity cost calculator",
+      "kWh cost calculator UK",
+      "appliance running cost calculator",
+      "electricity bill calculator UK",
+    ],
+    intro:
+      "Work out how much an appliance costs to run using its wattage, usage pattern, standby draw, and the electricity unit rate from your tariff. It is useful for checking heaters, tumble dryers, EV chargers, kitchen appliances, and home office kit before they quietly shape your bill.",
+    howTo: [
+      "Enter the appliance wattage or kilowatt rating from the label, manual, or smart plug.",
+      "Add the hours used per active day, active days per week, standby wattage if relevant, and your electricity unit rate in pence per kWh.",
+      "Review per-use, weekly, monthly, and annual estimates, then compare with the standing charge shown separately.",
+    ],
+    notes: [
+      "Electricity unit rates and standing charges vary by region, payment method, meter type, and tariff, so replace the defaults with your bill figures.",
+      "The appliance calculation focuses on usage charges. The standing charge is shown separately because you pay it even if the appliance is off.",
+    ],
+    faqs: [
+      {
+        question: "How do I calculate electricity cost from watts?",
+        answer:
+          "Convert watts to kilowatts by dividing by 1,000, multiply by hours used to get kWh, then multiply by your unit rate in pence per kWh.",
+      },
+      {
+        question: "Should I include the standing charge for one appliance?",
+        answer:
+          "Usually no. The standing charge is a fixed daily cost for the electricity supply, not a cost caused by a single appliance. This tool shows it separately for bill context.",
+      },
+      {
+        question: "Where do I find my electricity unit rate?",
+        answer:
+          "Look on your latest electricity bill, supplier app, or tariff information. Use the p/kWh rate for your meter, and use the day rate if you are checking a single-rate style cost.",
+      },
+    ],
+    relatedSlugs: ["uk-energy-direct-debit-calculator", "uk-gas-bill-calculator", "budget-planner"],
+  },
+  {
+    slug: "uk-gas-bill-calculator",
+    title: "UK Gas Bill Calculator",
+    shortTitle: "UK Gas Bill",
+    description: "Convert gas meter units to kWh and estimate a UK gas bill with standing charge and VAT.",
+    category: "UK Utilities",
+    toolType: "uk-gas-bill",
+    icon: "Flame",
+    keywords: [
+      "UK gas bill calculator",
+      "gas kWh calculator UK",
+      "gas meter reading calculator",
+      "gas unit cost calculator UK",
+    ],
+    intro:
+      "Estimate a gas bill from meter readings by converting units into kWh, applying your gas unit rate, adding standing charges, and showing VAT. It helps you check whether a supplier estimate or recent bill looks sensible.",
+    howTo: [
+      "Enter the previous and current gas meter readings, or enter the number of units used.",
+      "Choose metric or imperial meter units and adjust the calorific value if your bill shows a different figure.",
+      "Add the gas unit rate, daily standing charge, billing days, and VAT rate to estimate the bill total.",
+    ],
+    notes: [
+      "Metric gas meters are billed using units x correction factor x calorific value / 3.6. Imperial meters also convert hundreds of cubic feet to cubic metres.",
+      "Use your supplier's bill for the exact calorific value, tariff rates, VAT treatment, and any additional charges.",
+    ],
+    faqs: [
+      {
+        question: "Why does a gas meter not show kWh directly?",
+        answer:
+          "Gas meters measure volume, while bills charge for energy in kWh. Suppliers convert volume to kWh using a correction factor and calorific value.",
+      },
+      {
+        question: "What calorific value should I use?",
+        answer:
+          "A common planning value is around 39.5, but your gas bill should show the calorific value used for the billing period. Use that for a closer estimate.",
+      },
+      {
+        question: "Does this include domestic VAT?",
+        answer:
+          "Yes, you can enter a VAT percentage. Domestic energy bills commonly use 5% VAT, while some business situations may use a different rate.",
+      },
+    ],
+    relatedSlugs: ["uk-energy-direct-debit-calculator", "uk-electricity-cost-calculator", "uk-water-bill-calculator"],
+  },
+  {
+    slug: "uk-energy-direct-debit-calculator",
+    title: "UK Energy Direct Debit Calculator",
+    shortTitle: "Energy Direct Debit",
+    description: "Estimate monthly gas and electricity direct debit from annual usage, rates, and account balance.",
+    category: "UK Utilities",
+    toolType: "uk-energy-direct-debit",
+    icon: "Receipt",
+    keywords: [
+      "energy direct debit calculator UK",
+      "UK energy bill calculator",
+      "gas and electricity bill calculator",
+      "monthly energy payment calculator",
+    ],
+    intro:
+      "Check whether a monthly energy direct debit looks broadly aligned with your expected annual gas and electricity cost. The estimator combines annual kWh usage, unit rates, standing charges, current account balance, and any buffer you want to keep.",
+    howTo: [
+      "Enter your annual electricity and gas usage from a bill, annual statement, or supplier app.",
+      "Add the unit rates and standing charges for each fuel, using the figures from your current tariff.",
+      "Include your current monthly direct debit, account balance, and target buffer to compare the suggested payment.",
+    ],
+    notes: [
+      "Energy direct debits smooth seasonal use, so suppliers may review them differently depending on winter usage, credit balance, and rate changes.",
+      "Use rates including VAT if that is how they appear on your bill; do not add VAT again to those figures.",
+    ],
+    faqs: [
+      {
+        question: "Why can my direct debit be higher than this estimate?",
+        answer:
+          "Suppliers may factor in seasonal usage, debt recovery, expected price changes, meter-read history, and a target credit balance. This tool is a transparent planning estimate.",
+      },
+      {
+        question: "Where do I find annual kWh usage?",
+        answer:
+          "Most energy bills and supplier apps show estimated annual consumption for electricity and gas. Smart meter apps may also show recent usage that you can annualise.",
+      },
+      {
+        question: "How does account balance affect the monthly amount?",
+        answer:
+          "A credit balance can reduce the amount needed over the next 12 months, while a debit balance or target buffer increases the monthly amount required.",
+      },
+    ],
+    relatedSlugs: ["uk-electricity-cost-calculator", "uk-gas-bill-calculator", "budget-planner"],
+  },
+  {
+    slug: "uk-water-bill-calculator",
+    title: "UK Water Bill Calculator",
+    shortTitle: "UK Water Bill",
+    description: "Estimate a metered UK water bill from usage, water rates, wastewater rates, and standing charges.",
+    category: "UK Utilities",
+    toolType: "uk-water-bill",
+    icon: "Droplets",
+    keywords: [
+      "UK water bill calculator",
+      "water meter calculator UK",
+      "metered water bill calculator",
+      "water usage cost calculator UK",
+    ],
+    intro:
+      "Estimate a metered household water bill using annual usage in cubic metres, clean water and wastewater unit rates, standing charges, and optional surface water drainage charges. It is useful for checking a bill or modelling whether lower usage could reduce costs.",
+    howTo: [
+      "Enter your annual metered water usage in cubic metres, or convert litres by dividing by 1,000.",
+      "Add the clean water and wastewater rates from your water company's charges scheme or bill.",
+      "Include annual standing charges and any surface water drainage charge to see monthly and annual estimates.",
+    ],
+    notes: [
+      "Water and wastewater rates vary by region and supplier, and some homes use assessed or rateable-value charges instead of metered usage.",
+      "Wastewater is often charged on an assumed return-to-sewer percentage, so adjust that percentage if your bill states a different basis.",
+    ],
+    faqs: [
+      {
+        question: "What is one cubic metre of water?",
+        answer:
+          "One cubic metre is 1,000 litres. Metered water bills usually charge usage in cubic metres.",
+      },
+      {
+        question: "Does this decide whether I should get a water meter?",
+        answer:
+          "It helps estimate a metered bill, but you should compare it with your current unmetered or assessed bill and check your water company's meter rules.",
+      },
+      {
+        question: "Why is wastewater charged separately?",
+        answer:
+          "Many water bills charge clean water supply and wastewater services separately. Wastewater often assumes a percentage of supplied water returns to the sewer.",
+      },
+    ],
+    relatedSlugs: ["uk-energy-direct-debit-calculator", "uk-gas-bill-calculator", "budget-planner"],
   },
 ];
 
