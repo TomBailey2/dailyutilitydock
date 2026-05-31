@@ -1,0 +1,6 @@
+.next/
+node_modules/
+
+# Build-generated SEO files
+public/robots.txt
+public/sitemap*.xml
