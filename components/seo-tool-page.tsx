@@ -41,6 +41,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { SeoTool } from "@/lib/seo-tools";
+import { getSeoToolPageCopy } from "@/lib/tool-page-copy";
 
 interface SeoToolPageProps {
   tool: SeoTool;
@@ -1514,18 +1515,21 @@ function ToolBody({ type }: { type: SeoTool["toolType"] }) {
   }
 }
 
-function getToolUseCases(tool: SeoTool) {
-  return [
-    `Use it when you need a quick ${tool.shortTitle.toLowerCase()} answer without creating a spreadsheet or installing specialist software.`,
-    `Use it to compare different inputs and understand how a change affects the result before making a practical decision.`,
-    `Use it as part of a wider workflow with related Daily Utility Dock tools in ${tool.category.toLowerCase()} and adjacent categories.`,
-    "Use it for planning and checking, then verify official, regulated, legal, payroll, tax, or financial decisions with the relevant source.",
-  ];
+function Paragraphs({ items }: { items: string[] }) {
+  return (
+    <>
+      {items.map((item) => (
+        <p key={item} className="mt-3 text-muted-foreground">
+          {item}
+        </p>
+      ))}
+    </>
+  );
 }
 
 export function SeoToolPage({ tool, relatedTools, faqs }: SeoToolPageProps) {
   const Icon = iconMap[tool.icon as keyof typeof iconMap] ?? Calculator;
-  const useCases = getToolUseCases(tool);
+  const pageCopy = getSeoToolPageCopy(tool);
 
   return (
     <div className="container mx-auto px-4 py-8">
@@ -1564,23 +1568,14 @@ export function SeoToolPage({ tool, relatedTools, faqs }: SeoToolPageProps) {
         <AdsPlaceholder size="inline" className="mb-8" />
 
         <section className="prose prose-slate max-w-none rounded-xl border bg-card p-6">
-          <h2 className="mb-3 text-2xl font-semibold">About this {tool.shortTitle.toLowerCase()} tool</h2>
-          <p className="text-muted-foreground">{tool.intro}</p>
-          <p className="mt-4 text-muted-foreground">
-            Daily Utility Dock keeps the page focused on one practical task:
-            enter the relevant details, review the result, and adjust inputs to
-            compare scenarios. The goal is to make the calculation or conversion
-            understandable enough for everyday planning while keeping important
-            assumptions visible.
-          </p>
+          <h2 className="text-2xl font-semibold">Introduction</h2>
+          <Paragraphs items={pageCopy.introduction} />
+
+          <h2 className="mt-8 text-2xl font-semibold">About this {tool.shortTitle.toLowerCase()} tool</h2>
+          <Paragraphs items={pageCopy.about} />
 
           <h2 className="mt-8 text-2xl font-semibold">How this tool works</h2>
-          <p className="mt-3 text-muted-foreground">
-            The tool uses the values you provide and applies the calculation,
-            formatting, timing, or conversion rules described below. Results are
-            intended for quick checks and practical estimates rather than hidden
-            black-box decisions.
-          </p>
+          <Paragraphs items={pageCopy.howItWorks} />
           <ol className="mt-3 list-decimal space-y-2 pl-5 text-muted-foreground">
             {tool.howTo.map((step) => (
               <li key={step}>{step}</li>
@@ -1588,11 +1583,7 @@ export function SeoToolPage({ tool, relatedTools, faqs }: SeoToolPageProps) {
           </ol>
 
           <h2 className="mt-8 text-2xl font-semibold">When to use this tool</h2>
-          <ul className="mt-3 list-disc space-y-2 pl-5 text-muted-foreground">
-            {useCases.map((useCase) => (
-              <li key={useCase}>{useCase}</li>
-            ))}
-          </ul>
+          <Paragraphs items={pageCopy.whenToUse} />
 
           <h2 className="mt-8 text-2xl font-semibold">Good to know</h2>
           <ul className="mt-3 list-disc space-y-2 pl-5 text-muted-foreground">
