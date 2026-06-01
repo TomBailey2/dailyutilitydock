@@ -81,6 +81,14 @@ export default function RootLayout({
   return (
     <html lang="en" className={inter.variable}>
       <head>
+        <Script
+          id="google-adsense"
+          strategy="afterInteractive"
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8356740513541261"
+          crossOrigin="anonymous"
+        />
+
         {/* Google Analytics */}
         <Script
           strategy="afterInteractive"
