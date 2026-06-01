@@ -10,6 +10,7 @@ const navItems = [
   { label: "Categories", href: "/#tools" },
   { label: "Financial", href: "/financial-tools" },
   { label: "Converters", href: "/converters" },
+  { label: "Guides", href: "/blog" },
   { label: "About", href: "/about" },
   { label: "Contact", href: "/contact" },
 ];
