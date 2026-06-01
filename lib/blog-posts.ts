@@ -86,6 +86,13 @@ export const blogPosts: BlogPost[] = [
           "An upgrade can help when the connection is consistently saturated by normal use. It will not fix a bad router location, an overloaded old laptop, or a VPN route that is far away. Testing first keeps the decision grounded in evidence.",
         ],
       },
+      {
+        heading: "Turn the result into a practical next step",
+        body: [
+          "If the download result is strong but calls still break up, focus on upload speed, latency, and the app you are using. If every number looks poor, run one more test after restarting the router and disconnecting busy devices. If the Ethernet result is good but WiFi is weak, repositioning equipment may do more than changing broadband package.",
+          "Keep screenshots or notes from two or three tests if you plan to contact support. Include the time, device, room, and whether the test used WiFi or Ethernet. That record is more useful than saying the internet feels slow because it shows where the problem appears.",
+        ],
+      },
     ],
     faqs: [
       {
@@ -168,6 +175,13 @@ export const blogPosts: BlogPost[] = [
         body: [
           "Keep your most common cities saved in the same order: your location, main team hubs, client locations, and travel destinations. Before sending a non-urgent message, glance at the list. Before suggesting a call, check current local times, then convert the proposed time.",
           "This habit reduces back-and-forth, missed meetings, and accidental late-night pings. It also shows respect for the people on the other side of the calendar entry.",
+        ],
+      },
+      {
+        heading: "Write messages with the recipient's day in mind",
+        body: [
+          "When the clock shows it is outside normal hours for someone else, decide whether the message is urgent or can wait. If it can wait, schedule it for their morning or add a line that says no reply is expected until their workday. That small note prevents people from feeling pulled into work at odd times.",
+          "For teams, agree on a default format for time-sensitive messages. A line such as 'Today, 4:00 PM London / 11:00 AM New York' is clearer than assuming everyone will convert mentally. The world clock gives the current context; the converter confirms the exact future slot.",
         ],
       },
     ],
@@ -254,6 +268,13 @@ export const blogPosts: BlogPost[] = [
           "For important events, re-run the conversion for the actual future date. This takes less than a minute and can prevent a costly absence.",
         ],
       },
+      {
+        heading: "Send the invite in a way people can verify",
+        body: [
+          "After converting the time, put the meeting in a calendar invitation with the correct source time zone. Add a short text summary only as a backup, not as the source of truth. Calendar software can adjust for each attendee, while a copied text line can become outdated if the meeting moves.",
+          "For public webinars, interviews, or customer calls, include the city and date in confirmation emails. If the audience is broad, add UTC as well. This gives technical users a stable reference and gives everyone else a recognisable local anchor.",
+        ],
+      },
     ],
     faqs: [
       {
@@ -336,6 +357,13 @@ export const blogPosts: BlogPost[] = [
         body: [
           "The most common mistake is comparing one supplier's VAT-exclusive price with another supplier's VAT-inclusive price. Another is treating the VAT amount as profit, which it is not. VAT collected from customers may need to be paid to HMRC depending on registration and scheme details.",
           "When checking prices, write down three columns: net, VAT, and gross. If one figure is missing, calculate it before making the decision. Clear columns prevent small percentage errors from becoming expensive misunderstandings.",
+        ],
+      },
+      {
+        heading: "Use VAT checks before accepting a quote",
+        body: [
+          "Before approving a supplier quote, ask whether the figure is inclusive or exclusive of VAT, then calculate the missing values yourself. This is especially useful when several quotes use different wording. A cheaper-looking price can become more expensive once VAT and delivery are included.",
+          "For small business estimates, keep the VAT calculation beside the customer-facing total. It helps you explain the price, check that invoice software is configured correctly, and spot cases where a reduced or zero rate needs proper confirmation rather than a quick assumption.",
         ],
       },
     ],
@@ -422,6 +450,13 @@ export const blogPosts: BlogPost[] = [
           "The aim is not perfect forecasting. It is to make a hidden cost visible before you commit to a route, invite passengers, or choose between travel options.",
         ],
       },
+      {
+        heading: "Save the assumptions for repeated journeys",
+        body: [
+          "If you make the same journey often, keep a small note of the distance, fuel price, and efficiency you used. The next estimate will be faster, and you can update only the price per litre or the number of travel days. This is helpful for commutes, school runs, regular site visits, and delivery routes.",
+          "Compare the estimate with what you actually spent after a few trips. If the real cost is always higher, adjust the efficiency value downward or add a buffer. A calculator is most useful when the inputs reflect your driving rather than an ideal test figure.",
+        ],
+      },
     ],
     faqs: [
       {
@@ -504,6 +539,13 @@ export const blogPosts: BlogPost[] = [
         body: [
           "Change a password if a service reports a breach, your password manager flags reuse, you shared it with someone, you entered it on a suspicious site, or a device with saved credentials was lost. Routine forced changes can lead to weaker patterns if people just rotate numbers.",
           "When you do change a password, generate a fresh one rather than editing the old version. Small changes to a known password are not enough if the original has been exposed.",
+        ],
+      },
+      {
+        heading: "Make new account setup repeatable",
+        body: [
+          "A simple account setup routine reduces mistakes. Generate a fresh password, save it to the password manager immediately, confirm the login works, and enable two-factor authentication before storing recovery codes. Do this while the account is new rather than postponing security settings for later.",
+          "For shared work accounts, avoid passing passwords around in chat or email. Use a team password manager or access control system where possible, and remove access when someone no longer needs it. The strongest password still needs careful handling after it is generated.",
         ],
       },
     ],
@@ -590,6 +632,13 @@ export const blogPosts: BlogPost[] = [
           "If the QR code will stay printed for a long time, use a destination URL you control. A static code does not expire by itself, but the web page behind it can be moved, deleted, or redirected badly.",
         ],
       },
+      {
+        heading: "Add helpful text around the code",
+        body: [
+          "A QR code should not sit alone unless the context is obvious. Add a short label such as 'Scan for the menu', 'Scan to register', or 'Scan for setup instructions'. This tells people what will happen and makes the code feel less suspicious, especially on public signs.",
+          "If the action matters, include a short fallback URL nearby. Some people may have camera restrictions, poor lighting, or accessibility needs that make scanning harder. A typed address gives them another path without changing the main design.",
+        ],
+      },
     ],
     faqs: [
       {
@@ -672,6 +721,13 @@ export const blogPosts: BlogPost[] = [
         body: [
           "Do not post your public IP address in public forums unless you understand why it is needed. It is not the same as sharing a password, but it can reveal network information and invite unwanted attention. Share it only with trusted support staff when it is relevant.",
           "If you want to change the public IP a website sees, a reputable VPN or privacy network can route traffic through another server. Choose carefully because that service becomes part of your trust chain.",
+        ],
+      },
+      {
+        heading: "Use IP checks as part of a troubleshooting trail",
+        body: [
+          "When a website blocks access or shows the wrong region, write down the public IP, network type, VPN status, and time of the test. Then repeat the check on another connection, such as mobile data. The comparison can show whether the issue follows the account, the device, or the network.",
+          "For work allowlisting, confirm whether your address is static before sharing it. If the IP changes frequently, an administrator may need a different access method, such as a VPN, single sign-on rule, or a wider provider range approved by policy.",
         ],
       },
     ],
@@ -758,6 +814,13 @@ export const blogPosts: BlogPost[] = [
           "When exact age matters, write the date in an unambiguous form, such as 12 March 2004, rather than relying on a numeric format that can be read two ways.",
         ],
       },
+      {
+        heading: "Record the date used for the calculation",
+        body: [
+          "Exact age is tied to the date you calculate it on. If you are completing a form, planning eligibility, or recording a milestone, save both the date of birth and the target date. Without the target date, the same age result may be impossible to verify later.",
+          "This is especially important for cutoffs that are not today's date. A child might be one age on the application date and another by the event date. The calculation should match the wording of the rule, not just the day you happen to check.",
+        ],
+      },
     ],
     faqs: [
       {
@@ -840,6 +903,13 @@ export const blogPosts: BlogPost[] = [
         body: [
           "Conversions often support another decision. You might convert kilometres to miles before estimating fuel cost, pounds to kilograms before checking luggage, square feet to square metres before comparing rent, or Fahrenheit to Celsius before following a recipe.",
           "Keep the original value visible when you record the converted result. If someone needs to verify the number later, the source unit and rounding choice will be clear.",
+        ],
+      },
+      {
+        heading: "Check the source before trusting the result",
+        body: [
+          "A conversion is only as reliable as the value you start with. Product listings, old recipes, travel blogs, and forum posts can contain rounded or approximate numbers. If a measurement affects cost, safety, or fit, check whether the source value was exact, rounded, or copied from another unit system.",
+          "For practical work, record the converted value with enough precision for the task and keep the original beside it. That makes it easier to spot whether a later difference came from rounding, a unit mix-up, or a changed source measurement.",
         ],
       },
     ],
