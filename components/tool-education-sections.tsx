@@ -4,8 +4,22 @@ import {
   getRelatedSiteTools,
   type CoreTool,
 } from "@/lib/site-tools";
+import { getCoreToolPageCopy } from "@/lib/tool-page-copy";
+
+function Paragraphs({ items }: { items: string[] }) {
+  return (
+    <>
+      {items.map((item) => (
+        <p key={item} className="mt-3 text-muted-foreground">
+          {item}
+        </p>
+      ))}
+    </>
+  );
+}
 
 export function ToolEducationSections({ tool }: { tool: CoreTool }) {
+  const pageCopy = getCoreToolPageCopy(tool);
   const relatedTools = getRelatedSiteTools(
     tool.relatedSlugs,
     tool.slug,
@@ -15,16 +29,14 @@ export function ToolEducationSections({ tool }: { tool: CoreTool }) {
   return (
     <>
       <section className="rounded-xl border bg-card p-6">
-        <h2 className="text-2xl font-semibold">About this {tool.shortTitle.toLowerCase()}</h2>
-        <p className="mt-3 text-muted-foreground">{tool.intro}</p>
+        <h2 className="text-2xl font-semibold">Introduction</h2>
+        <Paragraphs items={pageCopy.introduction} />
+
+        <h2 className="mt-8 text-2xl font-semibold">About this {tool.shortTitle.toLowerCase()}</h2>
+        <Paragraphs items={pageCopy.about} />
 
         <h2 className="mt-8 text-2xl font-semibold">How this tool works</h2>
-        <p className="mt-3 text-muted-foreground">
-          The calculator keeps the workflow focused: enter the values you know,
-          review the result, then adjust one input at a time to compare
-          scenarios. The output is intended as a practical estimate, with the
-          key assumptions visible on the page.
-        </p>
+        <Paragraphs items={pageCopy.howItWorks} />
         <ol className="mt-4 list-decimal space-y-2 pl-5 text-muted-foreground">
           {tool.howItWorks.map((step) => (
             <li key={step}>{step}</li>
@@ -32,13 +44,7 @@ export function ToolEducationSections({ tool }: { tool: CoreTool }) {
         </ol>
 
         <h2 className="mt-8 text-2xl font-semibold">When to use this tool</h2>
-        <p className="mt-3 text-muted-foreground">
-          Use this page when you need a quick answer for an everyday decision
-          and want the calculation separated from unrelated settings. For
-          official, regulated, or high-value decisions, treat the result as a
-          planning aid and verify the details with the relevant provider,
-          employer, authority, or professional adviser.
-        </p>
+        <Paragraphs items={pageCopy.whenToUse} />
         <ul className="mt-4 list-disc space-y-2 pl-5 text-muted-foreground">
           {tool.whenToUse.map((useCase) => (
             <li key={useCase}>{useCase}</li>
