@@ -46,6 +46,7 @@ import {
   type HomepageSearchTool,
 } from "@/components/homepage-search";
 import { ToolCard } from "@/components/tool-card";
+import { blogPosts } from "@/lib/blog-posts";
 import {
   allSiteTools,
   getToolsBySlugs,
@@ -100,6 +101,14 @@ const featuredTools = getToolsBySlugs([
   "timezone-converter",
   "budget-planner",
 ]);
+
+const featuredGuides = blogPosts.filter((post) =>
+  [
+    "what-internet-speed-do-you-need",
+    "add-or-remove-vat-from-a-price-uk",
+    "create-strong-passwords-you-can-manage",
+  ].includes(post.slug)
+);
 
 const relatedWorkflows = [
   {
@@ -297,9 +306,54 @@ export default function HomePage() {
         </div>
       </section>
 
+      <section className="border-y bg-muted/30" aria-labelledby="featured-guides">
+        <div className="container mx-auto px-4 py-10">
+          <div className="mb-8 flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
+            <div>
+              <p className="text-sm font-semibold uppercase tracking-wide text-primary">
+                Practical guides
+              </p>
+              <h2 id="featured-guides" className="mt-2 text-2xl font-semibold md:text-3xl">
+                Learn the context behind the tools
+              </h2>
+            </div>
+            <Link
+              href="/blog"
+              className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:underline"
+            >
+              <BookOpen className="h-4 w-4" />
+              View all guides
+            </Link>
+          </div>
+          <div className="grid gap-6 md:grid-cols-3">
+            {featuredGuides.map((post) => (
+              <article
+                key={post.slug}
+                className="rounded-2xl border bg-background p-6 shadow-sm"
+              >
+                <p className="text-xs font-semibold uppercase tracking-wide text-primary">
+                  {post.category}
+                </p>
+                <h3 className="mt-3 text-lg font-semibold leading-tight">
+                  <Link
+                    href={`/blog/${post.slug}`}
+                    className="transition-colors hover:text-primary"
+                  >
+                    {post.title}
+                  </Link>
+                </h3>
+                <p className="mt-3 text-sm text-muted-foreground">
+                  {post.excerpt}
+                </p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section
         id="tools"
-        className="border-y bg-muted/30"
+        className="border-b bg-muted/30"
         aria-labelledby="all-tool-categories"
       >
         <div className="container mx-auto px-4 py-12">

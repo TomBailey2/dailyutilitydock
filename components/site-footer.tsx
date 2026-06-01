@@ -27,6 +27,7 @@ const footerLinks = {
     { label: "Terms of Use", href: "/terms-of-use" },
   ],
   company: [
+    { label: "Guides", href: "/blog" },
     { label: "About", href: "/about" },
     { label: "Contact", href: "/contact" },
   ],

@@ -124,3 +124,50 @@ export function WebSiteSchema({ name, url, description }: WebSiteSchemaProps) {
     />
   );
 }
+
+interface ArticleSchemaProps {
+  title: string;
+  description: string;
+  url: string;
+  publishedAt: string;
+  updatedAt: string;
+  authorName?: string;
+}
+
+export function ArticleSchema({
+  title,
+  description,
+  url,
+  publishedAt,
+  updatedAt,
+  authorName = "Daily Utility Dock",
+}: ArticleSchemaProps) {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    headline: title,
+    description,
+    url,
+    datePublished: publishedAt,
+    dateModified: updatedAt,
+    author: {
+      "@type": "Organization",
+      name: authorName,
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "Daily Utility Dock",
+    },
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": url,
+    },
+  };
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+    />
+  );
+}
