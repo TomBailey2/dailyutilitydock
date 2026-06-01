@@ -546,6 +546,7 @@ export const blogPosts: BlogPost[] = [
         body: [
           "A simple account setup routine reduces mistakes. Generate a fresh password, save it to the password manager immediately, confirm the login works, and enable two-factor authentication before storing recovery codes. Do this while the account is new rather than postponing security settings for later.",
           "For shared work accounts, avoid passing passwords around in chat or email. Use a team password manager or access control system where possible, and remove access when someone no longer needs it. The strongest password still needs careful handling after it is generated.",
+          "It also helps to review saved passwords every so often. Look for duplicates, old accounts you no longer use, and weak passwords imported from a browser years ago. Cleaning those up gradually is easier than trying to repair every account after a breach alert.",
         ],
       },
     ],
@@ -728,6 +729,7 @@ export const blogPosts: BlogPost[] = [
         body: [
           "When a website blocks access or shows the wrong region, write down the public IP, network type, VPN status, and time of the test. Then repeat the check on another connection, such as mobile data. The comparison can show whether the issue follows the account, the device, or the network.",
           "For work allowlisting, confirm whether your address is static before sharing it. If the IP changes frequently, an administrator may need a different access method, such as a VPN, single sign-on rule, or a wider provider range approved by policy.",
+          "If support asks for your IP, send it through the official support channel rather than a public post. Include whether you were on VPN, office WiFi, home broadband, or mobile data so the address has enough context to be useful.",
         ],
       },
     ],
@@ -819,6 +821,7 @@ export const blogPosts: BlogPost[] = [
         body: [
           "Exact age is tied to the date you calculate it on. If you are completing a form, planning eligibility, or recording a milestone, save both the date of birth and the target date. Without the target date, the same age result may be impossible to verify later.",
           "This is especially important for cutoffs that are not today's date. A child might be one age on the application date and another by the event date. The calculation should match the wording of the rule, not just the day you happen to check.",
+          "For personal milestones, the same habit keeps notes meaningful. A saved result such as 10,000 days old is more useful when it includes the date checked and the date the milestone occurs.",
         ],
       },
     ],
@@ -910,6 +913,7 @@ export const blogPosts: BlogPost[] = [
         body: [
           "A conversion is only as reliable as the value you start with. Product listings, old recipes, travel blogs, and forum posts can contain rounded or approximate numbers. If a measurement affects cost, safety, or fit, check whether the source value was exact, rounded, or copied from another unit system.",
           "For practical work, record the converted value with enough precision for the task and keep the original beside it. That makes it easier to spot whether a later difference came from rounding, a unit mix-up, or a changed source measurement.",
+          "If you are converting for someone else, write the units into the note rather than only the number. A message that says 12 litres is much safer than one that says 12, because the next person does not have to guess whether the value was litres, gallons, kilograms, or pounds.",
         ],
       },
     ],
