@@ -1,0 +1,485 @@
+{
+  "metadata": {
+    "name": "Daily Utility Dock AI social publishing API examples",
+    "updated": "2026-06-02",
+    "purpose": "Reusable Make.com, OpenAI, and Buffer payload examples for automated social scheduling.",
+    "security_note": "Replace placeholders in Make.com variables or secrets. Do not commit live API keys, webhook tokens, Buffer organization IDs, or Buffer channel IDs."
+  },
+  "make_webhook_payload_example": {
+    "trigger_source": "cursor",
+    "campaign_theme": "evergreen practical online tools for finance, productivity, and internet utilities",
+    "timezone": "Europe/London",
+    "planning_horizon_days": 7,
+    "requested_counts": {
+      "x": 10,
+      "linkedin": 4,
+      "pinterest": 14
+    },
+    "constraints": {
+      "avoid_same_url_days": 7,
+      "tone": "professional, helpful, non-spammy",
+      "evergreen_preferred": true
+    },
+    "focus_categories": [
+      "finance tools",
+      "productivity tools",
+      "internet utilities",
+      "calculators",
+      "useful online tools"
+    ]
+  },
+  "schedule_policy": {
+    "timezone": "Europe/London",
+    "convert_due_at_to_utc": true,
+    "platforms": {
+      "x": {
+        "weekly_target_default": 10,
+        "minimum_per_day": 1,
+        "maximum_per_day": 2,
+        "slots": [
+          {
+            "days": [
+              "monday",
+              "tuesday",
+              "wednesday",
+              "thursday",
+              "friday",
+              "saturday",
+              "sunday"
+            ],
+            "local_time": "09:10",
+            "priority": 1
+          },
+          {
+            "days": [
+              "monday",
+              "tuesday",
+              "wednesday",
+              "thursday",
+              "friday"
+            ],
+            "local_time": "16:20",
+            "priority": 2
+          }
+        ]
+      },
+      "linkedin": {
+        "weekly_target_default": 4,
+        "minimum_per_week": 3,
+        "maximum_per_week": 5,
+        "slots": [
+          {
+            "days": [
+              "monday",
+              "wednesday",
+              "friday"
+            ],
+            "local_time": "10:30",
+            "priority": 1
+          },
+          {
+            "days": [
+              "tuesday",
+              "thursday"
+            ],
+            "local_time": "11:15",
+            "priority": 2
+          }
+        ]
+      },
+      "pinterest": {
+        "weekly_target_default": 14,
+        "minimum_per_day": 1,
+        "maximum_per_day": 3,
+        "slots": [
+          {
+            "days": [
+              "monday",
+              "tuesday",
+              "wednesday",
+              "thursday",
+              "friday",
+              "saturday",
+              "sunday"
+            ],
+            "local_time": "07:40",
+            "priority": 1
+          },
+          {
+            "days": [
+              "monday",
+              "tuesday",
+              "wednesday",
+              "thursday",
+              "friday",
+              "saturday",
+              "sunday"
+            ],
+            "local_time": "12:35",
+            "priority": 2
+          },
+          {
+            "days": [
+              "tuesday",
+              "thursday",
+              "saturday"
+            ],
+            "local_time": "19:15",
+            "priority": 3
+          }
+        ]
+      }
+    },
+    "rotation_rules": {
+      "avoid_same_url_days_per_platform": 7,
+      "avoid_same_angle_days": 30,
+      "weekly_finance_cap_ratio_default": 0.4,
+      "minimum_weekly_productivity_posts": 1,
+      "minimum_weekly_internet_utility_posts": 1
+    }
+  },
+  "content_pool_seed": [
+    {
+      "url": "https://dailyutilitydock.com/financial-tools",
+      "title": "Financial Tools",
+      "category": "finance tools",
+      "priority": 5
+    },
+    {
+      "url": "https://dailyutilitydock.com/productivity-tools",
+      "title": "Productivity Tools",
+      "category": "productivity tools",
+      "priority": 5
+    },
+    {
+      "url": "https://dailyutilitydock.com/internet-tools",
+      "title": "Internet and IT Tools",
+      "category": "internet utilities",
+      "priority": 5
+    },
+    {
+      "url": "https://dailyutilitydock.com/tools/budget-planner",
+      "title": "Budget Planner",
+      "category": "finance tools",
+      "priority": 4
+    },
+    {
+      "url": "https://dailyutilitydock.com/tools/loan-repayment-calculator",
+      "title": "Loan Repayment Calculator",
+      "category": "finance tools",
+      "priority": 4
+    },
+    {
+      "url": "https://dailyutilitydock.com/tools/uk-take-home-pay-estimator",
+      "title": "UK Take-Home Pay Estimator",
+      "category": "finance tools",
+      "priority": 4
+    },
+    {
+      "url": "https://dailyutilitydock.com/tools/pomodoro-timer",
+      "title": "Pomodoro Timer",
+      "category": "productivity tools",
+      "priority": 4
+    },
+    {
+      "url": "https://dailyutilitydock.com/tools/task-priority-matrix",
+      "title": "Task Priority Matrix",
+      "category": "productivity tools",
+      "priority": 4
+    },
+    {
+      "url": "https://dailyutilitydock.com/tools/speed-test",
+      "title": "Internet Speed Test",
+      "category": "internet utilities",
+      "priority": 4
+    },
+    {
+      "url": "https://dailyutilitydock.com/tools/json-formatter-validator",
+      "title": "JSON Formatter and Validator",
+      "category": "internet utilities",
+      "priority": 4
+    },
+    {
+      "url": "https://dailyutilitydock.com/blog/build-a-monthly-budget-that-matches-real-spending",
+      "title": "Build a monthly budget that matches real spending",
+      "category": "finance guide",
+      "priority": 3
+    },
+    {
+      "url": "https://dailyutilitydock.com/blog/format-and-validate-json-before-sharing-data",
+      "title": "Format and validate JSON before sharing data",
+      "category": "internet guide",
+      "priority": 3
+    }
+  ],
+  "openai_responses_request_template": {
+    "method": "POST",
+    "url": "https://api.openai.com/v1/responses",
+    "headers": {
+      "Authorization": "Bearer {{OPENAI_API_KEY}}",
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "model": "gpt-4o-mini",
+      "input": [
+        {
+          "role": "system",
+          "content": "You are the social media publishing assistant for Daily Utility Dock, a website of practical free online tools, calculators, converters, finance utilities, productivity tools, and internet utilities. Write professional, useful, evergreen social posts. Do not write spam, exaggerated claims, fake scarcity, clickbait, or regulated financial/tax/legal advice. Promote only Daily Utility Dock URLs supplied in the content pool. Include exactly one canonical Daily Utility Dock URL per post. Return only JSON that matches the provided schema."
+        },
+        {
+          "role": "user",
+          "content": "Generate a scheduled social media batch for Daily Utility Dock.\n\nCampaign theme: {{campaign_theme}}\nTimezone: {{timezone}}\nPlanning horizon days: {{planning_horizon_days}}\n\nRequested counts:\n- X: {{x_count}}\n- LinkedIn: {{linkedin_count}}\n- Pinterest: {{pinterest_count}}\n\nSchedule slots:\n{{schedule_slots_json}}\n\nContent pool:\n{{content_pool_json}}\n\nRecent history to avoid:\n{{recent_history_json}}\n\nOutput requirements:\n- X: concise, useful, 180-260 characters when possible.\n- LinkedIn: professional short post, 450-900 characters, one practical takeaway, no exaggerated claims.\n- Pinterest: evergreen pin title and description, vertical image prompt, practical checklist or utility angle.\n- Every post must include one URL from the content pool.\n- Do not duplicate the same URL on the same platform within {{avoid_same_url_days}} days.\n- Use schedule times exactly from the provided slots.\n- Mark a post as skipped if a safe, non-duplicate post cannot be generated."
+        }
+      ],
+      "text": {
+        "format": {
+          "type": "json_schema",
+          "name": "daily_utility_dock_social_batch",
+          "strict": true,
+          "schema": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "batch_summary": {
+                "type": "string"
+              },
+              "approval_required": {
+                "type": "boolean"
+              },
+              "posts": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "properties": {
+                    "platform": {
+                      "type": "string",
+                      "enum": [
+                        "x",
+                        "linkedin",
+                        "pinterest"
+                      ]
+                    },
+                    "status": {
+                      "type": "string",
+                      "enum": [
+                        "ready",
+                        "skipped"
+                      ]
+                    },
+                    "slot_id": {
+                      "type": "string"
+                    },
+                    "due_at_utc": {
+                      "type": "string"
+                    },
+                    "canonical_url": {
+                      "type": "string"
+                    },
+                    "content_category": {
+                      "type": "string"
+                    },
+                    "angle": {
+                      "type": "string"
+                    },
+                    "text": {
+                      "type": "string"
+                    },
+                    "hashtags": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    },
+                    "pinterest_title": {
+                      "type": [
+                        "string",
+                        "null"
+                      ]
+                    },
+                    "pinterest_description": {
+                      "type": [
+                        "string",
+                        "null"
+                      ]
+                    },
+                    "pinterest_image_prompt": {
+                      "type": [
+                        "string",
+                        "null"
+                      ]
+                    },
+                    "public_image_url": {
+                      "type": [
+                        "string",
+                        "null"
+                      ]
+                    },
+                    "notes": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "platform",
+                    "status",
+                    "slot_id",
+                    "due_at_utc",
+                    "canonical_url",
+                    "content_category",
+                    "angle",
+                    "text",
+                    "hashtags",
+                    "pinterest_title",
+                    "pinterest_description",
+                    "pinterest_image_prompt",
+                    "public_image_url",
+                    "notes"
+                  ]
+                }
+              }
+            },
+            "required": [
+              "batch_summary",
+              "approval_required",
+              "posts"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "openai_output_example": {
+    "batch_summary": "Evergreen weekly batch covering finance, productivity, and internet utilities.",
+    "approval_required": false,
+    "posts": [
+      {
+        "platform": "x",
+        "status": "ready",
+        "slot_id": "x-2026-06-03-0910",
+        "due_at_utc": "2026-06-03T08:10:00.000Z",
+        "canonical_url": "https://dailyutilitydock.com/tools/loan-repayment-calculator",
+        "content_category": "finance tools",
+        "angle": "monthly payment versus total repayable",
+        "text": "A lower loan payment can still cost more if the term is much longer. Compare monthly repayment and total repayable before you decide what to check next. https://dailyutilitydock.com/tools/loan-repayment-calculator",
+        "hashtags": [],
+        "pinterest_title": null,
+        "pinterest_description": null,
+        "pinterest_image_prompt": null,
+        "public_image_url": null,
+        "notes": "Educational planning angle; no regulated advice."
+      },
+      {
+        "platform": "linkedin",
+        "status": "ready",
+        "slot_id": "linkedin-2026-06-03-1030",
+        "due_at_utc": "2026-06-03T09:30:00.000Z",
+        "canonical_url": "https://dailyutilitydock.com/internet-tools",
+        "content_category": "internet utilities",
+        "angle": "small utilities reduce workflow friction",
+        "text": "Small online utilities often remove the friction around everyday work: checking a public IP, formatting JSON for review, creating a UTM link, generating a QR code, or testing a connection before troubleshooting. Daily Utility Dock groups these tasks into lightweight browser tools so users can move from one practical check to the next without opening a full application. https://dailyutilitydock.com/internet-tools",
+        "hashtags": [
+          "Productivity"
+        ],
+        "pinterest_title": null,
+        "pinterest_description": null,
+        "pinterest_image_prompt": null,
+        "public_image_url": null,
+        "notes": "Professional category-level post."
+      },
+      {
+        "platform": "pinterest",
+        "status": "ready",
+        "slot_id": "pinterest-2026-06-03-0740",
+        "due_at_utc": "2026-06-03T06:40:00.000Z",
+        "canonical_url": "https://dailyutilitydock.com/tools/budget-planner",
+        "content_category": "finance tools",
+        "angle": "monthly budget checklist",
+        "text": "Monthly budget checklist: income, fixed bills, flexible spending, debt repayments, savings, annual costs, and a realistic buffer. Plan the numbers in one place: https://dailyutilitydock.com/tools/budget-planner",
+        "hashtags": [],
+        "pinterest_title": "Monthly Budget Checklist",
+        "pinterest_description": "Use this practical checklist to plan income, bills, spending, savings, debt repayments, annual costs, and a small buffer with Daily Utility Dock's free budget planner.",
+        "pinterest_image_prompt": "Create a clean vertical Pinterest graphic for Daily Utility Dock with the headline Monthly Budget Checklist. Use a calm finance planning style, light background, navy and teal accents, checklist layout, no people, no third-party logos, and generous margins.",
+        "public_image_url": null,
+        "notes": "Requires generated or selected public image URL before Buffer."
+      }
+    ]
+  },
+  "openai_images_request_template_for_pinterest": {
+    "method": "POST",
+    "url": "https://api.openai.com/v1/images/generations",
+    "headers": {
+      "Authorization": "Bearer {{OPENAI_API_KEY}}",
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "model": "gpt-image-1",
+      "prompt": "{{pinterest_image_prompt}}",
+      "size": "1024x1536",
+      "quality": "medium"
+    },
+    "next_step": "Upload returned image data to a public image host, then map the public HTTPS URL to public_image_url before sending the Pinterest post to Buffer."
+  },
+  "buffer_graphql": {
+    "endpoint": "https://api.buffer.com",
+    "headers": {
+      "Authorization": "Bearer {{BUFFER_API_KEY}}",
+      "Content-Type": "application/json"
+    },
+    "account_query": {
+      "query": "query { account { id email name organizations { id name } } }"
+    },
+    "channels_query": {
+      "query": "query { channels(input: { organizationId: \"{{BUFFER_ORGANIZATION_ID}}\" }) { id name service avatar isQueuePaused } }"
+    },
+    "scheduled_posts_query_template": {
+      "query": "query { posts(first: 10 input: { organizationId: \"{{BUFFER_ORGANIZATION_ID}}\" filter: { status: [scheduled] channelIds: [\"{{BUFFER_CHANNEL_ID}}\"] } sort: [{ field: dueAt direction: asc }] }) { edges { node { id text status dueAt channelId } } pageInfo { hasNextPage endCursor } } }"
+    },
+    "create_text_post_custom_schedule_template": {
+      "query": "mutation CreatePost { createPost(input: { text: \"{{ESCAPED_POST_TEXT}}\" channelId: \"{{BUFFER_CHANNEL_ID}}\" schedulingType: automatic mode: customScheduled dueAt: \"{{DUE_AT_UTC}}\" }) { ... on PostActionSuccess { post { id text status dueAt channelId } } ... on MutationError { message } } }"
+    },
+    "create_text_post_queue_template": {
+      "query": "mutation CreatePost { createPost(input: { text: \"{{ESCAPED_POST_TEXT}}\" channelId: \"{{BUFFER_CHANNEL_ID}}\" schedulingType: automatic mode: addToQueue }) { ... on PostActionSuccess { post { id text status dueAt channelId } } ... on MutationError { message } } }"
+    },
+    "create_pinterest_image_post_custom_schedule_template": {
+      "query": "mutation CreatePost { createPost(input: { text: \"{{ESCAPED_PINTEREST_DESCRIPTION}}\" channelId: \"{{BUFFER_CHANNEL_PINTEREST}}\" schedulingType: automatic mode: customScheduled dueAt: \"{{DUE_AT_UTC}}\" assets: [{ image: { url: \"{{PUBLIC_IMAGE_URL}}\" } }] }) { ... on PostActionSuccess { post { id text status dueAt channelId assets { id mimeType } } } ... on MutationError { message } } }"
+    },
+    "create_pinterest_image_post_queue_template": {
+      "query": "mutation CreatePost { createPost(input: { text: \"{{ESCAPED_PINTEREST_DESCRIPTION}}\" channelId: \"{{BUFFER_CHANNEL_PINTEREST}}\" schedulingType: automatic mode: addToQueue assets: [{ image: { url: \"{{PUBLIC_IMAGE_URL}}\" } }] }) { ... on PostActionSuccess { post { id text status dueAt channelId assets { id mimeType } } } ... on MutationError { message } } }"
+    }
+  },
+  "make_filters": {
+    "allowed_platforms": [
+      "x",
+      "linkedin",
+      "pinterest"
+    ],
+    "url_must_start_with": "https://dailyutilitydock.com/",
+    "banned_phrases": [
+      "guaranteed",
+      "best ever",
+      "make money fast",
+      "100% accurate",
+      "secret hack",
+      "limited time",
+      "act now"
+    ],
+    "length_targets": {
+      "x_min": 180,
+      "x_max": 260,
+      "linkedin_min": 450,
+      "linkedin_max": 900,
+      "pinterest_title_min": 35,
+      "pinterest_title_max": 85
+    }
+  },
+  "history_record_example": {
+    "post_hash": "x|https://dailyutilitydock.com/tools/loan-repayment-calculator|monthly-payment-versus-total-repayable",
+    "platform": "x",
+    "canonical_url": "https://dailyutilitydock.com/tools/loan-repayment-calculator",
+    "text": "A lower loan payment can still cost more if the term is much longer. Compare monthly repayment and total repayable before you decide what to check next. https://dailyutilitydock.com/tools/loan-repayment-calculator",
+    "scheduled_for": "2026-06-03T08:10:00.000Z",
+    "buffer_post_id": "buffer_post_id_from_response",
+    "status": "scheduled",
+    "created_at": "2026-06-02T16:40:00.000Z"
+  }
+}
