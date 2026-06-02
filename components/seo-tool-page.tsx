@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
 import {
   AlarmClock,
+  ArrowRight,
   Binary,
   BookOpen,
   Braces,
@@ -41,6 +42,8 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { SeoTool } from "@/lib/seo-tools";
+import { getBlogPostByToolSlug } from "@/lib/blog-posts";
+import { getSiteTool, siteCategories } from "@/lib/site-tools";
 import { getSeoToolPageCopy } from "@/lib/tool-page-copy";
 
 interface SeoToolPageProps {
@@ -1530,6 +1533,11 @@ function Paragraphs({ items }: { items: string[] }) {
 export function SeoToolPage({ tool, relatedTools, faqs }: SeoToolPageProps) {
   const Icon = iconMap[tool.icon as keyof typeof iconMap] ?? Calculator;
   const pageCopy = getSeoToolPageCopy(tool);
+  const guide = getBlogPostByToolSlug(tool.slug);
+  const siteTool = getSiteTool(tool.slug);
+  const primaryCategory = siteCategories.find(
+    (category) => category.slug === siteTool?.categorySlugs[0]
+  );
 
   return (
     <div className="container mx-auto px-4 py-8">
@@ -1539,10 +1547,21 @@ export function SeoToolPage({ tool, relatedTools, faqs }: SeoToolPageProps) {
             Home
           </Link>
           <span>/</span>
-          <Link href="/#tools" className="hover:text-primary">
-            Tools
-          </Link>
-          <span>/</span>
+          {primaryCategory ? (
+            <>
+              <Link href={primaryCategory.path} className="hover:text-primary">
+                {primaryCategory.title}
+              </Link>
+              <span>/</span>
+            </>
+          ) : (
+            <>
+              <Link href="/#tools" className="hover:text-primary">
+                Tools
+              </Link>
+              <span>/</span>
+            </>
+          )}
           <span className="text-foreground">{tool.title}</span>
         </nav>
 
@@ -1592,6 +1611,28 @@ export function SeoToolPage({ tool, relatedTools, faqs }: SeoToolPageProps) {
             ))}
           </ul>
         </section>
+
+        {guide ? (
+          <section className="mt-8 rounded-xl border bg-primary/5 p-6">
+            <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
+              <div>
+                <div className="mb-3 inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-wide text-primary">
+                  <BookOpen className="h-4 w-4" />
+                  Full guide
+                </div>
+                <h2 className="text-2xl font-semibold">{guide.title}</h2>
+                <p className="mt-3 text-muted-foreground">{guide.excerpt}</p>
+              </div>
+              <Link
+                href={`/blog/${guide.slug}`}
+                className="inline-flex shrink-0 items-center gap-2 rounded-full border bg-background px-4 py-2 text-sm font-semibold text-primary transition-colors hover:border-primary/40"
+              >
+                Read guide
+                <ArrowRight className="h-4 w-4" />
+              </Link>
+            </div>
+          </section>
+        ) : null}
 
         {relatedTools.length > 0 && (
           <section className="mt-8">

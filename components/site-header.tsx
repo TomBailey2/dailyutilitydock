@@ -7,9 +7,11 @@ import { Button } from "@/components/ui/button";
 
 const navItems = [
   { label: "Home", href: "/" },
-  { label: "Categories", href: "/#tools" },
   { label: "Financial", href: "/financial-tools" },
+  { label: "Time & Date", href: "/time-date-tools" },
+  { label: "Internet", href: "/internet-tools" },
   { label: "Converters", href: "/converters" },
+  { label: "Productivity", href: "/productivity-tools" },
   { label: "Guides", href: "/blog" },
   { label: "About", href: "/about" },
   { label: "Contact", href: "/contact" },
@@ -31,7 +33,7 @@ export function SiteHeader() {
             </span>
           </Link>
 
-          <nav className="hidden md:flex items-center gap-6">
+          <nav className="hidden md:flex items-center gap-4">
             {navItems.map((item) => (
               <Link
                 key={item.href}

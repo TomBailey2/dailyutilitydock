@@ -940,10 +940,521 @@ export const blogPosts: BlogPost[] = [
       },
     ],
   },
+  {
+    slug: "build-a-monthly-budget-that-matches-real-spending",
+    title: "How to build a monthly budget that matches real spending",
+    description:
+      "Create a practical monthly budget from real income and spending, then use the result to spot pressure points before bills or debt repayments become harder to manage.",
+    excerpt:
+      "A clear budgeting workflow for turning bank-statement figures into categories, savings targets, debt payments, and a realistic monthly surplus or shortfall.",
+    publishedAt: "2026-06-02",
+    updatedAt: "2026-06-02",
+    readingTime: "6 min read",
+    category: "Financial Tools",
+    keywords: [
+      "monthly budget planner",
+      "household budget calculator",
+      "how to make a budget",
+      "budget categories",
+      "spending plan",
+    ],
+    primaryToolSlug: "budget-planner",
+    relatedToolSlugs: [
+      "budget-planner",
+      "loan-repayment-calculator",
+      "savings-goal-calculator",
+      "uk-take-home-pay-estimator",
+      "uk-energy-direct-debit-calculator",
+    ],
+    intro: [
+      "A useful budget is not a perfect spreadsheet. It is a clear picture of what normally comes in, what normally goes out, and what is left for choices. The mistake many people make is starting with optimistic targets instead of evidence. A budget built from real spending is less flattering, but much more useful.",
+      "The aim is to create a monthly plan that can survive ordinary life: rent or mortgage payments, bills, groceries, transport, debt repayments, savings, subscriptions, and the smaller purchases that add up quietly. Once those numbers are visible, you can decide which category needs attention instead of guessing.",
+    ],
+    sections: [
+      {
+        heading: "Start with take-home income",
+        body: [
+          "Use take-home pay rather than gross salary. Gross salary is useful for salary comparisons, but a monthly budget depends on the money that actually reaches your account after tax, National Insurance, pension contributions, student loan deductions, and other payroll items.",
+          "If your income changes each month, choose a cautious baseline. For overtime, freelance income, commission, or irregular shifts, use an average from several months and keep a separate note of the lowest recent month. A budget that only works in a strong month can create pressure when income dips.",
+        ],
+      },
+      {
+        heading: "Use real spending instead of estimates",
+        body: [
+          "Open recent bank and card statements and sort spending into broad categories. Rent or mortgage, utilities, groceries, transport, debt repayments, savings, insurance, subscriptions, childcare, health costs, and other spending are usually enough for a first pass. Too many categories can make the budget harder to maintain.",
+          "Look for annual or occasional costs as well as monthly ones. Car insurance, school costs, holidays, professional fees, appliance replacements, and gifts can make a budget look fine until they arrive. Divide annual costs by 12 so they are represented in the monthly plan.",
+        ],
+      },
+      {
+        heading: "Separate fixed bills from flexible choices",
+        body: [
+          "Fixed bills are harder to change quickly. Rent, mortgage, council tax, insurance, loan payments, and committed subscriptions usually need notice, switching, or negotiation. Flexible categories such as food delivery, entertainment, clothing, and discretionary shopping can often change sooner.",
+          "This separation helps you choose the right action. If the shortfall comes from fixed commitments, a few smaller cuts may not solve it. If the pressure is in flexible spending, a category limit or weekly check-in may be enough to regain control.",
+        ],
+      },
+      {
+        heading: "Use the Budget Planner to test the month",
+        body: [
+          "The Monthly Budget Planner on Daily Utility Dock gives a quick view of planned spending, savings rate, and whether the month is balanced. Enter monthly take-home income, then add common categories such as rent, bills, groceries, transport, debt repayments, savings, and other spending.",
+          "The useful part is not only the final surplus or shortfall. Change one category at a time and watch the result. That makes trade-offs visible: a higher debt payment may reduce interest but leave less buffer, while a lower discretionary category may protect savings without changing fixed bills.",
+        ],
+      },
+      {
+        heading: "Build in a buffer before calling the budget finished",
+        body: [
+          "A budget with exactly zero left over is fragile. Small price rises, train fares, medicines, school payments, or a higher energy bill can push it negative. If possible, leave a modest unassigned buffer before extra spending. The buffer is not wasted money; it is protection against normal variation.",
+          "If there is no room for a buffer, that is useful information. It may mean a debt repayment, subscription, tariff, housing cost, or income assumption needs a closer look. A budget should reveal that pressure early rather than after a missed payment.",
+        ],
+      },
+      {
+        heading: "Review the plan after the month ends",
+        body: [
+          "At the end of the month, compare the plan with what happened. Do not treat every difference as a failure. Some differences are information: groceries were understated, a bill changed, fuel costs rose, or the savings target was too ambitious while another cost was high.",
+          "Update the categories and repeat the process. A budget becomes more accurate after two or three reviews because it starts to reflect your household rather than a generic template.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "What is the best monthly budget method?",
+        answer:
+          "The best method is the one you can maintain. Many people start with broad categories, use real bank-statement figures, and review the plan monthly before adding more detail.",
+      },
+      {
+        question: "Should savings be included as a budget category?",
+        answer:
+          "Yes. Treating savings as a planned allocation makes the budget more honest and helps show whether your target fits alongside bills, debt repayments, and everyday spending.",
+      },
+      {
+        question: "How much should I leave as a budget buffer?",
+        answer:
+          "There is no single rule. Even a small buffer is better than a plan that depends on every category being exact. Increase it when income is variable or bills are rising.",
+      },
+      {
+        question: "What should I do if my budget shows a shortfall?",
+        answer:
+          "Check whether the shortfall comes from fixed commitments, flexible spending, debt repayments, or an income assumption. Then adjust the category that has the most realistic room for change.",
+      },
+    ],
+  },
+  {
+    slug: "compare-loan-repayments-before-you-borrow",
+    title: "How to compare loan repayments before you borrow",
+    description:
+      "Understand monthly loan payments, APR, term length, total interest, and fees before comparing borrowing options or deciding whether a repayment fits your budget.",
+    excerpt:
+      "A practical guide to loan repayment estimates, why longer terms can cost more, and how to compare monthly affordability against total repayable.",
+    publishedAt: "2026-06-02",
+    updatedAt: "2026-06-02",
+    readingTime: "6 min read",
+    category: "Financial Tools",
+    keywords: [
+      "loan repayment calculator",
+      "monthly loan payment",
+      "APR calculator",
+      "total repayable loan",
+      "compare loan terms",
+    ],
+    primaryToolSlug: "loan-repayment-calculator",
+    relatedToolSlugs: [
+      "loan-repayment-calculator",
+      "budget-planner",
+      "compound-interest-calculator",
+      "mortgage-overpayment-calculator",
+      "savings-goal-calculator",
+    ],
+    intro: [
+      "A loan can look affordable when the monthly payment is the only number in view. The full decision needs more context: how much is borrowed, how long the term lasts, what APR is used, whether fees are included, and how much interest is paid over the life of the loan.",
+      "Comparing repayments before you apply helps you avoid choosing a term that solves this month but creates unnecessary cost later. It also helps you check whether a repayment fits your budget after rent, bills, food, transport, savings, and existing commitments.",
+    ],
+    sections: [
+      {
+        heading: "Understand what APR is trying to show",
+        body: [
+          "APR stands for annual percentage rate. It is intended to show the yearly cost of borrowing, including interest and certain compulsory charges. It is useful for comparing loans, but it is still based on assumptions about the amount, term, fees, and repayment pattern.",
+          "The advertised APR may not be the rate you are offered. Your credit profile, lender criteria, loan amount, and term can affect the final rate. Use calculations as planning estimates until you have a personalised quote and the lender's full terms.",
+        ],
+      },
+      {
+        heading: "Compare the monthly payment and the total cost",
+        body: [
+          "A longer term usually lowers the monthly payment because the balance is spread over more months. That can help affordability, but it often increases total interest because the loan lasts longer. A shorter term may cost more each month but reduce total repayable.",
+          "Neither option is automatically right. The decision depends on cash flow, risk, emergency savings, other debts, and whether the purchase can wait. The key is to compare both numbers before focusing on the lower monthly payment.",
+        ],
+      },
+      {
+        heading: "Include fees where possible",
+        body: [
+          "Some loans include arrangement fees, broker fees, early settlement rules, or optional products. If a fee is added to the loan balance, it can increase both the amount borrowed and the interest charged. If it is paid upfront, it still affects the true cost of the borrowing decision.",
+          "When comparing two options, make sure fees are handled consistently. A loan with a lower rate but a large fee can be more expensive for a smaller or shorter loan than it first appears.",
+        ],
+      },
+      {
+        heading: "Use the Loan Repayment Calculator for scenarios",
+        body: [
+          "The Loan Repayment Calculator on Daily Utility Dock estimates monthly payment, total repayable, total interest, and number of payments from the loan amount, APR, term, and optional upfront fee. It is useful for comparing a few realistic scenarios before you speak to a lender or make a purchase decision.",
+          "Try the same amount with different terms, then try the same term with a smaller amount. This shows whether the issue is the repayment length, the amount borrowed, or the rate assumption. If the payment only works with an unusually long term, check whether the purchase is still worth the total cost.",
+        ],
+      },
+      {
+        heading: "Check the repayment against your budget",
+        body: [
+          "A repayment can be mathematically affordable and still be uncomfortable. Add it to a monthly budget with existing bills, savings, transport, groceries, subscriptions, and any variable spending. If the repayment removes your buffer, the loan may be too tight even if the lender would approve it.",
+          "Also consider what happens if income falls or a bill rises. A fixed loan repayment is not easy to pause, so it should fit inside a budget that has some resilience.",
+        ],
+      },
+      {
+        heading: "Keep borrowing decisions tied to purpose",
+        body: [
+          "Borrowing for a necessary repair, a work-related purchase, or debt consolidation is different from borrowing for a discretionary upgrade. The calculation should be paired with the reason for the loan and the realistic alternatives.",
+          "If the loan funds something that can wait, compare the repayment with a savings goal. The slower option may be less exciting, but it can avoid interest and preserve flexibility.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "Why does a longer loan term cost more?",
+        answer:
+          "A longer term spreads payments over more months, which can lower the monthly payment but usually leaves interest accruing for longer. That often increases total repayable.",
+      },
+      {
+        question: "Is APR the same as the interest rate?",
+        answer:
+          "Not always. APR is intended to represent the annual cost of borrowing and can include certain compulsory fees. The nominal interest rate may not include those costs.",
+      },
+      {
+        question: "Should I choose the lowest monthly payment?",
+        answer:
+          "Not automatically. The lowest monthly payment can come from a longer term that costs more overall. Compare monthly affordability, total interest, fees, and flexibility.",
+      },
+      {
+        question: "Can a loan repayment calculator guarantee lender figures?",
+        answer:
+          "No. It provides an estimate based on the inputs. Lenders may use different methods, rates, fees, eligibility checks, and settlement rules.",
+      },
+    ],
+  },
+  {
+    slug: "estimate-uk-take-home-pay-from-gross-salary",
+    title: "How to estimate UK take-home pay from a gross salary",
+    description:
+      "Estimate monthly UK take-home pay by understanding gross salary, tax-free allowance, income tax bands, National Insurance, and pension contributions.",
+    excerpt:
+      "A plain-English guide to turning a UK gross salary into an estimated monthly take-home figure for budgeting and job-offer comparisons.",
+    publishedAt: "2026-06-02",
+    updatedAt: "2026-06-02",
+    readingTime: "6 min read",
+    category: "Financial Tools",
+    keywords: [
+      "UK take home pay calculator",
+      "net pay estimator",
+      "gross salary to net pay UK",
+      "PAYE tax calculator",
+      "monthly take home pay",
+    ],
+    primaryToolSlug: "uk-take-home-pay-estimator",
+    relatedToolSlugs: [
+      "uk-take-home-pay-estimator",
+      "salary-to-hourly-calculator",
+      "budget-planner",
+      "uk-statutory-sick-pay-calculator",
+      "uk-redundancy-pay-calculator",
+    ],
+    intro: [
+      "A salary offer is usually stated as a gross annual figure, but household planning depends on what arrives in your bank account. The difference can be substantial because income tax, National Insurance, pension contributions, student loans, benefits, and other payroll items may all affect take-home pay.",
+      "A take-home estimate helps with job comparisons, rent affordability, savings targets, debt repayments, and budget planning. It should still be treated as an estimate because payroll rules and personal circumstances can vary.",
+    ],
+    sections: [
+      {
+        heading: "Start with gross annual salary",
+        body: [
+          "Gross salary is the amount before deductions. For many employees it is the number shown in an employment contract or job advert. It does not tell you the monthly cash position by itself because deductions are applied before net pay reaches your account.",
+          "If you are comparing roles, check whether the salary is full-time equivalent or actual pay for your contracted hours. A part-time role may quote an FTE amount, while the paid salary is prorated.",
+        ],
+      },
+      {
+        heading: "Account for pension contributions",
+        body: [
+          "Employee pension contributions reduce the amount available as take-home pay, although the tax treatment depends on the pension arrangement. Some schemes use relief at source, some use net pay arrangements, and salary sacrifice works differently again.",
+          "For a quick planning estimate, include your expected employee pension percentage. If the exact payroll treatment matters, check your payslip, scheme details, or payroll team.",
+        ],
+      },
+      {
+        heading: "Understand tax-free allowance and bands",
+        body: [
+          "Many UK taxpayers receive a personal allowance before income tax is charged, but the allowance can reduce for higher incomes and may be affected by tax code changes. Taxable income above the allowance is then split across income tax bands.",
+          "A common mistake is thinking that moving into a higher band means all income is taxed at that higher rate. In most cases, only the income inside that band is taxed at that rate. That is why marginal rates and average tax rates are different.",
+        ],
+      },
+      {
+        heading: "Remember National Insurance",
+        body: [
+          "National Insurance is separate from income tax and has its own thresholds and rates. It can make take-home pay lower than a simple income-tax-only estimate. Payroll also needs to handle pay frequency, employment category, and current rules.",
+          "Because rates can change, use an estimator as a planning tool rather than a final payroll statement. Your payslip remains the best record of what was actually deducted.",
+        ],
+      },
+      {
+        heading: "Use the UK Take-Home Pay Estimator for planning",
+        body: [
+          "The UK Take-Home Pay Estimator on Daily Utility Dock gives a quick estimate of annual and monthly take-home pay after pension, income tax, and National Insurance assumptions. It is useful when you need a fast planning figure for a budget or a job-offer comparison.",
+          "After estimating take-home pay, move the monthly figure into a budget planner. A higher salary can still feel tight if commuting, pension contributions, childcare, student loans, rent, or debt repayments increase at the same time.",
+        ],
+      },
+      {
+        heading: "Compare job offers with the full picture",
+        body: [
+          "Take-home pay is only one part of a job offer. Pension contributions, employer pension, bonus uncertainty, working hours, commuting cost, remote-work flexibility, paid leave, health benefits, and career risk all matter. A slightly higher gross salary may not produce a better monthly position if costs rise too.",
+          "When two roles are close, estimate net pay, convert salary to hourly equivalent, and compare regular costs. That gives a more practical view than headline salary alone.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "Why is my take-home pay lower than a calculator estimate?",
+        answer:
+          "Your payslip may include student loan deductions, benefits, tax code adjustments, salary sacrifice, pension treatment differences, overtime, bonuses, or other payroll items not included in a simple estimate.",
+      },
+      {
+        question: "Does gross salary include pension contributions?",
+        answer:
+          "Gross salary is before deductions. Employee pension contributions are usually deducted through payroll, but the tax treatment depends on the scheme.",
+      },
+      {
+        question: "Can I use take-home pay for rent affordability?",
+        answer:
+          "Yes, take-home pay is more useful than gross salary for monthly budgeting. Still include commuting, bills, debt repayments, savings, and irregular costs before deciding what rent is comfortable.",
+      },
+      {
+        question: "Is this the same as payroll advice?",
+        answer:
+          "No. A take-home pay estimator is for planning. Use payslips, HMRC records, payroll teams, or qualified advisers for official tax and payroll questions.",
+      },
+    ],
+  },
+  {
+    slug: "check-if-your-energy-direct-debit-is-realistic",
+    title: "How to check if your energy direct debit is realistic",
+    description:
+      "Compare a UK gas and electricity direct debit with annual usage, unit rates, standing charges, account balance, and seasonal energy costs.",
+    excerpt:
+      "A practical way to sense-check monthly energy payments using kWh usage, tariff rates, standing charges, credit or debit balance, and a sensible buffer.",
+    publishedAt: "2026-06-02",
+    updatedAt: "2026-06-02",
+    readingTime: "6 min read",
+    category: "Financial Tools",
+    keywords: [
+      "energy direct debit calculator UK",
+      "UK energy bill calculator",
+      "monthly energy payment",
+      "gas and electricity direct debit",
+      "standing charge calculator",
+    ],
+    primaryToolSlug: "uk-energy-direct-debit-calculator",
+    relatedToolSlugs: [
+      "uk-energy-direct-debit-calculator",
+      "uk-electricity-cost-calculator",
+      "uk-gas-bill-calculator",
+      "uk-water-bill-calculator",
+      "budget-planner",
+    ],
+    intro: [
+      "Energy direct debits are designed to smooth out seasonal costs, but that can make them hard to judge. A payment can look too high in summer and still be reasonable across winter. It can also be set too high or too low if estimates, tariffs, account balances, or usage patterns have changed.",
+      "A realistic check starts with the figures on your bill: annual electricity and gas usage, unit rates, standing charges, current monthly payment, and account balance. Once those inputs are visible, you can compare the supplier's payment with a transparent estimate.",
+    ],
+    sections: [
+      {
+        heading: "Find annual kWh usage first",
+        body: [
+          "Annual kWh usage is the foundation of the estimate. Most bills, annual statements, and supplier apps show estimated annual consumption for electricity and gas. Smart meter data can help, but a short recent period may be misleading if it covers only winter or only summer.",
+          "If you have just moved home, your annual usage may be based on previous occupants or a generic estimate. In that case, treat the calculation as a starting point and update it after several real meter readings.",
+        ],
+      },
+      {
+        heading: "Use the actual tariff rates",
+        body: [
+          "Energy bills usually include a unit rate for each kWh and a daily standing charge. Electricity and gas often have different rates and standing charges. Enter the rates in the same units shown on your bill, usually pence per kWh and pence per day.",
+          "Check whether the figures include VAT. If you use rates that already include VAT, do not add VAT again. If you are comparing tariffs, make sure all options are being compared on the same basis.",
+        ],
+      },
+      {
+        heading: "Include account balance and any buffer",
+        body: [
+          "A credit balance can reduce the amount needed over the next billing period, while a debit balance means the supplier may need to collect more. Some suppliers also aim for a target credit buffer before winter or after a tariff change.",
+          "A buffer is not automatically wrong, but it should be explainable. If the requested direct debit is far above your annual-cost estimate plus any deficit or buffer, it may be worth asking the supplier how it was calculated.",
+        ],
+      },
+      {
+        heading: "Use the Energy Direct Debit Calculator",
+        body: [
+          "The UK Energy Direct Debit Calculator on Daily Utility Dock combines annual electricity and gas kWh, unit rates, standing charges, current monthly payment, account balance, target buffer, and the number of months to spread costs over.",
+          "The result shows an estimated annual energy cost and a suggested monthly payment. It also compares the suggested payment with the current direct debit, which is useful when deciding whether to leave it alone, request a review, or update your budget.",
+        ],
+      },
+      {
+        heading: "Understand why suppliers may differ",
+        body: [
+          "Suppliers may factor in seasonal usage, recent meter reads, estimated future use, tariff changes, debt recovery, account review policies, and expected winter consumption. Their calculation may not match a simple annualised estimate exactly.",
+          "The value of doing your own check is that you can ask better questions. Instead of saying the payment feels wrong, you can point to annual usage, rates, standing charges, balance, and the difference between your estimate and theirs.",
+        ],
+      },
+      {
+        heading: "Review usage when something changes",
+        body: [
+          "Direct debit estimates should be reviewed after a price change, a move to a different tariff, a new boiler, an electric vehicle, a household-size change, a smart-meter installation, or several estimated bills being replaced by actual readings.",
+          "Keep meter readings and bill PDFs where you can find them. A small habit of checking usage every month or quarter can prevent a large catch-up bill later.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "Why is my energy direct debit higher than my summer usage?",
+        answer:
+          "Direct debits often spread annual costs across the year. Payments can exceed summer usage so that the account has enough credit for higher winter use.",
+      },
+      {
+        question: "Where do I find annual energy usage?",
+        answer:
+          "Look on your energy bill, annual statement, supplier app, or smart meter account. Search for estimated annual consumption or annual kWh usage for electricity and gas.",
+      },
+      {
+        question: "Should I include standing charges?",
+        answer:
+          "Yes. Standing charges are paid daily regardless of usage, so they can make a material difference to annual cost and monthly direct debit estimates.",
+      },
+      {
+        question: "Can I use this estimate to challenge a supplier?",
+        answer:
+          "It can support a clearer conversation, but it is not a regulatory decision. Ask the supplier for their calculation and compare usage, rates, balances, and review period.",
+      },
+    ],
+  },
+  {
+    slug: "format-and-validate-json-before-sharing-data",
+    title: "How to format and validate JSON before sharing data",
+    description:
+      "Use JSON formatting and validation to catch syntax errors, improve readability, minify payloads, and share cleaner structured data with teams or tools.",
+    excerpt:
+      "A practical JSON workflow for developers, marketers, analysts, and support teams who need readable, valid structured data before copying it into another system.",
+    publishedAt: "2026-06-02",
+    updatedAt: "2026-06-02",
+    readingTime: "5 min read",
+    category: "Internet & IT",
+    keywords: [
+      "JSON formatter",
+      "JSON validator",
+      "format JSON online",
+      "minify JSON",
+      "validate structured data",
+    ],
+    primaryToolSlug: "json-formatter-validator",
+    relatedToolSlugs: [
+      "json-formatter-validator",
+      "url-encoder-decoder",
+      "base64-encoder-decoder",
+      "meta-tag-preview-checker",
+      "utm-builder",
+    ],
+    intro: [
+      "JSON is common because it is simple for software to read, but it is not always easy for people to inspect. A missing comma, an unescaped quote, or a misplaced bracket can break an API request, tracking setup, configuration file, automation step, or structured data snippet.",
+      "Formatting and validating JSON before sharing it saves time for the next person. It turns a dense line of text into an indented structure, confirms whether the syntax is valid, and gives you a cleaner payload to copy into documentation, tickets, test tools, or code reviews.",
+    ],
+    sections: [
+      {
+        heading: "Know what JSON validation checks",
+        body: [
+          "A JSON validator checks whether the text follows JSON syntax. It can catch missing commas, extra trailing commas, unquoted property names, mismatched brackets, invalid strings, and values that do not belong in JSON. It does not prove that the data is meaningful or correct for a specific API.",
+          "For example, a payload can be valid JSON but still use the wrong field name or value type for the system receiving it. Validation is the first check, not the final business-rule review.",
+        ],
+      },
+      {
+        heading: "Format before reviewing",
+        body: [
+          "Pretty formatting adds indentation and line breaks so nested objects and arrays are easier to inspect. This is useful when debugging API responses, analytics events, product feeds, configuration files, webhook payloads, or exported settings.",
+          "Once formatted, scan the structure from the outside in. Check top-level keys first, then nested sections. This is faster than reading a minified string from left to right and hoping the important field stands out.",
+        ],
+      },
+      {
+        heading: "Minify only when the destination needs it",
+        body: [
+          "Minified JSON removes unnecessary whitespace. That can be useful for compact storage, copying into a field with limited space, or sending a payload where readability is no longer needed. It should usually come after review, not before.",
+          "Keep a readable version in your notes or ticket if people may need to troubleshoot later. A minified payload is efficient for machines but unfriendly for human review.",
+        ],
+      },
+      {
+        heading: "Use the JSON Formatter and Validator",
+        body: [
+          "The JSON Formatter and Validator on Daily Utility Dock can format, minify, and validate JSON directly in the browser. Paste the payload, choose whether to format or minify, and review the status message before copying the output.",
+          "If the JSON is invalid, fix the reported syntax issue and validate again. Once it is valid, compare the formatted structure with the source system or documentation to make sure the fields are also semantically correct.",
+        ],
+      },
+      {
+        heading: "Be careful with sensitive data",
+        body: [
+          "JSON often contains tokens, email addresses, user IDs, customer data, internal URLs, or private configuration values. Before pasting any payload into an online tool, remove secrets and personal data unless you are comfortable with the environment and policy.",
+          "For sensitive production data, use approved internal tooling or anonymised examples. A short, representative sample is usually enough to debug syntax without exposing real records.",
+        ],
+      },
+      {
+        heading: "Pair JSON checks with related utilities",
+        body: [
+          "JSON work often sits next to other web utility tasks. You may need to URL-encode a value, decode Base64 content, preview metadata, or build a campaign URL after checking a payload. Keeping those tools close reduces context switching.",
+          "When sharing with another person, include the formatted JSON, the error you saw, the system that produced it, and the expected shape. That gives the reviewer enough context to help without recreating the whole workflow.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "What is the difference between formatting and validating JSON?",
+        answer:
+          "Validation checks whether the syntax is valid JSON. Formatting changes whitespace and indentation so valid JSON is easier to read.",
+      },
+      {
+        question: "Does formatting JSON change the data?",
+        answer:
+          "No. Formatting changes whitespace only after parsing succeeds. The keys, values, arrays, and objects remain the same.",
+      },
+      {
+        question: "Why does a trailing comma break JSON?",
+        answer:
+          "Standard JSON does not allow trailing commas after the last item in an object or array. Some JavaScript examples allow them, but JSON parsers generally do not.",
+      },
+      {
+        question: "Can valid JSON still fail in an API?",
+        answer:
+          "Yes. The JSON may be syntactically valid but still use the wrong fields, missing required values, or value types that the API does not accept.",
+      },
+    ],
+  },
 ];
 
 export function getBlogPost(slug: string) {
   return blogPosts.find((post) => post.slug === slug);
+}
+
+export function getBlogPostByToolSlug(toolSlug: string) {
+  return blogPosts.find((post) => post.primaryToolSlug === toolSlug);
+}
+
+export function getBlogPostsByToolSlugs(toolSlugs: string[], limit = 4) {
+  const toolSet = new Set(toolSlugs);
+
+  return blogPosts
+    .filter(
+      (post) =>
+        toolSet.has(post.primaryToolSlug) ||
+        post.relatedToolSlugs.some((slug) => toolSet.has(slug))
+    )
+    .sort((a, b) => {
+      const aPrimaryMatch = toolSet.has(a.primaryToolSlug) ? 1 : 0;
+      const bPrimaryMatch = toolSet.has(b.primaryToolSlug) ? 1 : 0;
+
+      if (aPrimaryMatch !== bPrimaryMatch) {
+        return bPrimaryMatch - aPrimaryMatch;
+      }
+
+      return b.updatedAt.localeCompare(a.updatedAt);
+    })
+    .slice(0, limit);
 }
 
 export function getRelatedBlogPosts(currentSlug: string, limit = 3) {

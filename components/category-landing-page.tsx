@@ -42,6 +42,7 @@ import { AdsPlaceholder } from "@/components/ads-placeholder";
 import { FAQSection } from "@/components/faq-section";
 import { BreadcrumbSchema, FAQSchema } from "@/components/schema-markup";
 import { ToolCard } from "@/components/tool-card";
+import { getBlogPostsByToolSlugs } from "@/lib/blog-posts";
 import {
   getSiteCategory,
   getToolsForCategory,
@@ -124,6 +125,7 @@ function CategorySchema({
 
 export function CategoryLandingPage({ category }: { category: SiteCategory }) {
   const tools = getToolsForCategory(category.slug);
+  const relatedGuides = getBlogPostsByToolSlugs(category.toolSlugs, 4);
   const CategoryIcon = iconMap[category.icon] ?? ListChecks;
   const relatedCategories = category.relatedCategorySlugs
     .map((slug) => getSiteCategory(slug))
@@ -249,6 +251,43 @@ export function CategoryLandingPage({ category }: { category: SiteCategory }) {
             })}
           </div>
         </section>
+
+        {relatedGuides.length > 0 ? (
+          <section className="mt-10 rounded-2xl border bg-card p-6 md:p-8" aria-labelledby="category-guides">
+            <div className="mb-6 flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
+              <div>
+                <p className="text-sm font-semibold uppercase tracking-wide text-primary">
+                  Related guides
+                </p>
+                <h2 id="category-guides" className="mt-2 text-2xl font-semibold md:text-3xl">
+                  Learn how to use these {category.shortTitle.toLowerCase()} tools
+                </h2>
+              </div>
+              <Link
+                href="/blog"
+                className="text-sm font-semibold text-primary hover:underline"
+              >
+                View all guides
+              </Link>
+            </div>
+
+            <div className="grid gap-4 md:grid-cols-2">
+              {relatedGuides.map((post) => (
+                <Link
+                  key={post.slug}
+                  href={`/blog/${post.slug}`}
+                  className="rounded-xl border bg-background p-5 transition-colors hover:border-primary/40 hover:bg-primary/5"
+                >
+                  <p className="text-xs font-semibold uppercase tracking-wide text-primary">
+                    {post.category}
+                  </p>
+                  <h3 className="mt-2 text-lg font-semibold">{post.title}</h3>
+                  <p className="mt-2 text-sm text-muted-foreground">{post.excerpt}</p>
+                </Link>
+              ))}
+            </div>
+          </section>
+        ) : null}
 
         <FAQSection items={category.faqs} />
 

@@ -9,10 +9,15 @@ import { getSiteTool } from "@/lib/site-tools";
 export const metadata: Metadata = {
   title: "Utility Tool Guides and Practical How-Tos",
   description:
-    "Read practical guides for internet checks, time zones, VAT, fuel costs, passwords, QR codes, IP addresses, age calculation, and unit conversion.",
+    "Read practical guides for budgeting, loans, take-home pay, energy bills, JSON formatting, internet checks, time zones, VAT, passwords, and conversions.",
   keywords: [
     "utility tool guides",
     "online calculator guides",
+    "budget planner guide",
+    "loan repayment guide",
+    "UK take home pay guide",
+    "energy bill guide",
+    "JSON formatter guide",
     "how to use online tools",
     "Daily Utility Dock blog",
     "practical how to guides",
@@ -57,9 +62,10 @@ export default function BlogIndexPage() {
           Practical guides for everyday online tools
         </h1>
         <p className="mt-4 text-muted-foreground md:text-lg">
-          Clear explanations for common search questions: checking connection
-          speed, converting time zones, calculating VAT, estimating fuel costs,
-          making QR codes, securing passwords, and more.
+          Clear explanations for common search questions: planning budgets,
+          comparing loan repayments, estimating UK take-home pay, checking
+          energy direct debits, formatting JSON, converting time zones, and
+          using practical browser utilities.
         </p>
       </section>
 

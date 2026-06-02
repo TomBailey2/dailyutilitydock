@@ -4,17 +4,19 @@ import { siteCategories } from "@/lib/site-tools";
 
 const footerLinks = {
   tools: [
+    { label: "Budget Planner", href: "/tools/budget-planner" },
+    { label: "Loan Repayments", href: "/tools/loan-repayment-calculator" },
+    { label: "UK Take-Home Pay", href: "/tools/uk-take-home-pay-estimator" },
+    { label: "Energy Direct Debit", href: "/tools/uk-energy-direct-debit-calculator" },
     { label: "Speed Test", href: "/tools/speed-test" },
-    { label: "World Clock", href: "/tools/world-clock" },
-    { label: "Time Zone Converter", href: "/tools/timezone-converter" },
     { label: "VAT Calculator", href: "/tools/vat-calculator" },
-    { label: "Fuel Calculator", href: "/tools/fuel-calculator" },
-    { label: "Password Generator", href: "/tools/password-generator" },
   ],
   moreTools: [
+    { label: "JSON Formatter", href: "/tools/json-formatter-validator" },
+    { label: "UTM Builder", href: "/tools/utm-builder" },
+    { label: "World Clock", href: "/tools/world-clock" },
+    { label: "Time Zone Converter", href: "/tools/timezone-converter" },
     { label: "QR Generator", href: "/tools/qr-generator" },
-    { label: "IP Checker", href: "/tools/ip-checker" },
-    { label: "Age Calculator", href: "/tools/age-calculator" },
     { label: "Unit Converter", href: "/tools/unit-converter" },
   ],
   categories: siteCategories.map((category) => ({
@@ -28,6 +30,8 @@ const footerLinks = {
   ],
   company: [
     { label: "Guides", href: "/blog" },
+    { label: "Budget guide", href: "/blog/build-a-monthly-budget-that-matches-real-spending" },
+    { label: "Energy direct debit guide", href: "/blog/check-if-your-energy-direct-debit-is-realistic" },
     { label: "About", href: "/about" },
     { label: "Contact", href: "/contact" },
   ],
