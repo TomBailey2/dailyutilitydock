@@ -1,9 +1,10 @@
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, BookOpen } from "lucide-react";
 import {
   getRelatedSiteTools,
   type CoreTool,
 } from "@/lib/site-tools";
+import { getBlogPostByToolSlug } from "@/lib/blog-posts";
 import { getCoreToolPageCopy } from "@/lib/tool-page-copy";
 
 function Paragraphs({ items }: { items: string[] }) {
@@ -20,6 +21,7 @@ function Paragraphs({ items }: { items: string[] }) {
 
 export function ToolEducationSections({ tool }: { tool: CoreTool }) {
   const pageCopy = getCoreToolPageCopy(tool);
+  const guide = getBlogPostByToolSlug(tool.slug);
   const relatedTools = getRelatedSiteTools(
     tool.relatedSlugs,
     tool.slug,
@@ -51,6 +53,28 @@ export function ToolEducationSections({ tool }: { tool: CoreTool }) {
           ))}
         </ul>
       </section>
+
+      {guide ? (
+        <section className="mt-8 rounded-xl border bg-primary/5 p-6">
+          <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
+            <div>
+              <div className="mb-3 inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-wide text-primary">
+                <BookOpen className="h-4 w-4" />
+                Full guide
+              </div>
+              <h2 className="text-2xl font-semibold">{guide.title}</h2>
+              <p className="mt-3 text-muted-foreground">{guide.excerpt}</p>
+            </div>
+            <Link
+              href={`/blog/${guide.slug}`}
+              className="inline-flex shrink-0 items-center gap-2 rounded-full border bg-background px-4 py-2 text-sm font-semibold text-primary transition-colors hover:border-primary/40"
+            >
+              Read guide
+              <ArrowRight className="h-4 w-4" />
+            </Link>
+          </div>
+        </section>
+      ) : null}
 
       {relatedTools.length > 0 && (
         <section className="mt-8">

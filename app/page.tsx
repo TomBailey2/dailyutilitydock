@@ -105,7 +105,10 @@ const featuredTools = getToolsBySlugs([
 const featuredGuides = blogPosts.filter((post) =>
   [
     "what-internet-speed-do-you-need",
-    "add-or-remove-vat-from-a-price-uk",
+    "build-a-monthly-budget-that-matches-real-spending",
+    "compare-loan-repayments-before-you-borrow",
+    "check-if-your-energy-direct-debit-is-realistic",
+    "format-and-validate-json-before-sharing-data",
     "create-strong-passwords-you-can-manage",
   ].includes(post.slug)
 );

@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { BreadcrumbSchema, FAQSchema, SoftwareAppSchema } from "@/components/schema-markup";
 import { SeoToolPage } from "@/components/seo-tool-page";
 import { getRelatedTools, getSeoTool, getSeoToolFaqs, seoTools } from "@/lib/seo-tools";
+import { getSiteCategory, getSiteTool } from "@/lib/site-tools";
 
 interface ToolPageProps {
   params: {
@@ -60,16 +61,19 @@ export default function ToolPage({ params }: ToolPageProps) {
   const url = `https://dailyutilitydock.com/tools/${tool.slug}`;
   const relatedTools = getRelatedTools(tool);
   const faqs = getSeoToolFaqs(tool);
+  const siteTool = getSiteTool(tool.slug);
+  const primaryCategory = siteTool ? getSiteCategory(siteTool.categorySlugs[0]) : undefined;
+  const breadcrumbItems = [
+    { name: "Home", url: "https://dailyutilitydock.com" },
+    primaryCategory
+      ? { name: primaryCategory.title, url: `https://dailyutilitydock.com${primaryCategory.path}` }
+      : { name: "Tools", url: "https://dailyutilitydock.com#tools" },
+    { name: tool.title, url },
+  ];
 
   return (
     <>
-      <BreadcrumbSchema
-        items={[
-          { name: "Home", url: "https://dailyutilitydock.com" },
-          { name: "Tools", url: "https://dailyutilitydock.com#tools" },
-          { name: tool.title, url },
-        ]}
-      />
+      <BreadcrumbSchema items={breadcrumbItems} />
       <FAQSchema questions={faqs} />
       <SoftwareAppSchema name={tool.title} description={tool.description} url={url} />
       <SeoToolPage tool={tool} relatedTools={relatedTools} faqs={faqs} />
