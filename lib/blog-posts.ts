@@ -1038,6 +1038,527 @@ export const blogPosts: BlogPost[] = [
     ],
   },
   {
+    slug: "how-to-create-a-monthly-budget",
+    title: "How To Create A Monthly Budget",
+    description:
+      "Learn how to create a realistic monthly budget using take-home income, fixed bills, flexible spending, savings goals, and simple budget calculator checks.",
+    excerpt:
+      "A practical monthly budgeting guide for turning income, bills, savings, debt payments, and everyday spending into a plan you can actually maintain.",
+    publishedAt: "2026-06-03",
+    updatedAt: "2026-06-03",
+    readingTime: "8 min read",
+    category: "Financial Tools",
+    keywords: [
+      "how to create a monthly budget",
+      "monthly budget planner",
+      "budget calculator",
+      "household budget categories",
+      "personal finance budgeting",
+    ],
+    primaryToolSlug: "budget-planner",
+    relatedToolSlugs: [
+      "budget-planner",
+      "uk-take-home-pay-estimator",
+      "loan-repayment-calculator",
+      "savings-goal-calculator",
+      "uk-energy-direct-debit-calculator",
+    ],
+    intro: [
+      "A monthly budget is not meant to make every spending decision feel restricted. At its best, it gives you a clear view of what comes in, what must go out, and what is left for savings, debt repayments, and choices. The most useful budget is honest enough to show pressure early and simple enough that you will keep using it.",
+      "The safest way to start is with real numbers rather than a perfect-looking template. Use take-home income, recent bills, card statements, and regular commitments. Then check the result with a monthly budget planner so you can see whether the month has a surplus, a shortfall, or no room for surprises.",
+    ],
+    sections: [
+      {
+        heading: "Start with monthly take-home income",
+        body: [
+          "Use the money that actually reaches your account, not gross salary. Gross pay can be useful for job comparisons, but a personal budget depends on net income after tax, National Insurance, pension contributions, student loan deductions, and any payroll benefits. If you are paid weekly or every four weeks, convert the pattern into a monthly figure so bills and income are compared on the same basis.",
+          "Variable income needs a little more care. If overtime, commission, freelance work, tips, or shift patterns change from month to month, choose a cautious baseline. Many people use an average from recent months and keep the lowest recent month visible as a stress test. A budget that only works in a strong month is not really balanced.",
+        ],
+      },
+      {
+        heading: "List fixed bills before flexible spending",
+        body: [
+          "Fixed bills are the commitments that are hard to change quickly: rent or mortgage payments, council tax, insurance, loan repayments, phone contracts, childcare, broadband, car finance, and essential subscriptions. Put these into the budget first because they shape how much freedom is left. Check the payment dates as well as the amounts, especially if several bills leave the account just before payday.",
+          "Flexible spending comes next. Groceries, fuel, public transport, clothing, gifts, home items, eating out, entertainment, and small online purchases often move around during the month. These categories are not unimportant, but they are usually easier to adjust than rent or a fixed loan payment. Keeping the two groups separate makes decisions clearer later.",
+        ],
+      },
+      {
+        heading: "Use real spending data",
+        body: [
+          "Open two or three months of bank and card statements and group transactions into broad categories. Do not worry about creating a perfect accounting system. A first budget can work with income, housing, utilities, food, transport, debt, savings, insurance, subscriptions, children or family costs, and other spending. Too many categories can make the process harder to repeat.",
+          "Look for annual and irregular costs while you do this. Car insurance, MOTs, holidays, school trips, professional memberships, gifts, replacement appliances, vet bills, and home repairs can make a monthly plan look healthier than it is. Divide expected annual costs by 12 and add a monthly sinking-fund amount so these expenses are not treated as emergencies every time they appear.",
+        ],
+      },
+      {
+        heading: "Set savings and debt priorities deliberately",
+        body: [
+          "Savings should be included as a planned category, not only whatever remains at the end. If you are building an emergency fund, saving for a deposit, planning a holiday, or preparing for annual bills, enter a realistic monthly amount. If the target looks too ambitious, use a savings goal calculator to test how changing the monthly contribution changes the timeline.",
+          "Debt repayments also need context. Minimum payments keep accounts on track, but extra repayments can reduce interest and shorten the time in debt. Before increasing payments, check whether the budget still has a buffer for food, bills, transport, and small surprises. A loan repayment calculator can help compare the effect of different payment sizes and terms before you commit.",
+        ],
+      },
+      {
+        heading: "Check the result with a budget planner",
+        body: [
+          "Once the categories are listed, enter the figures into the Monthly Budget Planner on Daily Utility Dock. The tool shows income, planned spending, savings rate, and leftover cash in one view. That quick summary is useful because it turns a long list of numbers into a practical question: does this month work?",
+          "If the result is negative, change one category at a time. Reducing groceries, pausing subscriptions, changing a savings target, or reviewing an energy direct debit each has a different effect. If the result is positive, decide where the surplus should go before it disappears into unplanned spending. The budget should direct the money, not merely describe where it went.",
+        ],
+      },
+      {
+        heading: "Build in a buffer for normal life",
+        body: [
+          "A budget that leaves exactly GBP0 unassigned is fragile. Real months include price changes, forgotten school costs, train fares, medicines, birthdays, small repairs, and one-off fees. Even a modest buffer gives the plan room to breathe. Without it, every small difference becomes a failure, which makes people abandon budgeting sooner.",
+          "If there is no room for a buffer, treat that as information rather than a personal fault. The issue may be high fixed commitments, a repayment schedule that is too tight, variable income, or a bill that needs reviewing. The budget has done its job by making the pressure visible before the account balance causes panic.",
+        ],
+      },
+      {
+        heading: "Review monthly and keep the system simple",
+        body: [
+          "At the end of the month, compare the plan with what actually happened. Do not rewrite history to make the numbers look tidy. If groceries were higher, a bill changed, or travel costs rose, update next month's plan. If a category was consistently overestimated, move the spare money deliberately rather than letting it vanish.",
+          "The best monthly budget is the one you can repeat. A simple budget checked every month is more useful than a detailed spreadsheet opened twice a year. Keep the categories broad, save the assumptions, and use calculators when you need to test a scenario quickly. Over time, the plan becomes less of a chore and more of a dashboard for everyday money decisions.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "What is the first step in creating a monthly budget?",
+        answer:
+          "Start with monthly take-home income, then list fixed bills and regular spending from real bank and card statements. A budget built from real data is more useful than one built from guesses.",
+      },
+      {
+        question: "How many budget categories should I use?",
+        answer:
+          "Use enough categories to make decisions clear, but not so many that the budget is hard to maintain. Housing, utilities, food, transport, debt, savings, insurance, subscriptions, and other spending are enough for many people.",
+      },
+      {
+        question: "Should I budget weekly or monthly?",
+        answer:
+          "A monthly view is useful because many bills are monthly, but weekly check-ins can help control flexible spending. Convert weekly figures into monthly amounts when using a monthly planner.",
+      },
+      {
+        question: "What if my budget shows I spend more than I earn?",
+        answer:
+          "Separate fixed commitments from flexible spending, then look for the category with realistic room for change. If the gap is structural, consider bill reviews, repayment advice, income changes, or professional support.",
+      },
+    ],
+  },
+  {
+    slug: "understanding-compound-interest",
+    title: "Understanding Compound Interest",
+    description:
+      "Understand compound interest in plain English, including how interest earns interest, why time matters, and how to model savings growth with an online calculator.",
+    excerpt:
+      "A clear guide to compound interest, regular deposits, compounding frequency, rates, time horizons, and the assumptions behind savings growth projections.",
+    publishedAt: "2026-06-03",
+    updatedAt: "2026-06-03",
+    readingTime: "8 min read",
+    category: "Financial Tools",
+    keywords: [
+      "understanding compound interest",
+      "compound interest calculator",
+      "interest on interest",
+      "savings growth calculator",
+      "monthly deposits compound interest",
+    ],
+    primaryToolSlug: "compound-interest-calculator",
+    relatedToolSlugs: [
+      "compound-interest-calculator",
+      "savings-goal-calculator",
+      "budget-planner",
+      "loan-repayment-calculator",
+      "salary-to-hourly-calculator",
+    ],
+    intro: [
+      "Compound interest is the process of earning interest on money you originally saved and on interest that has already been added. That second part is what makes compounding powerful over long periods. Growth can start slowly, then become more noticeable as the balance gets larger and each new interest payment has more money to work on.",
+      "The idea is simple, but real planning still needs careful inputs: starting balance, monthly deposits, interest rate, time period, and compounding frequency. A compound interest calculator helps turn those assumptions into a clear estimate, while also showing that the result is not a guarantee.",
+    ],
+    sections: [
+      {
+        heading: "Compound interest versus simple interest",
+        body: [
+          "Simple interest is calculated only on the original amount. If GBP1,000 earns 5% simple interest each year, the interest is GBP50 per year before any other effects. Compound interest adds interest to the balance, so future interest is calculated on the growing total. After the first year, the next year's interest can be earned on GBP1,050 rather than only GBP1,000.",
+          "The difference is small at first, which is why compounding is easy to underestimate. Over many years, the gap can become meaningful because each interest payment becomes part of the base for later interest. Time is one of the most important ingredients in compounding.",
+        ],
+      },
+      {
+        heading: "The main inputs in a compound interest calculation",
+        body: [
+          "A useful projection starts with the initial balance. This might be money already in a savings account, an investment pot, or a lump sum set aside for a future goal. Next comes the regular contribution, such as a monthly deposit. For many people, the monthly contribution has a bigger practical effect than small differences in interest rate, especially over shorter timeframes.",
+          "The interest rate and term then shape the growth path. A longer term gives compounding more time to work, while a higher rate increases the amount added at each compounding interval. The compounding frequency decides how often interest is applied. Monthly, quarterly, and yearly compounding can produce slightly different results even with the same annual rate.",
+        ],
+      },
+      {
+        heading: "Why time matters so much",
+        body: [
+          "Compound interest rewards starting earlier because early deposits have more years to earn returns. Two people can save the same monthly amount, but the person who starts sooner may end with a larger balance because each deposit has longer to compound. This does not mean late starters have failed; it simply shows why time is a valuable input.",
+          "Time also makes assumptions more sensitive. A small rate difference over one year may be barely noticeable. Over 20 or 30 years, the same difference can change the final estimate substantially. That is why projections should be tested across several rates rather than relying on one optimistic number.",
+        ],
+      },
+      {
+        heading: "Use regular deposits to make growth less passive",
+        body: [
+          "Compound interest is often described as if the rate does all the work, but regular deposits matter. Monthly saving builds the balance steadily and gives interest more money to act on. If the savings goal is within a few years, increasing the deposit may matter more than searching for a slightly higher rate.",
+          "The Compound Interest Calculator on Daily Utility Dock separates contributions from interest earned. That split is useful because it shows how much of the final balance came from your deposits and how much came from growth. It can also prevent unrealistic expectations when the time horizon is short.",
+        ],
+      },
+      {
+        heading: "Rates, inflation, tax, and risk",
+        body: [
+          "A calculator estimate is only as reliable as the assumptions behind it. Savings rates can change, investment returns move up and down, and product fees can reduce growth. Inflation also affects purchasing power. A balance may be higher in cash terms while buying less than expected if prices rise quickly.",
+          "Tax treatment can matter as well, depending on account type, country, allowances, and personal circumstances. For investments, there is also risk: returns are not smooth and the value can fall. Use compound interest projections for planning and comparison, then check the rules and risks of the actual product before making decisions.",
+        ],
+      },
+      {
+        heading: "Test scenarios instead of chasing one perfect answer",
+        body: [
+          "The best use of a compound interest calculator is scenario testing. Try a cautious rate, a middle assumption, and a more optimistic rate. Then test what happens if you increase the monthly deposit, shorten the term, or start with a larger lump sum. The comparison will usually teach you more than a single result.",
+          "Pair the projection with a budget planner if you are deciding how much to save each month. A deposit that looks excellent in a calculator still needs to fit alongside rent, bills, food, transport, debt repayments, and an emergency buffer. Sustainable contributions are more useful than ambitious amounts that stop after two months.",
+        ],
+      },
+      {
+        heading: "Use compound interest for goals, not certainty",
+        body: [
+          "Compound interest is helpful for understanding pensions, savings accounts, emergency funds, education funds, deposits, and long-term investing. It gives a structure for thinking about time, contributions, and growth. It also helps explain why delaying a savings habit can make a future goal harder.",
+          "Still, every projection should be treated as a planning estimate. Save the inputs you used, review them when rates or income change, and avoid presenting the final balance as certain. The real value of understanding compound interest is not predicting the future perfectly; it is making better decisions about the variables you can control.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "What is compound interest in simple terms?",
+        answer:
+          "Compound interest means earning interest on both your original money and interest that has already been added. Over time, interest can start earning its own interest.",
+      },
+      {
+        question: "How often should interest compound?",
+        answer:
+          "It depends on the product. Monthly compounding adds interest more often than yearly compounding, but the rate, fees, tax, and product terms are usually more important than frequency alone.",
+      },
+      {
+        question: "Does compound interest work with monthly deposits?",
+        answer:
+          "Yes. Regular deposits increase the balance over time, giving future interest a larger base. A calculator can show contributions and interest separately.",
+      },
+      {
+        question: "Can a compound interest calculator guarantee returns?",
+        answer:
+          "No. It estimates growth from the numbers you enter. Actual results can vary because rates, fees, tax, inflation, and investment performance can change.",
+      },
+    ],
+  },
+  {
+    slug: "how-uk-vat-is-calculated",
+    title: "How UK VAT Is Calculated",
+    description:
+      "Learn how UK VAT is calculated from net and gross prices, how to add or remove VAT, and why VAT-inclusive and VAT-exclusive prices are often confused.",
+    excerpt:
+      "A practical UK VAT guide covering net prices, VAT amounts, gross totals, 20% and reduced-rate formulas, invoice checks, and common pricing mistakes.",
+    publishedAt: "2026-06-03",
+    updatedAt: "2026-06-03",
+    readingTime: "8 min read",
+    category: "Financial Tools",
+    keywords: [
+      "how UK VAT is calculated",
+      "UK VAT calculator",
+      "add VAT formula",
+      "remove VAT from gross price",
+      "VAT inclusive exclusive",
+    ],
+    primaryToolSlug: "vat-calculator",
+    relatedToolSlugs: [
+      "vat-calculator",
+      "budget-planner",
+      "uk-take-home-pay-estimator",
+      "break-even-calculator",
+      "loan-repayment-calculator",
+    ],
+    intro: [
+      "UK VAT calculations are straightforward once three figures are separated: the net amount, the VAT amount, and the gross amount. The confusion usually begins when a price does not say whether VAT has already been included. Adding VAT to a net price and removing VAT from a gross price are different calculations.",
+      "This guide explains the arithmetic used for common VAT checks. It is intended for invoices, quotes, receipts, small business estimates, and everyday price comparisons. VAT rules can be complex, so official tax decisions should still be checked with HMRC or a qualified adviser.",
+    ],
+    sections: [
+      {
+        heading: "Understand net, VAT, and gross",
+        body: [
+          "The net price is the amount before VAT. The VAT amount is the tax charged on that net price. The gross price is the total after VAT has been added. If a service costs GBP100 net and the VAT rate is 20%, the VAT amount is GBP20 and the gross price is GBP120.",
+          "Those labels matter because different documents use different conventions. A business supplier may quote prices excluding VAT, while a consumer receipt usually shows the final VAT-inclusive amount. Before comparing two prices, make sure both are on the same basis.",
+        ],
+      },
+      {
+        heading: "How to add VAT to a net price",
+        body: [
+          "To add VAT, multiply the net amount by the VAT rate, then add the VAT to the net amount. At the standard 20% rate, GBP100 x 20% = GBP20 VAT, so the gross amount is GBP120. A faster version is to multiply the net amount by 1.20. For a 5% rate, multiply by 1.05.",
+          "This calculation is useful when preparing a quote, checking a supplier price, or estimating the customer-facing total from a VAT-exclusive amount. The UK VAT Calculator on Daily Utility Dock can show the net, VAT, and gross figures together so the relationship is clear.",
+        ],
+      },
+      {
+        heading: "How to remove VAT from a gross price",
+        body: [
+          "Removing VAT is where errors are most common. If a price includes 20% VAT, you do not remove VAT by subtracting 20% from the gross total. A GBP120 gross amount includes GBP20 VAT and GBP100 net. Subtracting 20% from GBP120 gives GBP96, which is not the original net amount.",
+          "The correct method is to divide the gross price by 1 plus the VAT rate. At 20%, divide by 1.20. At 5%, divide by 1.05. Once you have the net amount, subtract it from the gross amount to find the VAT included in the total.",
+        ],
+      },
+      {
+        heading: "Use the correct VAT rate",
+        body: [
+          "The standard UK VAT rate is 20%, but some goods and services can use reduced, zero, exempt, or outside-the-scope treatment. A calculator can handle the arithmetic for a selected rate, but it cannot decide which legal treatment applies to a product, customer, place of supply, or transaction type.",
+          "For everyday checks, start with the rate shown on the invoice or quote. If the rate looks unexpected, verify it before making pricing or accounting decisions. This is especially important for mixed supplies, construction, food, charities, imports, exports, and services supplied across borders.",
+        ],
+      },
+      {
+        heading: "Check invoices and quotes consistently",
+        body: [
+          "A clear VAT invoice usually shows net amount, VAT rate, VAT amount, and gross total. When any of those figures is missing, calculate the missing value before comparing suppliers. A quote that looks cheaper may simply be VAT-exclusive while another is VAT-inclusive.",
+          "For small business pricing, keep the VAT amount separate from income. VAT collected from customers may need to be paid to HMRC depending on registration, scheme, timing, and recoverable input tax. Treating VAT as margin can lead to cash-flow problems when the return is due.",
+        ],
+      },
+      {
+        heading: "Watch rounding and multiple line items",
+        body: [
+          "VAT can be rounded at line level or invoice level depending on the system and rules being applied. Small penny differences can appear when several items, discounts, or different rates are involved. A quick calculator is excellent for checking a single amount, but invoice software may round each line in a particular way.",
+          "If you are checking a full invoice, calculate each VAT rate group separately. Items at 20%, 5%, and 0% should not be blended into one percentage. The gross total should then reconcile back to the sum of the relevant net amounts and VAT amounts.",
+        ],
+      },
+      {
+        heading: "Use VAT calculations as part of broader planning",
+        body: [
+          "VAT is often one step in a wider money decision. A small business might use a VAT calculator for pricing, a break-even calculator for margin checks, and a budget planner for cash flow. A household user might use VAT calculations to compare quotes or understand a receipt.",
+          "The arithmetic is not complicated, but the context matters. Always know whether you are starting with net or gross, confirm the rate, and save the assumptions used. That habit prevents most VAT calculation mistakes before they reach an invoice, customer quote, or supplier comparison.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "How do you calculate 20% VAT in the UK?",
+        answer:
+          "To add 20% VAT, multiply the net amount by 1.20. To remove 20% VAT from a gross amount, divide the gross amount by 1.20.",
+      },
+      {
+        question: "Why is removing VAT not the same as subtracting 20%?",
+        answer:
+          "VAT is 20% of the net price, not 20% of the VAT-inclusive gross price. Subtracting 20% from the gross total gives the wrong net amount.",
+      },
+      {
+        question: "What is the difference between VAT-inclusive and VAT-exclusive?",
+        answer:
+          "VAT-inclusive means the price already includes VAT. VAT-exclusive means VAT still needs to be added to reach the gross total.",
+      },
+      {
+        question: "Can a UK VAT calculator tell me which rate applies?",
+        answer:
+          "No. It can calculate figures for a chosen rate, but rate selection and VAT treatment should be checked against HMRC guidance or professional advice when it matters.",
+      },
+    ],
+  },
+  {
+    slug: "how-much-mortgage-can-i-afford",
+    title: "How Much Mortgage Can I Afford?",
+    description:
+      "Work out mortgage affordability by comparing income, deposit, monthly budget, interest rates, living costs, debts, and realistic buffers before speaking to a lender.",
+    excerpt:
+      "A practical mortgage affordability guide covering monthly repayments, deposits, stress testing, household budgets, overpayments, and lender checks.",
+    publishedAt: "2026-06-03",
+    updatedAt: "2026-06-03",
+    readingTime: "8 min read",
+    category: "Financial Tools",
+    keywords: [
+      "how much mortgage can I afford",
+      "mortgage affordability calculator",
+      "monthly mortgage payment budget",
+      "mortgage overpayment calculator",
+      "home buying budget",
+    ],
+    primaryToolSlug: "mortgage-overpayment-calculator",
+    relatedToolSlugs: [
+      "mortgage-overpayment-calculator",
+      "budget-planner",
+      "loan-repayment-calculator",
+      "uk-take-home-pay-estimator",
+      "savings-goal-calculator",
+    ],
+    intro: [
+      "The question \"How much mortgage can I afford?\" is not answered by the largest loan a lender might offer. A mortgage payment has to fit inside real life: take-home pay, bills, food, transport, insurance, repairs, childcare, existing debts, savings, and the possibility that interest rates or income could change.",
+      "A good affordability check combines lender criteria with your own budget. Online calculators can help you model repayments, overpayments, savings targets, and monthly cash flow, but the final decision should leave room for resilience as well as approval.",
+    ],
+    sections: [
+      {
+        heading: "Start with take-home pay and stable income",
+        body: [
+          "Mortgage affordability begins with income, but monthly budgeting should use take-home pay rather than gross salary. Net income is what remains after tax, National Insurance, pension contributions, student loans, and other deductions. If you are applying jointly, include both incomes only if both are stable enough to support the commitment.",
+          "Variable income needs cautious treatment. Overtime, commission, bonuses, freelance work, and self-employment income may not be assessed by lenders in the same way as basic salary. For your own planning, test the mortgage payment against a normal month and a weaker month so the budget is not built on the best-case scenario.",
+        ],
+      },
+      {
+        heading: "Estimate the monthly payment, not just the loan size",
+        body: [
+          "A headline mortgage amount can hide the monthly impact. The payment depends on loan size, deposit, interest rate, term length, fees, and repayment type. A longer term can reduce the monthly payment but may increase total interest. A shorter term can save interest but put more pressure on monthly cash flow.",
+          "If you do not have a dedicated mortgage affordability calculator available, a loan repayment calculator can still help illustrate how amount, rate, and term change a monthly payment. Use it for rough planning, then compare with lender illustrations and mortgage-specific advice before making decisions.",
+        ],
+      },
+      {
+        heading: "Build a full home-owning budget",
+        body: [
+          "Renters sometimes compare the new mortgage payment only with current rent. Home ownership brings additional costs: buildings insurance, life insurance, repairs, service charges, ground rent where relevant, council tax changes, utilities, furniture, moving costs, and maintenance. A property that stretches the mortgage payment can feel unaffordable once these costs appear.",
+          "Use the Monthly Budget Planner on Daily Utility Dock to place the estimated mortgage payment inside a full household budget. Include groceries, transport, childcare, subscriptions, debts, savings, and irregular costs. The result should show whether the payment fits the month, not only whether it looks reasonable in isolation.",
+        ],
+      },
+      {
+        heading: "Consider deposit and upfront costs",
+        body: [
+          "The deposit affects the loan-to-value ratio, which can influence rates and lender options. A larger deposit may reduce borrowing and improve the rate available, but using every pound of savings can leave you exposed after completion. Buying a home usually creates immediate costs, from removals to essential repairs.",
+          "Keep a separate emergency fund if possible. A savings goal calculator can help plan the deposit and moving-cost timeline before you apply. If reaching the deposit requires draining all cash reserves, test whether waiting a little longer would make the purchase safer.",
+        ],
+      },
+      {
+        heading: "Stress test rate rises and life changes",
+        body: [
+          "Affordability should survive more than today's rate. If you choose a fixed-rate deal, payments may change when the fix ends. If you choose a variable or tracker rate, payments can change sooner. Test a higher rate and ask whether the budget still has room for food, bills, transport, savings, and repairs.",
+          "Also consider life changes that could affect income or spending: parental leave, childcare, job changes, reduced overtime, caring responsibilities, health costs, or a planned car replacement. You do not need to predict everything, but a mortgage that only works when nothing changes is risky.",
+        ],
+      },
+      {
+        heading: "Think about overpayments after affordability",
+        body: [
+          "Overpayments can reduce interest and shorten a repayment mortgage, but they should come after the basic affordability check. Paying extra into the mortgage while neglecting emergency savings or higher-interest debt may not be the best order. Check lender overpayment allowances and early repayment charges before sending extra money.",
+          "The Mortgage Overpayment Calculator on Daily Utility Dock is useful once you already have a mortgage or a clear scenario. It can show how a monthly or one-off overpayment might reduce interest and time. For buyers, it can also show why choosing a payment that leaves future overpayment flexibility may be better than stretching to the maximum from day one.",
+        ],
+      },
+      {
+        heading: "Use lender approval as a checkpoint, not the whole answer",
+        body: [
+          "Lenders assess credit history, income, commitments, deposit, property type, and affordability rules. Their approval matters, but it does not know every preference in your life. You may value travel, flexible work, saving for children, supporting family, or retiring earlier. Those choices may mean borrowing less than the maximum available.",
+          "A sensible mortgage amount is one that meets lender criteria and leaves your own budget resilient. Keep the calculation transparent: income, expected payment, other housing costs, debts, savings, and buffer. That record makes conversations with brokers, lenders, and family clearer because the decision is based on practical cash flow rather than a single borrowing multiple.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "Is mortgage affordability based on gross or net income?",
+        answer:
+          "Lenders may assess gross income and commitments, but your personal budget should use net take-home pay because that is what pays the mortgage and bills each month.",
+      },
+      {
+        question: "Should I borrow the maximum a lender offers?",
+        answer:
+          "Not automatically. The maximum may leave too little room for repairs, savings, rate changes, childcare, transport, or lifestyle priorities. Test the payment inside a full budget.",
+      },
+      {
+        question: "How can I stress test a mortgage payment?",
+        answer:
+          "Model a higher interest rate, reduced income, or higher bills and check whether the monthly budget still has a buffer. This is especially important before stretching to a larger property.",
+      },
+      {
+        question: "Can overpayments help make a mortgage cheaper?",
+        answer:
+          "On a repayment mortgage, overpayments can reduce interest and shorten the term, but check lender rules and make sure emergency savings and higher-interest debts are considered first.",
+      },
+    ],
+  },
+  {
+    slug: "best-free-online-financial-calculators",
+    title: "Best Free Online Financial Calculators",
+    description:
+      "Explore the best free online financial calculators for budgets, VAT, compound interest, loans, mortgages, savings goals, salary checks, and household bills.",
+    excerpt:
+      "A guide to choosing useful free finance calculators, when to use each one, and how Daily Utility Dock tools support better everyday money decisions.",
+    publishedAt: "2026-06-03",
+    updatedAt: "2026-06-03",
+    readingTime: "8 min read",
+    category: "Financial Tools",
+    keywords: [
+      "best free online financial calculators",
+      "free finance calculators",
+      "budget calculator online",
+      "loan and savings calculators",
+      "Daily Utility Dock financial tools",
+    ],
+    primaryToolSlug: "budget-planner",
+    relatedToolSlugs: [
+      "budget-planner",
+      "compound-interest-calculator",
+      "loan-repayment-calculator",
+      "vat-calculator",
+      "mortgage-overpayment-calculator",
+      "savings-goal-calculator",
+    ],
+    intro: [
+      "The best free online financial calculators are not the ones with the most fields. They are the ones that answer a real question clearly, show the assumptions, and help you decide what to check next. A good calculator should make money decisions easier to understand, not hide them behind a polished result.",
+      "Daily Utility Dock focuses on practical finance tools for everyday planning: budgets, VAT, savings growth, loan repayments, mortgage overpayments, take-home pay, household bills, fuel costs, and more. Used together, these calculators can turn scattered money questions into a connected workflow.",
+    ],
+    sections: [
+      {
+        heading: "Budget planners for monthly cash flow",
+        body: [
+          "A budget planner is often the best place to start because most money decisions eventually affect monthly cash flow. It brings income, bills, food, transport, savings, debt repayments, and other spending into one view. Without that view, a loan, subscription, savings target, or mortgage payment can look affordable in isolation while squeezing the rest of the month.",
+          "The Monthly Budget Planner on Daily Utility Dock is designed for a first-pass budget. It shows surplus, shortfall, and savings rate from the numbers you enter. Use it before adding a new repayment, increasing savings, changing rent, or deciding whether a bill review is needed.",
+        ],
+      },
+      {
+        heading: "Savings and compound interest calculators",
+        body: [
+          "Savings calculators help answer two related questions: how long will it take to reach a target, and how might money grow over time? A savings goal calculator is useful for emergency funds, holidays, deposits, annual bills, and short-term targets. It keeps the focus on current savings, monthly deposits, and the time needed to reach the goal.",
+          "A compound interest calculator is better for understanding longer-term growth. It models an initial balance, regular deposits, rate, term, and compounding frequency. The important point is to treat the result as a scenario, not a promise. Test cautious and optimistic rates, then check whether the monthly contribution fits your budget.",
+        ],
+      },
+      {
+        heading: "Loan repayment calculators",
+        body: [
+          "A loan repayment calculator helps compare monthly payment, total interest, and total repayable before borrowing. It is useful for personal loans, car finance comparisons, home improvement borrowing, and any situation where a lower monthly payment might hide a higher total cost.",
+          "Change the term and rate to see the trade-off. A longer term may make the monthly payment easier but increase interest. A shorter term may save money overall but reduce monthly flexibility. Pair the result with a budget planner so the repayment is tested against real bills and savings, not only lender affordability.",
+        ],
+      },
+      {
+        heading: "VAT and small business price calculators",
+        body: [
+          "For UK users and small businesses, a VAT calculator is one of the most useful everyday tools. It can add VAT to a net price, remove VAT from a gross price, and show the VAT amount separately. That helps with invoices, quotes, supplier comparisons, receipts, and checking whether a price is VAT-inclusive or VAT-exclusive.",
+          "Other business calculators, such as break-even tools, support pricing and margin decisions. The calculator gives the arithmetic, but users still need to confirm VAT treatment, product costs, fees, and business rules. A transparent estimate is the starting point for better questions.",
+        ],
+      },
+      {
+        heading: "Mortgage and housing calculators",
+        body: [
+          "Mortgage decisions involve more than a monthly payment. Buyers need to think about deposit, fees, insurance, repairs, rate changes, and the effect on the household budget. Existing homeowners may want to understand whether overpayments could reduce interest and shorten the mortgage term.",
+          "The Mortgage Overpayment Calculator on Daily Utility Dock estimates the effect of extra monthly or one-off payments on a repayment mortgage. It is especially useful after checking the budget, because overpayments should not leave you without emergency savings or force high-interest borrowing elsewhere.",
+        ],
+      },
+      {
+        heading: "Income, salary, and household bill calculators",
+        body: [
+          "Income calculators help turn headline figures into planning numbers. A UK take-home pay estimator can convert gross salary assumptions into estimated net pay, while a salary-to-hourly calculator can compare roles with different hours. These tools are helpful when reviewing job offers, rent affordability, or a change in working pattern.",
+          "Household bill calculators support the spending side. Energy direct debit, electricity cost, gas bill, water bill, and fuel cost calculators make recurring costs more visible. They are not a substitute for official bills, but they help you test whether a payment or estimate looks realistic.",
+        ],
+      },
+      {
+        heading: "How to choose a reliable free calculator",
+        body: [
+          "A useful calculator should explain its inputs, keep results readable, and avoid pretending to be regulated advice. Look for pages that separate assumptions from conclusions. If the output affects tax, borrowing, employment, utilities, or legal rights, use the calculator as a planning tool and verify important details with the provider or official source.",
+          "The strongest workflow is connected. Start with the budget planner, then use specialist calculators for the specific decision: VAT for prices, compound interest for growth, loan repayments for borrowing, savings goals for targets, and mortgage overpayments for housing. Internal links between Daily Utility Dock tools make that movement simple on mobile or desktop.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "Are free online financial calculators accurate?",
+        answer:
+          "They can be accurate for the formula and inputs they use, but the result is still an estimate. Real products may include fees, tax, changing rates, eligibility checks, or provider-specific rules.",
+      },
+      {
+        question: "Which financial calculator should I use first?",
+        answer:
+          "Start with a budget planner if the decision affects monthly cash flow. Then use a specialist calculator for the specific question, such as VAT, loans, savings, or mortgage overpayments.",
+      },
+      {
+        question: "Can online calculators replace financial advice?",
+        answer:
+          "No. They help with arithmetic and planning scenarios. For regulated advice, tax decisions, borrowing, payroll, or legal questions, speak to a qualified professional or official source.",
+      },
+      {
+        question: "Why use several calculators together?",
+        answer:
+          "Money decisions are connected. A loan repayment affects the monthly budget, a savings target depends on income, and a mortgage overpayment should be compared with other priorities.",
+      },
+    ],
+  },
+  {
     slug: "compare-loan-repayments-before-you-borrow",
     title: "How to compare loan repayments before you borrow",
     description:
