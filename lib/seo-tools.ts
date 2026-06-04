@@ -1,4 +1,12 @@
-export type ToolCategory = "Finance" | "Productivity" | "Internet Utilities" | "UK Workplace" | "UK Utilities";
+export type ToolCategory =
+  | "Finance"
+  | "Productivity"
+  | "Internet Utilities"
+  | "UK Workplace"
+  | "UK Utilities"
+  | "USA Tools"
+  | "Canada Tools"
+  | "Australia Tools";
 
 export type ToolType =
   | "compound-interest"
@@ -29,7 +37,12 @@ export type ToolType =
   | "uk-electricity-cost"
   | "uk-gas-bill"
   | "uk-energy-direct-debit"
-  | "uk-water-bill";
+  | "uk-water-bill"
+  | "country-sales-tax"
+  | "country-mortgage"
+  | "country-loan"
+  | "country-salary"
+  | "country-savings";
 
 export interface SeoTool {
   slug: string;
