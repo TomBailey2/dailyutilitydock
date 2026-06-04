@@ -547,6 +547,21 @@ const seoToolCategorySlugs: Record<string, SiteCategorySlug[]> = {
   "uk-gas-bill-calculator": ["financial-tools", "converters"],
   "uk-energy-direct-debit-calculator": ["financial-tools"],
   "uk-water-bill-calculator": ["financial-tools", "converters"],
+  "us-sales-tax-calculator": ["financial-tools"],
+  "us-mortgage-calculator": ["financial-tools"],
+  "us-loan-repayment-calculator": ["financial-tools"],
+  "us-salary-calculator": ["financial-tools"],
+  "401k-calculator": ["financial-tools"],
+  "canada-gst-hst-calculator": ["financial-tools"],
+  "canadian-mortgage-calculator": ["financial-tools"],
+  "canadian-loan-repayment-calculator": ["financial-tools"],
+  "canadian-salary-calculator": ["financial-tools"],
+  "tfsa-savings-calculator": ["financial-tools"],
+  "australia-gst-calculator": ["financial-tools"],
+  "australian-mortgage-calculator": ["financial-tools"],
+  "australian-loan-repayment-calculator": ["financial-tools"],
+  "australian-salary-calculator": ["financial-tools"],
+  "superannuation-calculator": ["financial-tools"],
 };
 
 const seoSiteTools: SiteTool[] = seoTools.map((tool) => ({

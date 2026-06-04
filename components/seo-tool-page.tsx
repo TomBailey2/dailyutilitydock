@@ -43,6 +43,10 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { SeoTool } from "@/lib/seo-tools";
 import { getBlogPostByToolSlug } from "@/lib/blog-posts";
+import {
+  getCountryConfigForTool,
+  type CountryToolCalculatorConfig,
+} from "@/lib/international-tools";
 import { getSiteTool, siteCategories } from "@/lib/site-tools";
 import { getSeoToolPageCopy } from "@/lib/tool-page-copy";
 
@@ -98,6 +102,55 @@ function formatCurrency(value: number) {
     currency: "GBP",
     maximumFractionDigits: 2,
   }).format(value);
+}
+
+function formatLocalCurrency(
+  value: number,
+  config: Pick<CountryToolCalculatorConfig, "locale" | "currency">
+) {
+  return new Intl.NumberFormat(config.locale, {
+    style: "currency",
+    currency: config.currency,
+    maximumFractionDigits: 2,
+  }).format(value);
+}
+
+function amortizedPayment(principal: number, annualRate: number, months: number) {
+  const monthlyRate = annualRate / 100 / 12;
+
+  if (monthlyRate === 0) {
+    return principal / Math.max(1, months);
+  }
+
+  return (
+    (principal * monthlyRate * (1 + monthlyRate) ** months) /
+    ((1 + monthlyRate) ** months - 1)
+  );
+}
+
+function canadianMortgagePayment(principal: number, annualRate: number, months: number) {
+  const monthlyRate = (1 + annualRate / 100 / 2) ** (2 / 12) - 1;
+
+  if (monthlyRate === 0) {
+    return principal / Math.max(1, months);
+  }
+
+  return (
+    (principal * monthlyRate * (1 + monthlyRate) ** months) /
+    ((1 + monthlyRate) ** months - 1)
+  );
+}
+
+function progressiveTax(income: number, brackets: CountryToolCalculatorConfig["salary"]["brackets"]) {
+  const sorted = [...brackets].sort((a, b) => a.threshold - b.threshold);
+
+  return sorted.reduce((tax, bracket, index) => {
+    const next = sorted[index + 1];
+    const upper = next ? next.threshold : Number.POSITIVE_INFINITY;
+    const taxableInBand = Math.max(0, Math.min(income, upper) - bracket.threshold);
+
+    return tax + taxableInBand * bracket.rate;
+  }, 0);
 }
 
 function formatNumber(value: number, digits = 2) {
@@ -1455,7 +1508,302 @@ function UkWaterBillTool() {
   );
 }
 
-function ToolBody({ type }: { type: SeoTool["toolType"] }) {
+function getCountryConfigOrThrow(slug: string) {
+  const config = getCountryConfigForTool(slug);
+
+  if (!config) {
+    throw new Error(`Missing international tool config for ${slug}`);
+  }
+
+  return config;
+}
+
+function CountrySalesTaxTool({ slug }: { slug: string }) {
+  const config = getCountryConfigOrThrow(slug);
+  const defaultRate =
+    config.salesTaxPresets.find((preset) => preset.value > 0)?.value ??
+    config.salesTaxPresets[0]?.value ??
+    0;
+  const [amount, setAmount] = useState("100");
+  const [rate, setRate] = useState(defaultRate.toString());
+  const [mode, setMode] = useState<"add" | "remove">("add");
+
+  const result = useMemo(() => {
+    const amountValue = Math.max(0, numberValue(amount));
+    const taxRate = Math.max(0, numberValue(rate)) / 100;
+
+    if (mode === "add") {
+      const tax = amountValue * taxRate;
+      return { net: amountValue, tax, total: amountValue + tax };
+    }
+
+    const net = taxRate === 0 ? amountValue : amountValue / (1 + taxRate);
+    return { net, tax: amountValue - net, total: amountValue };
+  }, [amount, rate, mode]);
+
+  return (
+    <div className="space-y-6">
+      <div className="grid gap-4 md:grid-cols-2">
+        <div className="space-y-2">
+          <Label htmlFor={`${slug}-preset`}>{config.salesTaxLabel} preset</Label>
+          <select
+            id={`${slug}-preset`}
+            value={rate}
+            onChange={(event) => setRate(event.target.value)}
+            className="input-field"
+          >
+            {config.salesTaxPresets.map((preset) => (
+              <option key={`${preset.label}-${preset.value}`} value={preset.value}>
+                {preset.label} ({preset.value}%){preset.note ? ` - ${preset.note}` : ""}
+              </option>
+            ))}
+          </select>
+        </div>
+        <Field id={`${slug}-custom-rate`} label={`Editable ${config.salesTaxLabel} rate`} suffix="%" value={rate} onChange={setRate} min="0" step="0.01" />
+        <Field id={`${slug}-amount`} label={mode === "add" ? "Amount before tax" : "Amount including tax"} prefix={config.currencyPrefix} value={amount} onChange={setAmount} min="0" step="0.01" />
+        <div className="space-y-2">
+          <Label htmlFor={`${slug}-mode`}>Calculation type</Label>
+          <select
+            id={`${slug}-mode`}
+            value={mode}
+            onChange={(event) => setMode(event.target.value as "add" | "remove")}
+            className="input-field"
+          >
+            <option value="add">Add {config.salesTaxLabel}</option>
+            <option value="remove">Remove {config.salesTaxLabel}</option>
+          </select>
+        </div>
+      </div>
+      <ResultGrid
+        items={[
+          { label: "Amount before tax", value: formatLocalCurrency(result.net, config) },
+          { label: `${config.salesTaxLabel} amount`, value: formatLocalCurrency(result.tax, config), help: `${formatNumber(numberValue(rate))}% estimate` },
+          { label: "Total amount", value: formatLocalCurrency(result.total, config) },
+          { label: "Rate source", value: "Editable estimate", help: "Check official sources for final decisions." },
+        ]}
+      />
+    </div>
+  );
+}
+
+function CountryMortgageTool({ slug }: { slug: string }) {
+  const config = getCountryConfigOrThrow(slug);
+  const defaults = config.mortgageDefaults;
+  const [homePrice, setHomePrice] = useState(defaults.homePrice.toString());
+  const [downPayment, setDownPayment] = useState(defaults.downPayment.toString());
+  const [rate, setRate] = useState(defaults.rate.toString());
+  const [termYears, setTermYears] = useState(defaults.termYears.toString());
+  const [annualTax, setAnnualTax] = useState(defaults.annualTax.toString());
+  const [annualInsurance, setAnnualInsurance] = useState(defaults.annualInsurance.toString());
+
+  const result = useMemo(() => {
+    const principal = Math.max(0, numberValue(homePrice) - numberValue(downPayment));
+    const months = Math.max(1, Math.round(numberValue(termYears) * 12));
+    const principalAndInterest =
+      defaults.compounding === "canadian-semi-annual"
+        ? canadianMortgagePayment(principal, numberValue(rate), months)
+        : amortizedPayment(principal, numberValue(rate), months);
+    const monthlyExtras = Math.max(0, numberValue(annualTax)) / 12 + Math.max(0, numberValue(annualInsurance)) / 12;
+
+    return {
+      principal,
+      principalAndInterest,
+      monthlyExtras,
+      totalMonthly: principalAndInterest + monthlyExtras,
+      totalInterest: principalAndInterest * months - principal,
+      months,
+    };
+  }, [homePrice, downPayment, rate, termYears, annualTax, annualInsurance, defaults.compounding]);
+
+  return (
+    <div className="space-y-6">
+      <div className="grid gap-4 md:grid-cols-2">
+        <Field id={`${slug}-home-price`} label="Home price" prefix={config.currencyPrefix} value={homePrice} onChange={setHomePrice} min="0" />
+        <Field id={`${slug}-down-payment`} label="Down payment or deposit" prefix={config.currencyPrefix} value={downPayment} onChange={setDownPayment} min="0" />
+        <Field id={`${slug}-rate`} label="Mortgage interest rate" suffix="%" value={rate} onChange={setRate} min="0" step="0.01" />
+        <Field id={`${slug}-term`} label="Mortgage term" suffix="years" value={termYears} onChange={setTermYears} min="1" step="1" />
+        <Field id={`${slug}-annual-tax`} label="Annual property tax or rates" prefix={config.currencyPrefix} value={annualTax} onChange={setAnnualTax} min="0" />
+        <Field id={`${slug}-annual-insurance`} label="Annual home insurance" prefix={config.currencyPrefix} value={annualInsurance} onChange={setAnnualInsurance} min="0" />
+      </div>
+      <ResultGrid
+        items={[
+          { label: "Estimated loan amount", value: formatLocalCurrency(result.principal, config) },
+          { label: "Principal and interest", value: formatLocalCurrency(result.principalAndInterest, config), help: "Monthly estimate" },
+          { label: defaults.extraMonthlyCostLabel, value: formatLocalCurrency(result.monthlyExtras, config), help: "Optional monthly add-on" },
+          { label: "Estimated total monthly payment", value: formatLocalCurrency(result.totalMonthly, config) },
+          { label: "Estimated interest over term", value: formatLocalCurrency(result.totalInterest, config) },
+          { label: "Payments", value: `${result.months}` },
+        ]}
+      />
+    </div>
+  );
+}
+
+function CountryLoanTool({ slug }: { slug: string }) {
+  const config = getCountryConfigOrThrow(slug);
+  const defaults = config.loanDefaults;
+  const [amount, setAmount] = useState(defaults.amount.toString());
+  const [rate, setRate] = useState(defaults.rate.toString());
+  const [termYears, setTermYears] = useState(defaults.termYears.toString());
+  const [fee, setFee] = useState(defaults.fee.toString());
+
+  const result = useMemo(() => {
+    const principal = Math.max(0, numberValue(amount) + numberValue(fee));
+    const months = Math.max(1, Math.round(numberValue(termYears) * 12));
+    const payment = amortizedPayment(principal, numberValue(rate), months);
+    const total = payment * months;
+
+    return { principal, payment, total, interest: total - principal, months };
+  }, [amount, rate, termYears, fee]);
+
+  return (
+    <div className="space-y-6">
+      <div className="grid gap-4 md:grid-cols-2">
+        <Field id={`${slug}-amount`} label="Loan amount" prefix={config.currencyPrefix} value={amount} onChange={setAmount} min="0" />
+        <Field id={`${slug}-rate`} label="Annual rate or APR" suffix="%" value={rate} onChange={setRate} min="0" step="0.01" />
+        <Field id={`${slug}-term`} label="Loan term" suffix="years" value={termYears} onChange={setTermYears} min="0.25" step="0.25" />
+        <Field id={`${slug}-fee`} label="Upfront fee to include" prefix={config.currencyPrefix} value={fee} onChange={setFee} min="0" />
+      </div>
+      <ResultGrid
+        items={[
+          { label: "Estimated monthly payment", value: formatLocalCurrency(result.payment, config) },
+          { label: "Total repayable", value: formatLocalCurrency(result.total, config) },
+          { label: "Interest and included fee cost", value: formatLocalCurrency(result.interest + numberValue(fee), config) },
+          { label: "Principal modelled", value: formatLocalCurrency(result.principal, config) },
+          { label: "Number of payments", value: `${result.months}` },
+        ]}
+      />
+    </div>
+  );
+}
+
+function CountrySalaryTool({ slug }: { slug: string }) {
+  const config = getCountryConfigOrThrow(slug);
+  const defaults = config.salary;
+  const [salary, setSalary] = useState(defaults.defaultSalary.toString());
+  const [retirementPercent, setRetirementPercent] = useState(defaults.defaultRetirementPercent.toString());
+  const [localRate, setLocalRate] = useState(defaults.defaultStateOrProvinceRate.toString());
+
+  const localRateLabel =
+    config.countryCode === "us"
+      ? "State/local income tax estimate"
+      : config.countryCode === "canada"
+        ? "Province/territory tax estimate"
+        : "Medicare levy-style estimate";
+
+  const result = useMemo(() => {
+    const gross = Math.max(0, numberValue(salary));
+    const preTax = gross * (Math.max(0, numberValue(retirementPercent)) / 100);
+    const taxable = Math.max(0, gross - preTax - defaults.federalAllowance);
+    const federalTax = progressiveTax(taxable, defaults.brackets);
+    const localTax = Math.max(0, gross - preTax) * (Math.max(0, numberValue(localRate)) / 100);
+    let payrollTax = 0;
+
+    if (config.countryCode === "us") {
+      payrollTax = Math.min(gross, defaults.extraPayrollWageBase ?? gross) * 0.062 + gross * 0.0145;
+    } else if (defaults.extraPayrollRate) {
+      payrollTax = Math.min(gross, defaults.extraPayrollWageBase ?? gross) * defaults.extraPayrollRate;
+    }
+
+    const net = Math.max(0, gross - preTax - federalTax - localTax - payrollTax);
+
+    return { preTax, federalTax, localTax, payrollTax, net };
+  }, [salary, retirementPercent, localRate, defaults, config.countryCode]);
+
+  return (
+    <div className="space-y-6">
+      <div className="grid gap-4 md:grid-cols-3">
+        <Field id={`${slug}-salary`} label="Annual gross salary" prefix={config.currencyPrefix} value={salary} onChange={setSalary} min="0" />
+        <Field id={`${slug}-retirement`} label="Pre-tax retirement or savings" suffix="%" value={retirementPercent} onChange={setRetirementPercent} min="0" step="0.1" />
+        <Field id={`${slug}-local-tax`} label={localRateLabel} suffix="%" value={localRate} onChange={setLocalRate} min="0" step="0.1" />
+      </div>
+      <ResultGrid
+        items={[
+          { label: "Estimated annual take-home", value: formatLocalCurrency(result.net, config) },
+          { label: "Estimated monthly take-home", value: formatLocalCurrency(result.net / 12, config) },
+          { label: "Income tax estimate", value: formatLocalCurrency(result.federalTax, config) },
+          { label: localRateLabel, value: formatLocalCurrency(result.localTax, config) },
+          { label: "Payroll deduction estimate", value: formatLocalCurrency(result.payrollTax, config) },
+          { label: "Pre-tax contribution", value: formatLocalCurrency(result.preTax, config) },
+        ]}
+      />
+      <div className="rounded-lg border bg-muted/30 p-4 text-sm text-muted-foreground">
+        <p className="font-medium text-foreground">Estimate notes</p>
+        <ul className="mt-2 list-disc space-y-1 pl-5">
+          {defaults.payrollNotes.map((note) => (
+            <li key={note}>{note}</li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  );
+}
+
+function CountrySavingsTool({ slug }: { slug: string }) {
+  const config = getCountryConfigOrThrow(slug);
+  const defaults = config.savings;
+  const [balance, setBalance] = useState(defaults.defaultBalance.toString());
+  const [salary, setSalary] = useState(config.salary.defaultSalary.toString());
+  const [annualContribution, setAnnualContribution] = useState(defaults.defaultAnnualContribution.toString());
+  const [employerPercent, setEmployerPercent] = useState(defaults.defaultEmployerPercent.toString());
+  const [returnRate, setReturnRate] = useState(defaults.defaultReturn.toString());
+  const [years, setYears] = useState(defaults.defaultYears.toString());
+  const [annualLimit, setAnnualLimit] = useState(defaults.annualLimit.toString());
+
+  const result = useMemo(() => {
+    const horizon = Math.max(0, Math.round(numberValue(years)));
+    const annualReturn = Math.max(0, numberValue(returnRate)) / 100;
+    const employeeContribution = Math.min(Math.max(0, numberValue(annualContribution)), Math.max(0, numberValue(annualLimit)));
+    const employerContribution = Math.max(0, numberValue(salary)) * (Math.max(0, numberValue(employerPercent)) / 100);
+    let projected = Math.max(0, numberValue(balance));
+    let totalEmployee = 0;
+    let totalEmployer = 0;
+
+    for (let year = 0; year < horizon; year += 1) {
+      projected += employeeContribution + employerContribution;
+      totalEmployee += employeeContribution;
+      totalEmployer += employerContribution;
+      projected *= 1 + annualReturn;
+    }
+
+    return {
+      projected,
+      totalEmployee,
+      totalEmployer,
+      growth: projected - Math.max(0, numberValue(balance)) - totalEmployee - totalEmployer,
+      annualContributionUsed: employeeContribution,
+      employerContribution,
+    };
+  }, [balance, salary, annualContribution, employerPercent, returnRate, years, annualLimit]);
+
+  return (
+    <div className="space-y-6">
+      <div className="grid gap-4 md:grid-cols-2">
+        <Field id={`${slug}-balance`} label={`Current ${defaults.label} balance`} prefix={config.currencyPrefix} value={balance} onChange={setBalance} min="0" />
+        <Field id={`${slug}-salary`} label="Annual salary or income basis" prefix={config.currencyPrefix} value={salary} onChange={setSalary} min="0" />
+        <Field id={`${slug}-contribution`} label={defaults.contributionLabel} prefix={config.currencyPrefix} value={annualContribution} onChange={setAnnualContribution} min="0" />
+        <Field id={`${slug}-employer`} label={defaults.employerLabel} suffix="%" value={employerPercent} onChange={setEmployerPercent} min="0" step="0.1" />
+        <Field id={`${slug}-return`} label="Assumed annual return" suffix="%" value={returnRate} onChange={setReturnRate} min="0" step="0.1" />
+        <Field id={`${slug}-years`} label="Years to project" value={years} onChange={setYears} min="0" step="1" />
+        <Field id={`${slug}-limit`} label="Editable annual contribution limit assumption" prefix={config.currencyPrefix} value={annualLimit} onChange={setAnnualLimit} min="0" />
+      </div>
+      <ResultGrid
+        items={[
+          { label: "Projected balance", value: formatLocalCurrency(result.projected, config) },
+          { label: "Annual contribution used", value: formatLocalCurrency(result.annualContributionUsed, config), help: "Capped by editable limit assumption" },
+          { label: "Estimated employer or extra contribution", value: formatLocalCurrency(result.employerContribution, config), help: "Annual amount" },
+          { label: "Total personal contributions", value: formatLocalCurrency(result.totalEmployee, config) },
+          { label: "Total employer or extra contributions", value: formatLocalCurrency(result.totalEmployer, config) },
+          { label: "Estimated investment growth", value: formatLocalCurrency(result.growth, config) },
+        ]}
+      />
+    </div>
+  );
+}
+
+function ToolBody({ tool }: { tool: SeoTool }) {
+  const type = tool.toolType;
+
   switch (type) {
     case "compound-interest":
       return <CompoundInterestTool />;
@@ -1515,6 +1863,16 @@ function ToolBody({ type }: { type: SeoTool["toolType"] }) {
       return <UkEnergyDirectDebitTool />;
     case "uk-water-bill":
       return <UkWaterBillTool />;
+    case "country-sales-tax":
+      return <CountrySalesTaxTool slug={tool.slug} />;
+    case "country-mortgage":
+      return <CountryMortgageTool slug={tool.slug} />;
+    case "country-loan":
+      return <CountryLoanTool slug={tool.slug} />;
+    case "country-salary":
+      return <CountrySalaryTool slug={tool.slug} />;
+    case "country-savings":
+      return <CountrySavingsTool slug={tool.slug} />;
   }
 }
 
@@ -1538,6 +1896,7 @@ export function SeoToolPage({ tool, relatedTools, faqs }: SeoToolPageProps) {
   const primaryCategory = siteCategories.find(
     (category) => category.slug === siteTool?.categorySlugs[0]
   );
+  const countryConfig = getCountryConfigForTool(tool.slug);
 
   return (
     <div className="container mx-auto px-4 py-8">
@@ -1580,7 +1939,7 @@ export function SeoToolPage({ tool, relatedTools, faqs }: SeoToolPageProps) {
 
         <Card className="mb-8">
           <CardContent className="pt-6">
-            <ToolBody type={tool.toolType} />
+            <ToolBody tool={tool} />
           </CardContent>
         </Card>
 
@@ -1610,6 +1969,25 @@ export function SeoToolPage({ tool, relatedTools, faqs }: SeoToolPageProps) {
               <li key={note}>{note}</li>
             ))}
           </ul>
+
+          {countryConfig ? (
+            <>
+              <h2 className="mt-8 text-2xl font-semibold">
+                Country-specific assumptions
+              </h2>
+              <ul className="mt-3 list-disc space-y-2 pl-5 text-muted-foreground">
+                {countryConfig.assumptions.map((assumption) => (
+                  <li key={assumption}>{assumption}</li>
+                ))}
+              </ul>
+              <p className="mt-3 text-muted-foreground">
+                Results are estimates only. Do not use this page as regulated
+                financial, tax, legal, payroll, mortgage, or investment advice;
+                check official government sources, provider documents, or a
+                qualified professional before making final decisions.
+              </p>
+            </>
+          ) : null}
         </section>
 
         {guide ? (

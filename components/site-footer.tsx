@@ -23,6 +23,11 @@ const footerLinks = {
     label: category.title,
     href: category.path,
   })),
+  international: [
+    { label: "USA Tools", href: "/us-tools" },
+    { label: "Canada Tools", href: "/canada-tools" },
+    { label: "Australia Tools", href: "/australia-tools" },
+  ],
   legal: [
     { label: "Privacy Policy", href: "/privacy-policy" },
     { label: "Cookie Policy", href: "/cookie-policy" },
@@ -92,6 +97,20 @@ export function SiteFooter() {
             <h3 className="font-semibold mb-4 text-sm">Categories</h3>
             <ul className="space-y-2">
               {footerLinks.categories.map((link) => (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+
+            <h3 className="mb-4 mt-6 text-sm font-semibold">International</h3>
+            <ul className="space-y-2">
+              {footerLinks.international.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}
