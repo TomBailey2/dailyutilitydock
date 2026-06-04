@@ -1202,6 +1202,591 @@ export const seoTools: SeoTool[] = [
     ],
     relatedSlugs: ["uk-energy-direct-debit-calculator", "uk-gas-bill-calculator", "budget-planner"],
   },
+  {
+    slug: "us-sales-tax-calculator",
+    title: "US Sales Tax Calculator",
+    shortTitle: "US Sales Tax",
+    description: "Add or remove estimated US sales tax using an editable combined local rate.",
+    category: "USA Tools",
+    toolType: "country-sales-tax",
+    icon: "Receipt",
+    keywords: ["US sales tax calculator", "sales tax estimate", "add sales tax", "remove sales tax"],
+    intro:
+      "Estimate sales tax for a US purchase by entering the pre-tax or tax-included amount and the combined state, county, and city rate that applies.",
+    howTo: [
+      "Choose an example rate or enter the combined local sales tax rate you want to use.",
+      "Enter the amount and choose whether to add sales tax or remove sales tax.",
+      "Review the estimated pre-tax amount, sales tax amount, and total.",
+    ],
+    notes: [
+      "Estimates only. US sales tax can vary by location, product type, exemption, marketplace, and filing period.",
+      "Check state and local tax authority sources, receipts, or a tax professional before relying on a final figure.",
+    ],
+    faqs: [
+      {
+        question: "Does this know my exact US sales tax rate?",
+        answer:
+          "No. Enter the combined local rate from an official state or local source, point-of-sale system, or receipt. The presets are editable examples only.",
+      },
+      {
+        question: "Can sales tax be different inside the same state?",
+        answer:
+          "Yes. Counties, cities, districts, exemptions, and product rules can change the final rate, so the calculator is a planning estimate.",
+      },
+      {
+        question: "Is this tax advice?",
+        answer:
+          "No. It is a sales tax arithmetic tool for estimates only, not legal, accounting, or tax advice.",
+      },
+    ],
+    relatedSlugs: ["us-mortgage-calculator", "budget-planner", "unit-converter"],
+  },
+  {
+    slug: "us-mortgage-calculator",
+    title: "US Mortgage Calculator",
+    shortTitle: "US Mortgage",
+    description: "Estimate a US mortgage payment with principal, interest, property tax, and insurance.",
+    category: "USA Tools",
+    toolType: "country-mortgage",
+    icon: "Home",
+    keywords: ["US mortgage calculator", "mortgage payment calculator", "principal and interest"],
+    intro:
+      "Estimate a monthly mortgage payment for a US home loan using price, down payment, interest rate, term, property tax, and homeowners insurance.",
+    howTo: [
+      "Enter home price, down payment, mortgage rate, and term.",
+      "Add annual property tax and homeowners insurance estimates if you want a fuller monthly payment.",
+      "Compare the estimated principal and interest payment with the total monthly housing estimate.",
+    ],
+    notes: [
+      "Estimates only. This does not include PMI, HOA dues, escrow rules, lender fees, points, closing costs, or changing interest rates.",
+      "Check lender disclosures, local tax records, insurance quotes, and professional advice before making decisions.",
+    ],
+    faqs: [
+      {
+        question: "What does the US mortgage payment include?",
+        answer:
+          "The calculator estimates principal and interest, then adds optional property tax and homeowners insurance. PMI, HOA dues, fees, and escrow details are not included.",
+      },
+      {
+        question: "Is this the same as a lender quote?",
+        answer:
+          "No. Lenders use detailed underwriting, fees, points, escrow, taxes, insurance, and eligibility checks. Treat this as a planning estimate.",
+      },
+      {
+        question: "Can I compare 15-year and 30-year terms?",
+        answer:
+          "Yes. Change the term to compare the monthly payment and total interest trade-off.",
+      },
+    ],
+    relatedSlugs: ["us-loan-repayment-calculator", "budget-planner", "compound-interest-calculator"],
+  },
+  {
+    slug: "us-loan-repayment-calculator",
+    title: "US Loan Repayment Calculator",
+    shortTitle: "US Loan Repayment",
+    description: "Estimate fixed-rate US loan payments, total interest, and total repayment.",
+    category: "USA Tools",
+    toolType: "country-loan",
+    icon: "Landmark",
+    keywords: ["US loan repayment calculator", "loan payment calculator", "APR payment estimate"],
+    intro:
+      "Estimate a monthly payment for a fixed-rate US loan using loan amount, APR, term, and optional upfront fee.",
+    howTo: [
+      "Enter the amount borrowed, APR, term, and any fee you want included.",
+      "Review the estimated monthly payment, total repayment, and interest cost.",
+      "Try different rates or terms to compare affordability and total cost.",
+    ],
+    notes: [
+      "Estimates only. Lenders may calculate APR, fees, interest accrual, and payoff amounts differently.",
+      "Check lender disclosures and professional advice before borrowing.",
+    ],
+    faqs: [
+      {
+        question: "What type of loan does this estimate?",
+        answer:
+          "It estimates a fixed-rate amortizing loan with equal monthly payments, which can be useful for personal loan or auto loan comparisons.",
+      },
+      {
+        question: "Does it include late fees or early payoff rules?",
+        answer:
+          "No. It excludes late fees, prepayment rules, variable rates, insurance products, and lender-specific charges.",
+      },
+      {
+        question: "Why test different terms?",
+        answer:
+          "A longer term may reduce the monthly payment but can increase total interest. Comparing scenarios makes that trade-off visible.",
+      },
+    ],
+    relatedSlugs: ["us-mortgage-calculator", "us-salary-calculator", "budget-planner"],
+  },
+  {
+    slug: "us-salary-calculator",
+    title: "US Salary Calculator",
+    shortTitle: "US Salary",
+    description: "Estimate US take-home pay with simplified federal, FICA, and state/local assumptions.",
+    category: "USA Tools",
+    toolType: "country-salary",
+    icon: "Wallet",
+    keywords: ["US salary calculator", "US take home pay", "federal income tax estimate"],
+    intro:
+      "Estimate US take-home pay from annual salary using simplified federal tax brackets, FICA-style payroll deductions, retirement contribution, and an editable state/local tax rate.",
+    howTo: [
+      "Enter annual gross salary and any pre-tax 401k or retirement contribution percentage.",
+      "Adjust the state/local tax estimate if you have a better local assumption.",
+      "Review estimated annual and monthly take-home pay with the main deductions separated.",
+    ],
+    notes: [
+      "Estimates only. Credits, deductions, filing status differences, local payroll rules, benefits, additional Medicare tax, and state-specific brackets are not fully modelled.",
+      "Check IRS and state guidance, payroll records, or a qualified professional before making final decisions.",
+    ],
+    faqs: [
+      {
+        question: "Does this calculate my exact US paycheck?",
+        answer:
+          "No. It is a simplified annual estimate. Payroll withholding, benefits, deductions, credits, filing status, and state rules can materially change results.",
+      },
+      {
+        question: "Why is there a state/local tax field?",
+        answer:
+          "US state and local income taxes vary widely. The editable field lets you use an estimate that better matches your location.",
+      },
+      {
+        question: "Does it include 401k contributions?",
+        answer:
+          "It includes a simplified pre-tax retirement contribution percentage so you can see how it affects estimated taxable pay and take-home pay.",
+      },
+    ],
+    relatedSlugs: ["401k-calculator", "budget-planner", "salary-to-hourly-calculator"],
+  },
+  {
+    slug: "401k-calculator",
+    title: "401k Calculator",
+    shortTitle: "401k",
+    description: "Project estimated 401k growth from balance, contributions, employer match, and return assumptions.",
+    category: "USA Tools",
+    toolType: "country-savings",
+    icon: "PiggyBank",
+    keywords: ["401k calculator", "401k contribution calculator", "retirement savings estimate"],
+    intro:
+      "Estimate how a 401k balance could grow using current balance, employee contributions, employer match, assumed return, and years invested.",
+    howTo: [
+      "Enter current balance, salary, annual employee contribution, employer match percentage, expected return, and years.",
+      "Review projected balance, total contributions, estimated employer match, and growth.",
+      "Change one assumption at a time to compare savings scenarios.",
+    ],
+    notes: [
+      "Estimates only. This does not model tax law changes, plan fees, vesting, catch-up rules, loans, withdrawals, investment volatility, or exact IRS limits.",
+      "Check IRS guidance, employer plan documents, fund fees, and professional advice before making retirement decisions.",
+    ],
+    faqs: [
+      {
+        question: "Does this guarantee my 401k balance?",
+        answer:
+          "No. The projection uses the return you enter and assumes steady annual contributions. Real investment returns can rise or fall.",
+      },
+      {
+        question: "Does it enforce every IRS contribution rule?",
+        answer:
+          "No. It shows an editable annual limit for planning, but catch-up contributions, employer limits, plan rules, and tax rules should be checked separately.",
+      },
+      {
+        question: "What is employer match?",
+        answer:
+          "Employer match is money your employer may contribute based on your salary or employee contribution. The calculator uses a simplified percentage of salary.",
+      },
+    ],
+    relatedSlugs: ["us-salary-calculator", "compound-interest-calculator", "savings-goal-calculator"],
+  },
+  {
+    slug: "canada-gst-hst-calculator",
+    title: "GST/HST Calculator Canada",
+    shortTitle: "GST/HST Canada",
+    description: "Add or remove estimated Canadian GST/HST using editable province/territory-style presets.",
+    category: "Canada Tools",
+    toolType: "country-sales-tax",
+    icon: "Receipt",
+    keywords: ["GST HST calculator Canada", "Canadian sales tax calculator", "add HST", "remove GST"],
+    intro:
+      "Estimate GST/HST on Canadian prices by choosing an editable preset or entering the rate that applies to your province/territory and situation.",
+    howTo: [
+      "Choose a GST/HST preset or enter a custom rate.",
+      "Enter an amount and choose whether to add tax or remove tax from an included total.",
+      "Review the estimated pre-tax amount, GST/HST amount, and total.",
+    ],
+    notes: [
+      "Estimates only. Separate PST, QST, or RST may apply in some provinces and is not included unless it is part of an HST-style preset.",
+      "Check CRA and province/territory guidance or professional advice before using figures for filing or invoicing decisions.",
+    ],
+    faqs: [
+      {
+        question: "Does this include every Canadian sales tax?",
+        answer:
+          "No. It focuses on GST/HST. In some provinces, separate PST, QST, or RST can apply and should be handled with official province/territory guidance.",
+      },
+      {
+        question: "Can I enter a custom GST/HST rate?",
+        answer:
+          "Yes. The presets are editable planning constants, and you can enter the percentage you want to use.",
+      },
+      {
+        question: "Is this suitable for tax filing?",
+        answer:
+          "No. It is an arithmetic estimate only and does not decide taxability, exemptions, input tax credits, or registration obligations.",
+      },
+    ],
+    relatedSlugs: ["canadian-mortgage-calculator", "budget-planner", "unit-converter"],
+  },
+  {
+    slug: "canadian-mortgage-calculator",
+    title: "Canadian Mortgage Calculator",
+    shortTitle: "Canadian Mortgage",
+    description: "Estimate Canadian mortgage payments with semi-annual compounding assumptions.",
+    category: "Canada Tools",
+    toolType: "country-mortgage",
+    icon: "Home",
+    keywords: ["Canadian mortgage calculator", "Canada mortgage payment", "mortgage payment estimate"],
+    intro:
+      "Estimate a Canadian mortgage payment using home price, down payment, interest rate, amortization term, and optional property tax and insurance.",
+    howTo: [
+      "Enter purchase price, down payment, rate, and amortization term.",
+      "Add annual property tax and insurance if you want a broader monthly estimate.",
+      "Review principal and interest separately from optional monthly housing costs.",
+    ],
+    notes: [
+      "Estimates only. Uses a common semi-annual compounding convention for planning and excludes lender fees, CMHC insurance, taxes, and qualification rules.",
+      "Check lender documents, broker advice, insurer rules, and provincial requirements before acting.",
+    ],
+    faqs: [
+      {
+        question: "Why mention semi-annual compounding?",
+        answer:
+          "Canadian mortgage calculations commonly quote rates compounded semi-annually, so this calculator converts that into a monthly payment estimate.",
+      },
+      {
+        question: "Does it include CMHC mortgage insurance?",
+        answer:
+          "No. Mortgage default insurance, lender fees, land transfer tax, and closing costs are not included.",
+      },
+      {
+        question: "Can I use it for renewal comparisons?",
+        answer:
+          "You can use it for broad payment comparisons, but lender renewal offers and amortization details should be checked directly.",
+      },
+    ],
+    relatedSlugs: ["canadian-loan-repayment-calculator", "budget-planner", "savings-goal-calculator"],
+  },
+  {
+    slug: "canadian-loan-repayment-calculator",
+    title: "Canadian Loan Repayment Calculator",
+    shortTitle: "Canadian Loan Repayment",
+    description: "Estimate Canadian fixed-rate loan payments, total interest, and total repayment.",
+    category: "Canada Tools",
+    toolType: "country-loan",
+    icon: "Landmark",
+    keywords: ["Canadian loan calculator", "Canada loan repayment", "loan payment estimate"],
+    intro:
+      "Estimate a Canadian fixed-rate loan payment using amount borrowed, annual rate, term, and optional upfront fee.",
+    howTo: [
+      "Enter loan amount, annual rate, term, and optional fee.",
+      "Review estimated monthly payment, total repayment, and interest cost.",
+      "Compare several terms or rates before reviewing lender quotes.",
+    ],
+    notes: [
+      "Estimates only. Lenders may treat fees, compounding, insurance, variable rates, and early payoff differently.",
+      "Check lender disclosures and professional advice before borrowing.",
+    ],
+    faqs: [
+      {
+        question: "What loan types can this estimate?",
+        answer:
+          "It is best for simple fixed-rate instalment loan comparisons, not revolving credit, variable-rate debt, or lender-specific payoff calculations.",
+      },
+      {
+        question: "Does it include loan insurance?",
+        answer:
+          "No. Optional insurance, service fees, late fees, and other charges should be added separately if they apply.",
+      },
+      {
+        question: "Why compare total interest?",
+        answer:
+          "The total interest figure shows the cost of stretching or shortening the term beyond the monthly payment.",
+      },
+    ],
+    relatedSlugs: ["canadian-mortgage-calculator", "canadian-salary-calculator", "budget-planner"],
+  },
+  {
+    slug: "canadian-salary-calculator",
+    title: "Canadian Salary Calculator",
+    shortTitle: "Canadian Salary",
+    description: "Estimate Canadian take-home pay with federal, province/territory, CPP, and EI-style assumptions.",
+    category: "Canada Tools",
+    toolType: "country-salary",
+    icon: "Wallet",
+    keywords: ["Canadian salary calculator", "Canada take home pay", "province territory tax estimate"],
+    intro:
+      "Estimate Canadian take-home pay using simplified federal brackets, an editable province/territory rate, payroll deduction assumptions, and optional pre-tax savings.",
+    howTo: [
+      "Enter annual gross salary and an optional pre-tax savings or pension percentage.",
+      "Adjust the province/territory tax estimate to fit your location or planning scenario.",
+      "Review estimated annual and monthly take-home pay with deductions separated.",
+    ],
+    notes: [
+      "Estimates only. Detailed province/territory brackets, credits, Quebec rules, CPP/EI maximums, benefits, and deductions are not fully modelled.",
+      "Check CRA, provincial or territorial sources, payroll records, or professional advice before making decisions.",
+    ],
+    faqs: [
+      {
+        question: "Does this calculate exact Canadian payroll withholding?",
+        answer:
+          "No. It provides a simplified annual estimate. Actual payroll depends on province/territory rules, forms, credits, CPP/EI, benefits, and employer setup.",
+      },
+      {
+        question: "Why is province/territory tax editable?",
+        answer:
+          "Provincial and territorial tax systems differ. An editable field avoids pretending one national estimate fits every user.",
+      },
+      {
+        question: "Does it handle Quebec separately?",
+        answer:
+          "No. Quebec has distinct payroll and tax rules, so use official Quebec and CRA sources for final planning.",
+      },
+    ],
+    relatedSlugs: ["tfsa-savings-calculator", "budget-planner", "salary-to-hourly-calculator"],
+  },
+  {
+    slug: "tfsa-savings-calculator",
+    title: "TFSA Savings Calculator",
+    shortTitle: "TFSA Savings",
+    description: "Project estimated TFSA savings growth from balance, contributions, return, and years.",
+    category: "Canada Tools",
+    toolType: "country-savings",
+    icon: "PiggyBank",
+    keywords: ["TFSA calculator", "TFSA savings calculator", "Canada savings projection"],
+    intro:
+      "Estimate how a TFSA balance could grow using current savings, annual contributions, assumed return, and years invested.",
+    howTo: [
+      "Enter current TFSA balance, annual contribution, assumed return, and time horizon.",
+      "Review projected balance, total contributions, and estimated growth.",
+      "Compare contribution scenarios while checking your own TFSA room separately.",
+    ],
+    notes: [
+      "Estimates only. The calculator does not know your personal TFSA room, withdrawals, penalties, eligible investments, or fees.",
+      "Check CRA guidance, financial institution records, and professional advice before contributing or investing.",
+    ],
+    faqs: [
+      {
+        question: "Does this know my TFSA contribution room?",
+        answer:
+          "No. Enter contributions only after checking your own CRA account, records, and eligibility.",
+      },
+      {
+        question: "Does it include investment risk?",
+        answer:
+          "No. The projection uses the return you enter. Real cash, GIC, fund, or market returns can differ and may include fees.",
+      },
+      {
+        question: "Is TFSA growth tax-free?",
+        answer:
+          "TFSAs can shelter eligible investment income under Canadian rules, but contribution room, residency, overcontribution penalties, and product details matter.",
+      },
+    ],
+    relatedSlugs: ["canadian-salary-calculator", "compound-interest-calculator", "savings-goal-calculator"],
+  },
+  {
+    slug: "australia-gst-calculator",
+    title: "GST Calculator Australia",
+    shortTitle: "Australia GST",
+    description: "Add or remove estimated Australian GST with a 10% editable default rate.",
+    category: "Australia Tools",
+    toolType: "country-sales-tax",
+    icon: "Receipt",
+    keywords: ["GST calculator Australia", "Australian GST calculator", "add GST", "remove GST"],
+    intro:
+      "Estimate Australian GST by adding GST to a GST-exclusive amount or removing GST from a GST-inclusive total.",
+    howTo: [
+      "Use the 10% GST preset or choose the GST-free editable option.",
+      "Enter the amount and choose whether GST should be added or removed.",
+      "Review the estimated GST-exclusive amount, GST amount, and GST-inclusive total.",
+    ],
+    notes: [
+      "Estimates only. The calculator does not decide whether a supply is taxable, GST-free, input-taxed, or affected by business rules.",
+      "Check ATO guidance, invoices, accounting records, or professional advice before using figures for official decisions.",
+    ],
+    faqs: [
+      {
+        question: "What GST rate does Australia use?",
+        answer:
+          "The default editable preset is 10%, which is the common Australian GST rate, but some supplies can be GST-free or treated differently.",
+      },
+      {
+        question: "Can it remove GST from a total?",
+        answer:
+          "Yes. Choose the remove option and it divides by one plus the GST rate to estimate the GST-exclusive amount.",
+      },
+      {
+        question: "Is this accounting advice?",
+        answer:
+          "No. It is an arithmetic estimator only and does not replace ATO guidance or professional accounting advice.",
+      },
+    ],
+    relatedSlugs: ["australian-mortgage-calculator", "budget-planner", "unit-converter"],
+  },
+  {
+    slug: "australian-mortgage-calculator",
+    title: "Australian Mortgage Calculator",
+    shortTitle: "Australian Mortgage",
+    description: "Estimate Australian home loan repayments with optional insurance and extra cost inputs.",
+    category: "Australia Tools",
+    toolType: "country-mortgage",
+    icon: "Home",
+    keywords: ["Australian mortgage calculator", "home loan repayment calculator", "Australia mortgage payment"],
+    intro:
+      "Estimate Australian home loan repayments using property price, deposit, interest rate, loan term, and optional monthly ownership costs.",
+    howTo: [
+      "Enter property price, deposit, rate, and loan term.",
+      "Add annual insurance or other monthly ownership cost estimates if useful.",
+      "Review principal and interest repayment separately from optional extra costs.",
+    ],
+    notes: [
+      "Estimates only. Stamp duty, lender fees, LMI, offset accounts, redraw, package fees, rate changes, and eligibility rules are not included.",
+      "Check lender documents, state/territory duties, broker advice, and professional guidance before acting.",
+    ],
+    faqs: [
+      {
+        question: "Does this include stamp duty or LMI?",
+        answer:
+          "No. It focuses on repayment estimates and optional annual costs. Stamp duty, lenders mortgage insurance, fees, and concessions should be checked separately.",
+      },
+      {
+        question: "Can I compare interest rates?",
+        answer:
+          "Yes. Change the interest rate to see how repayments and total interest may move.",
+      },
+      {
+        question: "Is this a loan approval calculator?",
+        answer:
+          "No. It does not assess serviceability, credit history, expenses, or lender policy.",
+      },
+    ],
+    relatedSlugs: ["australian-loan-repayment-calculator", "budget-planner", "savings-goal-calculator"],
+  },
+  {
+    slug: "australian-loan-repayment-calculator",
+    title: "Australian Loan Repayment Calculator",
+    shortTitle: "Australian Loan Repayment",
+    description: "Estimate Australian fixed-rate loan repayments, total interest, and total repayable.",
+    category: "Australia Tools",
+    toolType: "country-loan",
+    icon: "Landmark",
+    keywords: ["Australian loan repayment calculator", "Australia loan calculator", "loan repayment estimate"],
+    intro:
+      "Estimate a monthly repayment for an Australian fixed-rate loan using loan amount, annual rate, term, and optional fee.",
+    howTo: [
+      "Enter loan amount, annual rate, term, and optional upfront fee.",
+      "Review estimated monthly repayment, total repayable, and interest cost.",
+      "Compare scenarios before checking lender quotes and product terms.",
+    ],
+    notes: [
+      "Estimates only. Product fees, comparison rates, variable rates, redraw, early repayment, and lender rules are not fully modelled.",
+      "Check lender disclosures and professional advice before borrowing.",
+    ],
+    faqs: [
+      {
+        question: "Does this use the comparison rate?",
+        answer:
+          "No. It uses the annual rate you enter and an optional fee. A formal comparison rate may include other costs and assumptions.",
+      },
+      {
+        question: "Can it model a zero-interest loan?",
+        answer:
+          "Yes. Enter 0 as the rate and it will divide the amount across the repayment term.",
+      },
+      {
+        question: "Does it handle variable-rate loans?",
+        answer:
+          "No. It assumes the rate stays the same for the estimate period.",
+      },
+    ],
+    relatedSlugs: ["australian-mortgage-calculator", "australian-salary-calculator", "budget-planner"],
+  },
+  {
+    slug: "australian-salary-calculator",
+    title: "Australian Salary Calculator",
+    shortTitle: "Australian Salary",
+    description: "Estimate Australian take-home pay with simplified income tax and Medicare levy assumptions.",
+    category: "Australia Tools",
+    toolType: "country-salary",
+    icon: "Wallet",
+    keywords: ["Australian salary calculator", "Australia take home pay", "income tax estimate Australia"],
+    intro:
+      "Estimate Australian annual and monthly take-home pay using simplified resident tax bands and an editable Medicare levy-style percentage.",
+    howTo: [
+      "Enter annual gross salary and optional salary sacrifice or pre-tax contribution percentage.",
+      "Adjust the Medicare levy-style percentage if your planning assumption differs.",
+      "Review estimated annual and monthly take-home pay with deductions separated.",
+    ],
+    notes: [
+      "Estimates only. Offsets, HELP/HECS, deductions, salary packaging, residency rules, benefits, and exact payroll treatment are not included.",
+      "Check ATO guidance, payroll records, or professional advice before making final decisions.",
+    ],
+    faqs: [
+      {
+        question: "Does this calculate exact Australian tax?",
+        answer:
+          "No. It is a simplified resident income tax estimate. Your final tax can change because of deductions, offsets, Medicare levy rules, HELP/HECS, and personal circumstances.",
+      },
+      {
+        question: "Does it include superannuation?",
+        answer:
+          "The salary calculator focuses on take-home income. Use the Superannuation Calculator to estimate super balance growth.",
+      },
+      {
+        question: "Why is Medicare levy editable?",
+        answer:
+          "Medicare levy outcomes can depend on income, family status, exemptions, and surcharges. An editable input keeps the assumption visible.",
+      },
+    ],
+    relatedSlugs: ["superannuation-calculator", "budget-planner", "salary-to-hourly-calculator"],
+  },
+  {
+    slug: "superannuation-calculator",
+    title: "Superannuation Calculator",
+    shortTitle: "Superannuation",
+    description: "Project estimated Australian superannuation growth from balance, contributions, employer super, and returns.",
+    category: "Australia Tools",
+    toolType: "country-savings",
+    icon: "PiggyBank",
+    keywords: ["superannuation calculator", "super calculator Australia", "retirement savings estimate"],
+    intro:
+      "Estimate how an Australian superannuation balance could grow using current balance, employer super guarantee percentage, extra contributions, assumed return, and years.",
+    howTo: [
+      "Enter current super balance, salary, employer super percentage, extra annual contribution, expected return, and years.",
+      "Review projected balance, estimated employer contributions, extra contributions, and growth.",
+      "Compare scenarios while checking caps, fees, tax treatment, and fund rules separately.",
+    ],
+    notes: [
+      "Estimates only. It does not model all contribution caps, contribution tax, insurance premiums, fund fees, preservation age, investment risk, or legislative changes.",
+      "Check ATO guidance, fund statements, licensed advice, and professional sources before making retirement decisions.",
+    ],
+    faqs: [
+      {
+        question: "Does this guarantee my super balance?",
+        answer:
+          "No. It projects from the return and contributions you enter. Real investment returns, fees, insurance, and tax can change outcomes.",
+      },
+      {
+        question: "Does it include employer super guarantee?",
+        answer:
+          "Yes, it includes a simplified employer super percentage of salary, with an editable default assumption.",
+      },
+      {
+        question: "Does it enforce concessional contribution caps?",
+        answer:
+          "It displays an editable annual limit assumption for planning, but personal caps, carry-forward rules, and tax treatment must be checked separately.",
+      },
+    ],
+    relatedSlugs: ["australian-salary-calculator", "compound-interest-calculator", "savings-goal-calculator"],
+  },
 ];
 
 export function getSeoTool(slug: string) {

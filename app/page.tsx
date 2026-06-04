@@ -149,6 +149,24 @@ const relatedWorkflows = [
   },
 ];
 
+const internationalToolHubs = [
+  {
+    title: "USA Tools",
+    href: "/us-tools",
+    description: "US sales tax, mortgage, loan, salary, and 401k calculators.",
+  },
+  {
+    title: "Canada Tools",
+    href: "/canada-tools",
+    description: "Canadian GST/HST, mortgage, loan, salary, and TFSA tools.",
+  },
+  {
+    title: "Australia Tools",
+    href: "/australia-tools",
+    description: "Australian GST, mortgage, loan, salary, and super tools.",
+  },
+];
+
 const searchableTools: HomepageSearchTool[] = allSiteTools.map(
   ({ title, description, href, categorySlugs, keywords }) => ({
     title,
@@ -306,6 +324,37 @@ export default function HomePage() {
               />
             );
           })}
+        </div>
+      </section>
+
+      <section className="container mx-auto px-4 pb-10" aria-labelledby="international-tools">
+        <div className="rounded-2xl border bg-card p-6 shadow-sm md:p-8">
+          <div className="mb-6 flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
+            <div>
+              <p className="text-sm font-semibold uppercase tracking-wide text-primary">
+                International tools
+              </p>
+              <h2 id="international-tools" className="mt-2 text-2xl font-semibold md:text-3xl">
+                Country-specific finance and utility hubs
+              </h2>
+            </div>
+            <p className="max-w-2xl text-sm text-muted-foreground md:text-right">
+              Start with focused tool hubs for the United States, Canada, and
+              Australia while the rest of Daily Utility Dock remains globally useful.
+            </p>
+          </div>
+          <div className="grid gap-4 md:grid-cols-3">
+            {internationalToolHubs.map((hub) => (
+              <Link
+                key={hub.href}
+                href={hub.href}
+                className="rounded-xl border bg-background p-5 transition-colors hover:border-primary/40 hover:bg-primary/5"
+              >
+                <p className="font-semibold">{hub.title}</p>
+                <p className="mt-2 text-sm text-muted-foreground">{hub.description}</p>
+              </Link>
+            ))}
+          </div>
         </div>
       </section>
 

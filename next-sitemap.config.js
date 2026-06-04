@@ -22,6 +22,9 @@ module.exports = {
       '/converters',
       '/productivity-tools',
       '/health-lifestyle-tools',
+      '/us-tools',
+      '/canada-tools',
+      '/australia-tools',
     ].includes(path);
     const isBlog = path.startsWith('/blog');
     const isLegal = ['/privacy-policy', '/cookie-policy', '/terms-of-use'].includes(path);
